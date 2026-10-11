@@ -28,7 +28,7 @@ export default function CourseCard({ course, onQuickView }: { course: Course; on
         <p className="mt-2 min-h-[48px] flex-1 text-sm leading-6 text-slate-500">{course.description}</p>
 
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-4 text-xs text-slate-500">
-          <span className="flex items-center gap-1.5"><Users size={14} className="text-brand-blue" />{course.instructor}</span>
+          <Link href={'/about#teacher-' + course.instructor.toLowerCase().replace(/\\s+/g, '-')} className="flex min-w-0 items-center gap-1.5 rounded-sm transition hover:text-brand-violet focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-violet/40" aria-label={'View teacher profile for ' + course.instructor}><Users size={14} className="shrink-0 text-brand-blue" /><span className="underline decoration-transparent underline-offset-4 transition hover:decoration-violet-300">{course.instructor}</span><ArrowUpRight size={12} className="shrink-0" /></Link>
           <span className="flex items-center gap-1.5"><Clock3 size={14} className="text-brand-violet" />{course.duration}</span>
         </div>
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
