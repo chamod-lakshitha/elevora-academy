@@ -344,3 +344,40 @@ input {
   .section-space { padding-top: 2.5rem; padding-bottom: 2.5rem; }
   .section-space::before { width: 3rem; height: 2px; }
 }
+
+
+/* Teaching academy identity: warm paper, lesson-note details, and welcoming classroom surfaces. */
+.academy-hero {
+  background:
+    radial-gradient(ellipse at 82% 12%, rgba(251,191,36,.14), transparent 30%),
+    radial-gradient(ellipse at 7% 88%, rgba(96,165,250,.16), transparent 28%),
+    linear-gradient(118deg,#fffdf8 0%,#f4f2ff 54%,#fff8e9 100%);
+}
+.academy-hero::before {
+  content:"";
+  position:absolute;
+  z-index:0;
+  inset:0;
+  pointer-events:none;
+  opacity:.34;
+  background-image:radial-gradient(rgba(61,52,112,.16) .7px,transparent .7px);
+  background-size:18px 18px;
+  mask-image:linear-gradient(90deg,transparent,black 35%,black 78%,transparent);
+}
+.academy-hero .hero-eyebrow { border-color:rgba(217,164,39,.28); background:rgba(255,255,255,.88); }
+.academy-hero .hero-heading { letter-spacing:-.052em; }
+.academy-hero .hero-panel { box-shadow:0 24px 65px rgba(31,25,81,.2); }
+.academy-hero .hero-panel-grid { opacity:.2; }
+.academy-hero .hero-primary-button { background:linear-gradient(135deg,#ffdf80 0%,#f4b934 100%); }
+.academy-hero .hero-secondary-button { background:rgba(255,255,255,.78); }
+.pillar-card,
+section article.rounded-\\[1\\.7rem\\],
+section article.rounded-\\[1\\.6rem\\] { border-color:rgba(105,91,157,.15); }
+section.bg-slate-50\\/80 { background:linear-gradient(180deg,#faf9ff 0%,#f8f7fc 100%); }
+.cta-panel { background:linear-gradient(120deg,#171342 0%,#3e267f 54%,#176b7b 100%); }
+.nav-shell { border-bottom-color:rgba(229,220,190,.8); }
+.nav-shell nav[aria-label="Main navigation"] { background:rgba(249,247,255,.9); }
+footer { background-image:linear-gradient(135deg,#15133e 0%,#20285d 58%,#145568 100%); }
+@media (prefers-reduced-motion:reduce) {
+  .academy-hero::before { opacity:.2; }
+}
