@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import type { CSSProperties } from 'react';
 
 const iconSources: Record<string, { src: string; alt: string; className: string }> = {
   FR: { src: '/course-icons/french-flag.svg', alt: 'French flag', className: 'h-9 w-9 rounded-md object-cover shadow-sm' },
