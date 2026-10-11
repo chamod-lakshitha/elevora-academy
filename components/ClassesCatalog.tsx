@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import {
   ArrowRight, ArrowUpRight, Search, SlidersHorizontal, Sparkles, Star, X, CheckCircle2,
@@ -16,8 +17,13 @@ export default function ClassesCatalog() {
   const [category, setCategory] = useState('All classes');
   const [search, setSearch] = useState('');
   const [selected, setSelected] = useState<Course | null>(null);
+  const [mounted, setMounted] = useState(false);
   const dialogRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const filtered = useMemo(() => {
     const term = search.trim().toLocaleLowerCase();
@@ -197,8 +203,9 @@ export default function ClassesCatalog() {
         </div>
       </section>
 
-      <AnimatePresence>
-              {selected && (
+      {mounted && createPortal(
+        <AnimatePresence>
+          {selected && (
                 <motion.div
                   className="fixed inset-0 z-[60] flex items-center justify-center bg-brand-navy/60 p-4 backdrop-blur-md"
                   initial={reduceMotion ? false : { opacity: 0 }}
