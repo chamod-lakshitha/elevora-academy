@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Online Classes in Languages, Technology and More',
+  title: 'Online French, English, German & Coding Classes',
   description: 'Explore Elelora Academy online classes, compare learning paths and find practical lessons in languages, technology and academic skills.',
   alternates: { canonical: '/classes' },
   openGraph: {
