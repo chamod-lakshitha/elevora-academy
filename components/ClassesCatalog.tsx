@@ -249,7 +249,7 @@ export default function ClassesCatalog() {
                     </div>
                   </motion.div>
                 </motion.div>
-        
+          )}
         </AnimatePresence>,
         document.body,
       )}
