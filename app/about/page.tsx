@@ -10,8 +10,8 @@ import SectionHeading from '@/components/SectionHeading';
 import { absoluteUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'About Elevora Academy | Our Online Learning Mission',
-  description: 'Discover Elevora Academy’s mission to make online learning practical and accessible through French, English, German, Java and Python classes.',
+  title: 'About Elevora Academy | Teaching That Helps You Grow',
+  description: 'Meet Elevora Academy, an online learning space focused on clear teaching, guided practice and helping learners grow through language and technology classes.',
   alternates: { canonical: '/about' },
   openGraph: { title: 'About Elevora Academy', description: 'Learn about our learner-first approach to practical online language and coding classes.', type: 'website', ...(absoluteUrl('/about') ? { url: absoluteUrl('/about') } : {}) },
 };
@@ -33,21 +33,21 @@ export default function AboutPage() {
     <main className="overflow-hidden">
       <PageHero
         variant="about"
-        eyebrow="The story behind Elevora"
-        title="Education that opens"
-        highlight="new possibilities."
-        description="We believe learning should feel accessible, motivating and useful. Elevora Academy helps curious minds build skills, grow confidence and take their next step."
+        eyebrow="A little about our academy"
+        title="Teaching that opens"
+        highlight="doors to possibility."
+        description="At Elevora Academy, learning is more than completing a course. It is asking questions, practising with purpose and gaining the confidence to use what you learn in real life."
         primaryLabel="Explore our classes"
         primaryHref="/classes"
         secondaryLabel="Back to home"
         secondaryHref="/"
-        proofs={["Learner-first approach", "Skills for real life"]}
+        proofs={["Learners come first", "Practice with purpose"]}
       />
 
       <section className="section-space relative overflow-hidden bg-white">
         <div aria-hidden="true" className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-sky-100/50 blur-3xl" />
         <div className="container-shell relative grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
-          <SectionHeading eyebrow="Our purpose" title="Learning should open doors, not create barriers." description="We are shaping a flexible online learning space where curiosity is encouraged, progress is celebrated and each new skill can lead to a new possibility." titleClassName="max-w-[18ch] text-[clamp(1.65rem,5.5vw,3rem)] leading-[1.12] tracking-[-0.035em] break-words [overflow-wrap:anywhere] sm:max-w-none sm:text-4xl lg:text-5xl" />
+          <SectionHeading eyebrow="Our purpose" title="Clear teaching. Confident learners." description="We want every learner to feel welcome to ask questions, take their time, practise and discover what they are capable of." titleClassName="max-w-[18ch] text-[clamp(1.65rem,5.5vw,3rem)] leading-[1.12] tracking-[-0.035em] break-words [overflow-wrap:anywhere] sm:max-w-none sm:text-4xl lg:text-5xl" />
           <div className="grid gap-5 sm:grid-cols-2">
             <Reveal>
               <article className="group h-full rounded-[1.7rem] border border-sky-100 bg-gradient-to-br from-sky-50 via-white to-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft sm:p-7">
@@ -71,7 +71,7 @@ export default function AboutPage() {
 
       <section className="section-space relative overflow-hidden bg-slate-50/80">
         <div className="container-shell relative">
-          <SectionHeading eyebrow="What guides us" title="Built on progress, powered by possibility" description="Our values shape how we design lessons, support learners and keep improving." centered titleClassName="leading-[1.28] sm:leading-[1.18] lg:leading-[1.18]" />
+          <SectionHeading eyebrow="What guides our teaching" title="A supportive place to learn and grow" description="We believe the best learning happens when clear explanations meet meaningful practice and encouragement." centered titleClassName="leading-[1.28] sm:leading-[1.18] lg:leading-[1.18]" />
           <Stagger className="mt-10 grid gap-5 md:grid-cols-3" delayChildren={0.03}>
             {values.map((value, index) => {
               const Icon = value.icon;
@@ -94,7 +94,7 @@ export default function AboutPage() {
 
       <section className="section-space">
         <div className="container-shell">
-          <SectionHeading eyebrow="Designed around learners" title="The support to keep moving forward" description="Learning is personal. We aim to make the journey feel structured, encouraging and relevant to your goals." centered titleClassName="leading-tight sm:leading-[1.12] lg:leading-[1.12]" />
+          <SectionHeading eyebrow="The learning experience" title="Guidance at every step" description="From the first question to the final practice task, we want learning to feel organised, encouraging and connected to your goals." centered titleClassName="leading-tight sm:leading-[1.12] lg:leading-[1.12]" />
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {pillars.map((pillar, index) => {
               const Icon = pillar.icon;
@@ -118,9 +118,9 @@ export default function AboutPage() {
               <div aria-hidden="true" className="absolute -right-12 -top-28 h-80 w-80 rounded-full border border-white/15" />
               <div aria-hidden="true" className="absolute -bottom-24 left-[40%] h-56 w-56 rounded-full bg-fuchsia-500/20 blur-3xl" />
               <Quote size={30} className="relative mx-auto text-brand-amber" />
-              <p className="relative mx-auto mt-5 max-w-3xl text-2xl font-bold leading-snug sm:text-3xl">“The goal isn’t simply to finish a lesson. It’s to leave feeling ready for what’s next.”</p>
-              <p className="relative mt-5 text-sm text-white/60">The Elevora Academy philosophy</p>
-              <Link href="/classes" className="button-primary relative mt-8">Take your first step <ArrowUpRight size={17} /></Link>
+              <p className="relative mx-auto mt-5 max-w-3xl text-2xl font-bold leading-snug sm:text-3xl">“Great teaching helps you understand today—and feel ready to try more tomorrow.”</p>
+              <p className="relative mt-5 text-sm text-white/60">The Elevora Academy approach</p>
+              <Link href="/classes" className="button-primary relative mt-8">Find your class <ArrowUpRight size={17} /></Link>
             </div>
           </Reveal>
         </div>
