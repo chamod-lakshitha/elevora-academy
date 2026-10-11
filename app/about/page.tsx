@@ -127,9 +127,6 @@ export default function AboutPage() {
             centered
             titleClassName="leading-[1.2] sm:leading-[1.12]"
           />
-          <div className="mx-auto mt-5 max-w-3xl rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-center text-xs font-medium leading-5 text-amber-900 sm:text-sm">
-            Demo profiles for the website design. Names, qualifications and experience are illustrative and should be replaced with your real teachers’ details before publication.
-          </div>
           <Stagger className="mt-9 grid gap-5 sm:grid-cols-2 xl:grid-cols-4" delayChildren={0.05}>
             {teachingStaff.map((teacher, index) => {
               const Icon = teacher.icon;
