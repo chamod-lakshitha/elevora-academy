@@ -117,29 +117,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-space relative overflow-hidden bg-slate-50/80">
-        <div className="container-shell relative">
-          <SectionHeading eyebrow="What guides our teaching" title="A supportive place to learn and grow" description="We believe the best learning happens when clear explanations meet meaningful practice and encouragement." centered titleClassName="leading-[1.28] sm:leading-[1.18] lg:leading-[1.18]" />
-          <Stagger className="mt-10 grid gap-5 md:grid-cols-3" delayChildren={0.03}>
-            {values.map((value, index) => {
-              const Icon = value.icon;
-              return (
-                <article key={value.title} className="group h-full overflow-hidden rounded-[1.7rem] border border-slate-200/70 bg-white shadow-[0_5px_22px_rgba(20,35,75,0.035)] transition duration-300 hover:-translate-y-2 hover:border-violet-200 hover:shadow-[0_24px_60px_rgba(49,35,122,0.12)]">
-                                    <div className="p-6 sm:p-7">
-                    <div className="flex items-start justify-between gap-3">
-                      <span className={'flex h-14 w-14 items-center justify-center rounded-2xl transition duration-300 group-hover:rotate-3 group-hover:scale-105 ' + value.tint}><Icon size={25} /></span>
-                      <span className="text-xs font-black tracking-[0.2em] text-slate-300">0{index + 1}</span>
-                    </div>
-                    <h3 className="mt-6 text-xl font-extrabold tracking-tight text-brand-ink">{value.title}</h3>
-                    <p className="muted-copy mt-3 text-sm">{value.text}</p>
-                  </div>
-                </article>
-              );
-            })}
-          </Stagger>
-        </div>
-      </section>
-
       <section className="section-space relative overflow-hidden bg-white">
         <div aria-hidden="true" className="absolute -right-24 top-10 h-72 w-72 rounded-full bg-violet-100/50 blur-3xl" />
         <div className="container-shell relative">
@@ -189,6 +166,29 @@ export default function AboutPage() {
                       <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                       Educator profile 0{index + 1}
                     </div>
+                  </div>
+                </article>
+              );
+            })}
+          </Stagger>
+        </div>
+      </section>
+
+      <section className="section-space relative overflow-hidden bg-slate-50/80">
+        <div className="container-shell relative">
+          <SectionHeading eyebrow="What guides our teaching" title="A supportive place to learn and grow" description="We believe the best learning happens when clear explanations meet meaningful practice and encouragement." centered titleClassName="leading-[1.28] sm:leading-[1.18] lg:leading-[1.18]" />
+          <Stagger className="mt-10 grid gap-5 md:grid-cols-3" delayChildren={0.03}>
+            {values.map((value, index) => {
+              const Icon = value.icon;
+              return (
+                <article key={value.title} className="group h-full overflow-hidden rounded-[1.7rem] border border-slate-200/70 bg-white shadow-[0_5px_22px_rgba(20,35,75,0.035)] transition duration-300 hover:-translate-y-2 hover:border-violet-200 hover:shadow-[0_24px_60px_rgba(49,35,122,0.12)]">
+                                    <div className="p-6 sm:p-7">
+                    <div className="flex items-start justify-between gap-3">
+                      <span className={'flex h-14 w-14 items-center justify-center rounded-2xl transition duration-300 group-hover:rotate-3 group-hover:scale-105 ' + value.tint}><Icon size={25} /></span>
+                      <span className="text-xs font-black tracking-[0.2em] text-slate-300">0{index + 1}</span>
+                    </div>
+                    <h3 className="mt-6 text-xl font-extrabold tracking-tight text-brand-ink">{value.title}</h3>
+                    <p className="muted-copy mt-3 text-sm">{value.text}</p>
                   </div>
                 </article>
               );
