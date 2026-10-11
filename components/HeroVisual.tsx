@@ -40,11 +40,11 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
               </div>
 
               <div className="relative z-10 mx-auto flex min-h-[118px] w-full max-w-[310px] flex-1 items-center justify-center sm:min-h-[132px] md:min-h-[148px] lg:min-h-[170px] xl:min-h-[200px]">
-                <div aria-hidden="true" className="hero-rotate absolute h-[110px] w-[110px] rounded-full border border-dashed border-white/35 sm:h-[126px] sm:w-[126px] md:h-[142px] md:w-[142px] lg:h-[164px] lg:w-[164px] xl:h-[196px] xl:w-[196px]" />
-                <div aria-hidden="true" className="absolute h-[94px] w-[94px] rounded-full border border-white/15 bg-white/[0.035] sm:h-[108px] sm:w-[108px] md:h-[122px] md:w-[122px] lg:h-[140px] lg:w-[140px] xl:h-[166px] xl:w-[166px]" />
-                <div aria-hidden="true" className="hero-pulse absolute h-[78px] w-[78px] rounded-full bg-white/15 blur-lg sm:h-[92px] sm:w-[92px] md:h-[104px] md:w-[104px] lg:h-[118px] lg:w-[118px] xl:h-[142px] xl:w-[142px]" />
-                <div className="hero-float hero-float-book relative z-10 flex h-[clamp(3rem,14vw,5rem)] w-[clamp(3rem,14vw,5rem)] items-center justify-center rounded-[clamp(0.85rem,3.5vw,1.4rem)] border border-white/30 bg-gradient-to-br from-white/25 via-violet-200/15 to-cyan-200/20 text-amber-200 shadow-[0_20px_55px_rgba(10,6,45,0.32)] backdrop-blur-md">
-                  <BookOpen className="h-[clamp(1.75rem,7vw,3rem)] w-[clamp(1.75rem,7vw,3rem)] drop-shadow-lg" strokeWidth={1.5} />
+                <div aria-hidden="true" className="hero-rotate absolute h-[124px] w-[124px] rounded-full border border-dashed border-white/35 sm:h-[146px] sm:w-[146px] md:h-[166px] md:w-[166px] lg:h-[188px] lg:w-[188px] xl:h-[210px] xl:w-[210px]" />
+                <div aria-hidden="true" className="absolute h-[106px] w-[106px] rounded-full border border-white/15 bg-white/[0.035] sm:h-[124px] sm:w-[124px] md:h-[142px] md:w-[142px] lg:h-[160px] lg:w-[160px] xl:h-[180px] xl:w-[180px]" />
+                <div aria-hidden="true" className="hero-pulse absolute h-[86px] w-[86px] rounded-full bg-white/15 blur-lg sm:h-[100px] sm:w-[100px] md:h-[116px] md:w-[116px] lg:h-[132px] lg:w-[132px] xl:h-[150px] xl:w-[150px]" />
+                <div className="hero-float hero-float-book relative z-10 flex h-[clamp(3.5rem,18vw,5.25rem)] w-[clamp(3.5rem,18vw,5.25rem)] items-center justify-center rounded-[clamp(0.9rem,4vw,1.4rem)] border border-white/30 bg-gradient-to-br from-white/25 via-violet-200/15 to-cyan-200/20 text-amber-200 shadow-[0_20px_55px_rgba(10,6,45,0.32)] backdrop-blur-md">
+                  <BookOpen className="h-[clamp(2rem,9vw,3.25rem)] w-[clamp(2rem,9vw,3.25rem)] drop-shadow-lg" strokeWidth={1.5} />
                 </div>
                 <OrbitingIcons variant="home" />
               </div>
