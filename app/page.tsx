@@ -79,16 +79,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[#f8f9ff] py-14 sm:py-18 lg:py-24">
-        <div aria-hidden="true" className="pointer-events-none absolute -left-28 top-10 h-72 w-72 rounded-full bg-sky-100/70 blur-3xl" />
-        <div aria-hidden="true" className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-violet-100/70 blur-3xl" />
+      <section className="relative isolate overflow-hidden bg-white py-14 sm:py-18 lg:py-24">
+        
+        
         <div className="container-shell relative">
-          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-20">
-            <div className="lg:sticky lg:top-28">
-              <span className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.22em] text-brand-violet"><span aria-hidden="true" className="h-2 w-2 rounded-full bg-brand-gold" />The Elevora teaching approach</span>
-              <h2 className="mt-5 max-w-lg text-4xl font-black leading-[1.08] tracking-[-0.045em] text-brand-navy sm:text-5xl lg:text-6xl">Every learner deserves to <span className="bg-gradient-to-r from-brand-blue via-brand-violet to-fuchsia-500 bg-clip-text text-transparent">thrive.</span></h2>
-              <p className="mt-6 max-w-md text-base leading-8 text-slate-600 sm:text-lg">Good teaching makes learning feel clear, encouraging and achievable. We focus on understanding, practice and progress—not just getting through a lesson.</p>
-              <div aria-hidden="true" className="mt-8 flex items-center gap-3"><span className="h-1.5 w-14 rounded-full bg-brand-blue" /><span className="h-1.5 w-8 rounded-full bg-brand-violet" /><span className="h-1.5 w-4 rounded-full bg-brand-gold" /></div>
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-20">
+            <div className="text-right lg:sticky lg:top-28">
+              <span className="inline-flex items-center justify-end gap-2 text-xs font-extrabold uppercase tracking-[0.22em] text-brand-violet"><span aria-hidden="true" className="h-2 w-2 rounded-full bg-brand-gold" />The Elevora teaching approach</span>
+              <h2 className="ml-auto mt-5 max-w-lg text-4xl font-black leading-[1.08] tracking-[-0.045em] text-brand-navy sm:text-5xl lg:text-6xl">Every learner deserves to <span className="bg-gradient-to-r from-brand-blue via-brand-violet to-fuchsia-500 bg-clip-text text-transparent">thrive.</span></h2>
+              <p className="ml-auto mt-6 max-w-md text-base leading-8 text-slate-600 sm:text-lg">Good teaching makes learning feel clear, encouraging and achievable. We focus on understanding, practice and progress—not just getting through a lesson.</p>
+              <div aria-hidden="true" className="mt-8 flex items-center justify-end gap-3"><span className="h-1.5 w-14 rounded-full bg-brand-blue" /><span className="h-1.5 w-8 rounded-full bg-brand-violet" /><span className="h-1.5 w-4 rounded-full bg-brand-gold" /></div>
             </div>
             <div className="relative">
               <div aria-hidden="true" className="absolute bottom-8 left-[1.45rem] top-8 w-px bg-gradient-to-b from-sky-300 via-violet-300 to-amber-300 sm:left-[1.7rem]" />
