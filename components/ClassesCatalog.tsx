@@ -245,7 +245,7 @@ export default function ClassesCatalog() {
                         <span className="text-2xl font-black text-brand-navy">{selected.price}<span className="ml-1 text-xs font-medium text-slate-400">/ course</span></span>
                         <Link href={'/classes/' + selected.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')} onClick={() => setSelected(null)} className="button-primary">Course details <ArrowUpRight size={16} /></Link>
                       </div>
-                      <div className="mt-4 flex flex-wrap items-center justify-between gap-3"><p className="text-xs leading-5 text-slate-400">Please confirm current availability and course details with Elevora Academy.</p><button type="button" onClick={() => setSelected(null)} className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-600 transition hover:border-violet-200 hover:bg-violet-50 hover:text-brand-violet focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-violet/20"><X size={15} /> Close</button></div>
+                      <p className="mt-4 text-xs leading-5 text-slate-400">Please confirm current availability and course details with Elevora Academy.</p>
                     </div>
                   </motion.div>
                 </motion.div>
