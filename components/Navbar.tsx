@@ -8,7 +8,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   return <header className="sticky top-0 z-50 border-b border-white/70 bg-white/80 backdrop-blur-xl">
     <div className="container-shell flex h-[76px] items-center justify-between gap-5"><BrandLogo />
-      <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">{links.map(link => <Link key={link.href} href={link.href} className="text-sm font-semibold text-slate-600 transition hover:text-brand-violet">{link.label}</Link>)}</nav>
+      <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">{links.map(link => <Link key={link.href} href={link.href} className="rounded-full px-2 py-2 text-sm font-semibold text-slate-600 transition-colors duration-200 hover:text-brand-violet focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-violet/15">{link.label}</Link>)}</nav>
       <Link href="/classes" className="button-primary hidden !px-5 !py-3 md:inline-flex">Get started <ArrowUpRight size={16} /></Link>
       <button className="rounded-xl border border-slate-200 p-2.5 text-brand-navy md:hidden" aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}>{open ? <X size={21} /> : <Menu size={21} />}</button>
     </div>
