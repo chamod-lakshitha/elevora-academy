@@ -94,9 +94,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#f7f5ff] py-12 sm:py-16 lg:py-20">
-        <div aria-hidden="true" className="absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-amber-100/60 blur-3xl" />
-        <div aria-hidden="true" className="absolute -right-24 top-0 h-72 w-72 rounded-full bg-violet-100/70 blur-3xl" />
+      <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#f7f5ff] via-white to-[#f8faff] py-12 sm:py-16 lg:py-20">
+        <div aria-hidden="true" className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-sky-200/35 blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-violet-200/45 blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-0 h-px w-3/4 -translate-x-1/2 bg-gradient-to-r from-transparent via-violet-200 to-transparent" />
         <div className="container-shell relative">
           <div className="mx-auto max-w-2xl text-center">
             <SectionHeading
@@ -106,34 +107,42 @@ export default function HomePage() {
               centered
             />
           </div>
-          <div className="relative mt-12 grid gap-10 md:grid-cols-3 md:gap-8">
-            <div aria-hidden="true" className="pointer-events-none absolute left-[16.666%] right-[16.666%] top-7 hidden h-[2px] rounded-full bg-gradient-to-r from-sky-300 via-violet-300 to-amber-300 md:block" />
+
+          <div className="relative mt-12 grid gap-5 sm:mt-14 md:grid-cols-3 md:gap-6">
             {[
-              { number: '01', icon: Compass, title: 'Choose your subject', text: 'Explore our language and technology classes and find the subject that fits your goals.', tone: 'bg-sky-100 text-sky-700', line: 'bg-sky-400' },
-              { number: '02', icon: BookOpenCheck, title: 'Learn and practise', text: 'Build understanding with clear explanations, guided activities and practical examples.', tone: 'bg-violet-100 text-violet-700', line: 'bg-violet-400' },
-              { number: '03', icon: Target, title: 'Grow with confidence', text: 'Keep practising, ask questions and celebrate each new skill you master.', tone: 'bg-amber-100 text-amber-800', line: 'bg-amber-400' },
+              { number: '01', icon: Compass, title: 'Choose your subject', text: 'Explore our language and technology classes and find the subject that fits your goals.', label: 'FIND YOUR FIT', tone: 'from-sky-500 to-cyan-400', soft: 'bg-sky-50', ink: 'text-sky-700', glow: 'group-hover:shadow-sky-200/70' },
+              { number: '02', icon: BookOpenCheck, title: 'Learn and practise', text: 'Build understanding with clear explanations, guided activities and practical examples.', label: 'BUILD YOUR SKILLS', tone: 'from-violet-600 to-fuchsia-400', soft: 'bg-violet-50', ink: 'text-violet-700', glow: 'group-hover:shadow-violet-200/70' },
+              { number: '03', icon: Target, title: 'Grow with confidence', text: 'Keep practising, ask questions and celebrate each new skill you master.', label: 'MAKE PROGRESS', tone: 'from-amber-500 to-orange-400', soft: 'bg-amber-50', ink: 'text-amber-700', glow: 'group-hover:shadow-amber-200/70' },
             ].map((step, index) => {
               const Icon = step.icon;
               return (
-                <Reveal key={step.number} delay={index * 0.08} className="relative z-10 min-w-0">
-                  <div className="flex h-full flex-col items-center text-center">
-                    <div className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-4 border-[#f7f5ff] bg-white shadow-[0_5px_18px_rgba(40,30,95,0.10)]">
-                      <span className={'flex h-10 w-10 items-center justify-center rounded-full ' + step.tone}><Icon size={20} strokeWidth={2} /></span>
+                <Reveal key={step.number} delay={index * 0.12} className="h-full min-w-0">
+                  <article className={'group relative h-full overflow-hidden rounded-[1.75rem] border border-white bg-white/90 p-6 shadow-[0_12px_40px_rgba(39,35,86,0.07)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_55px_rgba(39,35,86,0.13)] sm:p-7 ' + step.glow}>
+                    <div aria-hidden="true" className={'absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ' + step.tone} />
+                    <span aria-hidden="true" className="pointer-events-none absolute -right-3 -top-8 select-none text-[8rem] font-black leading-none tracking-tighter text-slate-100/80 transition-transform duration-500 group-hover:scale-110">{step.number}</span>
+                    <div className="relative flex items-start justify-between gap-4">
+                      <div className={'flex h-[4.25rem] w-[4.25rem] items-center justify-center rounded-2xl ' + step.soft}>
+                        <span className={'flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br text-white shadow-lg transition-transform duration-300 group-hover:rotate-[-5deg] group-hover:scale-105 ' + step.tone}>
+                          <Icon size={24} strokeWidth={2.1} />
+                        </span>
+                      </div>
+                      <span className={'mt-1 rounded-full px-3 py-1.5 text-[10px] font-black tracking-[0.14em] ' + step.soft + ' ' + step.ink}>{step.label}</span>
                     </div>
-                    <div className="mt-5 flex min-h-5 items-center justify-center gap-3">
-                      <span className="text-xs font-black tracking-[0.18em] text-violet-500">{step.number}</span>
-                      <span aria-hidden="true" className={'h-1 w-8 rounded-full ' + step.line} />
+                    <div className="relative mt-7">
+                      <p className={'text-xs font-black tracking-[0.2em] ' + step.ink}>STEP {step.number}</p>
+                      <h3 className="mt-2 text-xl font-extrabold leading-snug tracking-tight text-brand-navy sm:text-2xl">{step.title}</h3>
+                      <p className="mt-3 text-sm leading-7 text-slate-600">{step.text}</p>
                     </div>
-                    <h3 className="mt-3 min-h-[3.5rem] max-w-xs text-xl font-extrabold leading-snug tracking-tight text-brand-navy">{step.title}</h3>
-                    <p className="mt-2 max-w-sm text-sm leading-6 text-slate-600 md:min-h-[4.5rem]">{step.text}</p>
-                  </div>
+                    <div aria-hidden="true" className={'mt-7 h-1 w-12 rounded-full bg-gradient-to-r transition-all duration-300 group-hover:w-20 ' + step.tone} />
+                  </article>
                 </Reveal>
               );
             })}
           </div>
-          <Reveal className="mt-10 text-center">
-            <Link href="/classes" className="inline-flex items-center gap-2 rounded-full bg-brand-violet px-6 py-3.5 text-sm font-extrabold text-white shadow-lg shadow-violet-900/15 transition hover:-translate-y-0.5 hover:bg-brand-navy">
-              Start learning <ArrowRight size={17} />
+
+          <Reveal className="mt-9 text-center sm:mt-11">
+            <Link href="/classes" className="group inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-brand-violet px-7 py-3.5 text-sm font-extrabold text-white shadow-[0_12px_28px_rgba(91,63,190,0.25)] transition-all duration-300 hover:-translate-y-1 hover:bg-brand-navy hover:shadow-[0_16px_32px_rgba(35,31,85,0.24)]">
+              Explore our classes <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </Reveal>
         </div>
