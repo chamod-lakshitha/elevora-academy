@@ -231,7 +231,7 @@ export default function ClassesCatalog() {
                       <div aria-hidden="true" className="absolute -right-8 -top-14 h-48 w-48 rounded-full border border-white/25" />
                       <div aria-hidden="true" className="absolute -bottom-20 -left-10 h-48 w-48 rounded-full border border-white/25" />
                       <div className="relative z-10 rounded-2xl border border-white/40 bg-white/95 p-2 shadow-xl"><CourseIcon icon={selected.icon} /></div>
-                      <button data-dialog-close type="button" aria-label="Close course details" onClick={() => setSelected(null)} className="absolute right-4 top-4 rounded-full bg-white/20 p-2 text-white transition hover:bg-white/35 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50"><X size={18} /></button>
+                      <button data-dialog-close type="button" aria-label="Close course details" onClick={() => setSelected(null)} className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-white/80 bg-white text-brand-navy shadow-lg transition duration-200 hover:rotate-90 hover:bg-violet-50 hover:text-brand-violet focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/70"><X size={18} /></button>
                     </div>
                     <div className="p-6 sm:p-8">
                       <span className="text-xs font-bold uppercase tracking-widest text-brand-violet">{selected.category} · {selected.level}</span>
