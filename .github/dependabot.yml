@@ -7,6 +7,9 @@ updates:
       day: "tuesday"
       time: "08:00"
     open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
     groups:
       production-dependencies:
         dependency-type: "production"
