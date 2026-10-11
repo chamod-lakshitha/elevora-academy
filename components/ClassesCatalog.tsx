@@ -6,7 +6,6 @@ import {
   ArrowRight, ArrowUpRight, Search, SlidersHorizontal, Sparkles, Star, X, CheckCircle2,
 } from 'lucide-react';
 import Link from 'next/link';
-import { createPortal } from 'react-dom';
 import CourseCard from '@/components/CourseCard';
 import CourseIcon from '@/components/CourseIcon';
 import { courses, type Course } from '@/lib/data';
@@ -198,53 +197,52 @@ export default function ClassesCatalog() {
         </div>
       </section>
 
-      {typeof document !== 'undefined' && createPortal(
-        <AnimatePresence>
-        {selected && (
-          <motion.div
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-brand-navy/60 p-4 backdrop-blur-md"
-            initial={reduceMotion ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={reduceMotion ? undefined : { opacity: 0 }}
-            onClick={(event) => {
-              if (event.target === event.currentTarget) setSelected(null);
-            }}
-          >
-            <motion.div
-              ref={dialogRef}
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="course-dialog-title"
-              tabIndex={-1}
-              className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto overscroll-contain rounded-[2rem] bg-white shadow-2xl"
-              initial={reduceMotion ? false : { opacity: 0, y: 18, scale: 0.985 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={reduceMotion ? undefined : { opacity: 0, y: 10, scale: 0.99 }}
-              transition={{ duration: reduceMotion ? 0 : 0.2 }}
-            >
-              <div className={'relative flex h-36 items-center justify-center overflow-hidden bg-gradient-to-br ' + selected.color}>
-                <div aria-hidden="true" className="absolute -right-8 -top-14 h-48 w-48 rounded-full border border-white/25" />
-                <div aria-hidden="true" className="absolute -bottom-20 -left-10 h-48 w-48 rounded-full border border-white/25" />
-                <div className="relative z-10 rounded-2xl border border-white/40 bg-white/95 p-2 shadow-xl"><CourseIcon icon={selected.icon} /></div>
-                <button data-dialog-close type="button" aria-label="Close course details" onClick={() => setSelected(null)} className="absolute right-4 top-4 rounded-full bg-white/20 p-2 text-white transition hover:bg-white/35 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50"><X size={18} /></button>
-              </div>
-              <div className="p-6 sm:p-8">
-                <span className="text-xs font-bold uppercase tracking-widest text-brand-violet">{selected.category} · {selected.level}</span>
-                <h2 id="course-dialog-title" className="mt-2 text-2xl font-black tracking-tight text-brand-navy">{selected.title}</h2>
-                <p className="mt-3 leading-7 text-slate-500">{selected.description}</p>
-                <div className="mt-5 grid grid-cols-2 gap-3 text-sm">
-                  <div className="rounded-2xl bg-slate-50 p-4"><span className="block text-xs text-slate-500">Instructor</span><b className="mt-1 block text-brand-navy">{selected.instructor}</b></div>
-                  <div className="rounded-2xl bg-slate-50 p-4"><span className="block text-xs text-slate-500">Duration</span><b className="mt-1 block text-brand-navy">{selected.duration}</b></div>
-                </div>
-                <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-slate-100 pt-5">
-                  <span className="text-2xl font-black text-brand-navy">{selected.price}<span className="ml-1 text-xs font-medium text-slate-400">/ course</span></span>
-                  <Link href={'/classes/' + selected.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')} onClick={() => setSelected(null)} className="button-primary">Course details <ArrowUpRight size={16} /></Link>
-                </div>
-                <p className="mt-3 text-xs text-slate-400">Please confirm current availability and course details with Elevora Academy.</p>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
+      <AnimatePresence>
+              {selected && (
+                <motion.div
+                  className="fixed inset-0 z-[60] flex items-center justify-center bg-brand-navy/60 p-4 backdrop-blur-md"
+                  initial={reduceMotion ? false : { opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={reduceMotion ? undefined : { opacity: 0 }}
+                  onClick={(event) => {
+                    if (event.target === event.currentTarget) setSelected(null);
+                  }}
+                >
+                  <motion.div
+                    ref={dialogRef}
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="course-dialog-title"
+                    tabIndex={-1}
+                    className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto overscroll-contain rounded-[2rem] bg-white shadow-2xl"
+                    initial={reduceMotion ? false : { opacity: 0, y: 18, scale: 0.985 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={reduceMotion ? undefined : { opacity: 0, y: 10, scale: 0.99 }}
+                    transition={{ duration: reduceMotion ? 0 : 0.2 }}
+                  >
+                    <div className={'relative flex h-36 items-center justify-center overflow-hidden bg-gradient-to-br ' + selected.color}>
+                      <div aria-hidden="true" className="absolute -right-8 -top-14 h-48 w-48 rounded-full border border-white/25" />
+                      <div aria-hidden="true" className="absolute -bottom-20 -left-10 h-48 w-48 rounded-full border border-white/25" />
+                      <div className="relative z-10 rounded-2xl border border-white/40 bg-white/95 p-2 shadow-xl"><CourseIcon icon={selected.icon} /></div>
+                      <button data-dialog-close type="button" aria-label="Close course details" onClick={() => setSelected(null)} className="absolute right-4 top-4 rounded-full bg-white/20 p-2 text-white transition hover:bg-white/35 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50"><X size={18} /></button>
+                    </div>
+                    <div className="p-6 sm:p-8">
+                      <span className="text-xs font-bold uppercase tracking-widest text-brand-violet">{selected.category} · {selected.level}</span>
+                      <h2 id="course-dialog-title" className="mt-2 text-2xl font-black tracking-tight text-brand-navy">{selected.title}</h2>
+                      <p className="mt-3 leading-7 text-slate-500">{selected.description}</p>
+                      <div className="mt-5 grid grid-cols-2 gap-3 text-sm">
+                        <div className="rounded-2xl bg-slate-50 p-4"><span className="block text-xs text-slate-500">Instructor</span><b className="mt-1 block text-brand-navy">{selected.instructor}</b></div>
+                        <div className="rounded-2xl bg-slate-50 p-4"><span className="block text-xs text-slate-500">Duration</span><b className="mt-1 block text-brand-navy">{selected.duration}</b></div>
+                      </div>
+                      <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-slate-100 pt-5">
+                        <span className="text-2xl font-black text-brand-navy">{selected.price}<span className="ml-1 text-xs font-medium text-slate-400">/ course</span></span>
+                        <Link href={'/classes/' + selected.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')} onClick={() => setSelected(null)} className="button-primary">Course details <ArrowUpRight size={16} /></Link>
+                      </div>
+                      <p className="mt-3 text-xs text-slate-400">Please confirm current availability and course details with Elevora Academy.</p>
+                    </div>
+                  </motion.div>
+                </motion.div>
+        
         </AnimatePresence>,
         document.body,
       )}
