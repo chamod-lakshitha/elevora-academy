@@ -11,7 +11,7 @@ export default function OrbitingIcons({ variant }: OrbitingIconsProps) {
   const SecondaryIcon = variant === 'about' ? Lightbulb : Globe2;
   const orbitSize = variant === 'about'
     ? 'h-44 w-44 sm:h-52 sm:w-52'
-    : 'h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] xl:h-[190px] xl:w-[190px]';
+    : 'h-[96px] w-[96px] sm:h-[110px] sm:w-[110px] md:h-[126px] md:w-[126px] lg:h-[146px] lg:w-[146px] xl:h-[176px] xl:w-[176px]';
   const starStyle = variant === 'about'
     ? 'bg-amber-300 text-brand-navy'
     : 'bg-amber-400 text-blue-950';
@@ -26,8 +26,8 @@ export default function OrbitingIcons({ variant }: OrbitingIconsProps) {
     >
       <div className="hero-orbit-spin absolute inset-0">
         <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
-          <span className={'hero-orbit-counter flex h-9 w-9 items-center justify-center rounded-xl shadow-xl sm:h-10 sm:w-10 ' + starStyle}>
-            <Sparkles className="h-[18px] w-[18px]" />
+          <span className={'hero-orbit-counter flex h-7 w-7 items-center justify-center rounded-lg shadow-xl sm:h-8 sm:w-8 md:h-9 md:w-9 xl:h-10 xl:w-10 ' + starStyle}>
+            <Sparkles className="h-4 w-4 sm:h-[17px] sm:w-[17px] md:h-[18px] md:w-[18px]" />
           </span>
         </span>
         <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
