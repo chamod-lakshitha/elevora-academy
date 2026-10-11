@@ -7,10 +7,13 @@ import {
 import { Reveal, Stagger } from '@/components/Reveal';
 import PageHero from '@/components/PageHero';
 import SectionHeading from '@/components/SectionHeading';
+import { absoluteUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'About Elelora Academy',
-  description: 'Learn about Elelora Academy’s mission to make online learning accessible, encouraging and practical for curious minds.',
+  title: 'About Elevora Academy | Our Online Learning Mission',
+  description: 'Discover Elevora Academy’s mission to make online learning practical and accessible through French, English, German, Java and Python classes.',
+  alternates: { canonical: '/about' },
+  openGraph: { title: 'About Elevora Academy', description: 'Learn about our learner-first approach to practical online language and coding classes.', type: 'website', ...(absoluteUrl('/about') ? { url: absoluteUrl('/about') } : {}) },
 };
 
 const values = [
@@ -30,10 +33,10 @@ export default function AboutPage() {
     <main className="overflow-hidden">
       <PageHero
         variant="about"
-        eyebrow="The story behind Elelora"
+        eyebrow="The story behind Elevora"
         title="Education that opens"
         highlight="new possibilities."
-        description="We believe learning should feel accessible, motivating and useful. Elelora Academy helps curious minds build skills, grow confidence and take their next step."
+        description="We believe learning should feel accessible, motivating and useful. Elevora Academy helps curious minds build skills, grow confidence and take their next step."
         primaryLabel="Explore our classes"
         primaryHref="/classes"
         secondaryLabel="Back to home"
@@ -116,7 +119,7 @@ export default function AboutPage() {
               <div aria-hidden="true" className="absolute -bottom-24 left-[40%] h-56 w-56 rounded-full bg-fuchsia-500/20 blur-3xl" />
               <Quote size={30} className="relative mx-auto text-brand-amber" />
               <p className="relative mx-auto mt-5 max-w-3xl text-2xl font-bold leading-snug sm:text-3xl">“The goal isn’t simply to finish a lesson. It’s to leave feeling ready for what’s next.”</p>
-              <p className="relative mt-5 text-sm text-white/60">The Elelora Academy philosophy</p>
+              <p className="relative mt-5 text-sm text-white/60">The Elevora Academy philosophy</p>
               <Link href="/classes" className="button-primary relative mt-8">Take your first step <ArrowUpRight size={17} /></Link>
             </div>
           </Reveal>
