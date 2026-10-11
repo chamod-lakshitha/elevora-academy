@@ -48,10 +48,9 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
                     <img
                       src="https://t3.ftcdn.net/jpg/00/28/37/10/360_F_28371075_AsZo8SNstOhvRahzvVhJxTaVKKJTLrpM.jpg"
                       alt="Student learning, representing the Elevora Academy learning experience"
-                      className="h-full w-full object-cover object-[center_42%] blur-[1px]"
+                      className="h-full w-full object-contain bg-white"
                       loading="eager"
                     />
-                    <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-[#171342]/30 via-[#33206b]/10 to-[#123f61]/25" />
                   </div>
                   <div aria-hidden="true" className="absolute -bottom-2 -right-3 flex h-10 w-10 items-center justify-center rounded-xl border-2 border-white bg-amber-300 text-violet-900 shadow-lg sm:-bottom-3 sm:-right-4 sm:h-12 sm:w-12">
                     <BookOpen className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1.8} />
