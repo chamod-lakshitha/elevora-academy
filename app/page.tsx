@@ -63,9 +63,6 @@ export default function HomePage() {
             <Reveal className="shrink-0"><Link href="/classes#class-catalog" aria-label="Explore all classes" className="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-extrabold text-brand-violet shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-violet-200 hover:shadow-soft">Explore classes <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" /></Link></Reveal>
           </div>
           <HomeCoursesCarousel courses={courses.slice(0, 5)} />
-          <div className="mt-8 flex justify-center">
-            <Link href="/classes#class-catalog" className="group inline-flex items-center gap-2 rounded-full bg-brand-navy px-5 py-3 text-sm font-extrabold text-white shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-brand-violet focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-violet/20">Explore all classes <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" /></Link>
-          </div>
         </div>
       </section>
 
