@@ -238,14 +238,14 @@ export default function ClassesCatalog() {
                       <h2 id="course-dialog-title" className="mt-2 text-2xl font-black tracking-tight text-brand-navy">{selected.title}</h2>
                       <p className="mt-3 leading-7 text-slate-500">{selected.description}</p>
                       <div className="mt-5 grid grid-cols-2 gap-3 text-sm">
-                        <div className="rounded-2xl bg-slate-50 p-4"><span className="block text-xs text-slate-500">Instructor</span><b className="mt-1 block text-brand-navy">{selected.instructor}</b></div>
+                        <div className="rounded-2xl bg-slate-50 p-4"><span className="block text-xs text-slate-500">Instructor</span><Link href={'/about#teacher-' + selected.instructor.toLowerCase().replace(/\\s+/g, '-')} onClick={() => setSelected(null)} className="mt-1 inline-flex items-center gap-1 font-bold text-brand-violet underline decoration-violet-200 underline-offset-4 transition hover:text-brand-navy">{selected.instructor} <ArrowUpRight size={13} /></Link><span className="mt-1 block text-[11px] text-slate-500">View teacher profile</span></div>
                         <div className="rounded-2xl bg-slate-50 p-4"><span className="block text-xs text-slate-500">Duration</span><b className="mt-1 block text-brand-navy">{selected.duration}</b></div>
                       </div>
                       <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-slate-100 pt-5">
                         <span className="text-2xl font-black text-brand-navy">{selected.price}<span className="ml-1 text-xs font-medium text-slate-400">/ course</span></span>
                         <Link href={'/classes/' + selected.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')} onClick={() => setSelected(null)} className="button-primary">Course details <ArrowUpRight size={16} /></Link>
                       </div>
-                      <p className="mt-3 text-xs text-slate-400">Please confirm current availability and course details with Elevora Academy.</p>
+                      <div className="mt-4 flex flex-wrap items-center justify-between gap-3"><p className="text-xs leading-5 text-slate-400">Please confirm current availability and course details with Elevora Academy.</p><button type="button" onClick={() => setSelected(null)} className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-600 transition hover:border-violet-200 hover:bg-violet-50 hover:text-brand-violet focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-violet/20"><X size={15} /> Close</button></div>
                     </div>
                   </motion.div>
                 </motion.div>
