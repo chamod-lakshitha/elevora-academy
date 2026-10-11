@@ -31,8 +31,6 @@ export default function PageHero({
   secondaryHref,
   proofs,
 }: PageHeroProps) {
-  const isAbout = variant === 'about';
-
   return (
     <section className={'page-hero hero-backdrop page-hero-' + variant + ' relative isolate overflow-hidden'}>
       <div aria-hidden="true" className="hero-grid absolute inset-0" />
@@ -40,7 +38,7 @@ export default function PageHero({
       <div aria-hidden="true" className="hero-blob hero-blob-blue absolute -left-28 bottom-[-6rem] h-[24rem] w-[24rem] rounded-full blur-3xl" />
 
       <div className="container-shell relative grid items-center gap-10 pb-12 pt-12 sm:pb-16 sm:pt-14 lg:min-h-[690px] lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:gap-10 lg:pb-16 lg:pt-12 xl:min-h-[720px] xl:gap-14">
-        <div className={'relative z-10 min-w-0 ' + (isAbout ? 'lg:order-2' : 'lg:order-1')}>
+        <div className="relative z-10 min-w-0 lg:order-1">
           <Reveal animateOnMount>
             <span className="eyebrow hero-eyebrow"><Sparkles size={15} className="text-amber-500" /> {eyebrow}</span>
           </Reveal>
@@ -74,7 +72,7 @@ export default function PageHero({
           </Reveal>
         </div>
 
-        <div className={'relative z-10 mx-auto w-full min-w-0 max-w-[580px] px-1 pb-5 pt-1 sm:px-5 lg:px-0 lg:py-8 ' + (isAbout ? 'lg:order-1' : 'lg:order-2')}>
+        <div className="relative z-10 mx-auto w-full min-w-0 max-w-[580px] px-1 pb-5 pt-1 sm:px-5 lg:px-0 lg:py-8 lg:order-2">
           <HeroVisual variant={variant} />
           <div aria-hidden="true" className="pointer-events-none absolute -bottom-3 left-1/2 -z-10 h-14 w-4/5 -translate-x-1/2 rounded-full bg-violet-950/10 blur-2xl" />
         </div>
