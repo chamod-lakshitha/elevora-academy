@@ -38,7 +38,7 @@ export default function PageHero({
       <div aria-hidden="true" className="hero-blob hero-blob-blue absolute -left-28 bottom-[-6rem] h-[24rem] w-[24rem] rounded-full blur-3xl" />
 
       <div className="container-shell relative grid items-center gap-10 pb-12 pt-12 sm:pb-16 sm:pt-14 lg:min-h-[690px] lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:gap-10 lg:pb-16 lg:pt-12 xl:min-h-[720px] xl:gap-14">
-        <div className="relative z-10 min-w-0 lg:order-1">
+        <div className="relative z-10 min-w-0 lg:order-1 lg:flex lg:min-h-[620px] lg:flex-col lg:justify-center">
           <Reveal animateOnMount>
             <span className="eyebrow hero-eyebrow"><Sparkles size={15} className="text-amber-500" /> {eyebrow}</span>
           </Reveal>
