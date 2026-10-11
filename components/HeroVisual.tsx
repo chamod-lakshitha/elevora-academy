@@ -46,12 +46,12 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
                 <div className="hero-float hero-float-book relative z-10 h-[116px] w-[94px] overflow-visible sm:h-[142px] sm:w-[112px] md:h-[154px] md:w-[122px]">
                   <div className="absolute inset-0 overflow-hidden rounded-[1.2rem] border-2 border-white/90 bg-white shadow-[0_20px_55px_rgba(10,6,45,0.32)] sm:rounded-[1.5rem]">
                     <img
-                      src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=85"
-                      alt="Students learning together in an educational setting"
-                      className="h-full w-full object-cover object-center"
+                      src="https://t3.ftcdn.net/jpg/00/28/37/10/360_F_28371075_AsZo8SNstOhvRahzvVhJxTaVKKJTLrpM.jpg"
+                      alt="Student learning, representing the Elevora Academy learning experience"
+                      className="h-full w-full scale-105 object-cover object-center blur-[1.5px]"
                       loading="eager"
                     />
-                    <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#171342]/35 via-transparent to-white/5" />
+                    <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-[#171342]/45 via-[#33206b]/15 to-[#123f61]/35 backdrop-blur-[1px]" />
                   </div>
                   <div aria-hidden="true" className="absolute -bottom-2 -right-3 flex h-10 w-10 items-center justify-center rounded-xl border-2 border-white bg-amber-300 text-violet-900 shadow-lg sm:-bottom-3 sm:-right-4 sm:h-12 sm:w-12">
                     <BookOpen className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1.8} />
