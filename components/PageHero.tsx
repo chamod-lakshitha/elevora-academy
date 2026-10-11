@@ -32,7 +32,7 @@ export default function PageHero({
   proofs,
 }: PageHeroProps) {
   return (
-    <section className={'page-hero hero-backdrop page-hero-' + variant + ' relative isolate overflow-hidden'}>
+    <section className={'page-hero academy-hero hero-backdrop page-hero-' + variant + ' relative isolate overflow-hidden'}>
       <div aria-hidden="true" className="hero-grid absolute inset-0" />
       <div aria-hidden="true" className="hero-blob hero-blob-violet absolute -right-24 top-[-5rem] h-[28rem] w-[28rem] rounded-full blur-3xl" />
       <div aria-hidden="true" className="hero-blob hero-blob-blue absolute -left-28 bottom-[-6rem] h-[24rem] w-[24rem] rounded-full blur-3xl" />
