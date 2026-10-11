@@ -46,8 +46,8 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
                 <div className="hero-float hero-float-book relative z-10 h-[116px] w-[94px] overflow-visible sm:h-[142px] sm:w-[112px] md:h-[154px] md:w-[122px]">
                   <div className="absolute inset-0 overflow-hidden rounded-[1.2rem] border-2 border-white/90 bg-white shadow-[0_20px_55px_rgba(10,6,45,0.32)] sm:rounded-[1.5rem]">
                     <img
-                      src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=480&q=85"
-                      alt="Schoolboy concentrating on his studies"
+                      src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=85"
+                      alt="Students learning together in an educational setting"
                       className="h-full w-full object-cover object-center"
                       loading="eager"
                     />
