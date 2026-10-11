@@ -113,7 +113,7 @@ export default function Navbar() {
             );
           })}
           <Link onClick={() => setOpen(false)} href="/classes" className="button-primary mt-1 w-full">
-            Get started <ArrowUpRight size={16} />
+            Join a class <ArrowUpRight size={16} />
           </Link>
         </nav>
       )}
