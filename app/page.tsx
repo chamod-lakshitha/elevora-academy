@@ -31,6 +31,7 @@ export default function HomePage() {
   return (
     <main className="overflow-hidden">
       <PageHero
+        variant="home"
         eyebrow="A brighter way to learn"
         title="Learn boldly."
         highlight="Become limitless."
