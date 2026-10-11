@@ -34,15 +34,15 @@ export default function HomePage() {
         <div aria-hidden="true" className="hero-grid absolute inset-0" />
         <div aria-hidden="true" className="hero-blob hero-blob-violet absolute -right-24 top-[-5rem] h-[28rem] w-[28rem] rounded-full blur-3xl" />
         <div aria-hidden="true" className="hero-blob hero-blob-blue absolute -left-28 bottom-[-6rem] h-[24rem] w-[24rem] rounded-full blur-3xl" />
-        <div className="container-shell relative grid items-center gap-8 pb-12 pt-10 sm:pb-16 sm:pt-14 lg:min-h-[690px] lg:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)] lg:gap-9 lg:pb-16 lg:pt-12 xl:gap-12">
+        <div className="container-shell relative grid items-center gap-10 pb-12 pt-12 sm:pb-16 sm:pt-14 lg:min-h-[690px] lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:gap-10 lg:pb-16 lg:pt-12 xl:min-h-[720px] xl:gap-14">
           <div className="relative z-10 min-w-0">
             <Reveal animateOnMount>
               <span className="eyebrow hero-eyebrow"><Sparkles size={15} className="text-amber-500" /> A brighter way to learn</span>
             </Reveal>
             <Reveal animateOnMount delay={0.08}>
-              <h1 className="hero-heading mt-6 max-w-[720px] text-[clamp(3rem,5.15vw,5.35rem)] font-black leading-[0.96] tracking-[-0.065em] text-brand-ink sm:mt-7">
+              <h1 className="hero-heading mt-6 max-w-full text-[clamp(2.8rem,4.35vw,4.65rem)] font-black leading-[1.02] tracking-[-0.058em] text-brand-ink sm:mt-7">
                 Learn boldly.
-                <span className="hero-heading-gradient mt-1 block">Become limitless.</span>
+                <span className="hero-heading-gradient mt-2 block max-w-full">Become limitless.</span>
               </h1>
             </Reveal>
             <Reveal animateOnMount delay={0.16}>
@@ -78,7 +78,7 @@ export default function HomePage() {
               </div>
             </Reveal>
           </div>
-          <div className="relative z-10 min-w-0 px-1 pb-5 pt-1 sm:px-5 lg:px-0 lg:py-8">
+          <div className="relative z-10 mx-auto w-full min-w-0 max-w-[580px] px-1 pb-5 pt-1 sm:px-5 lg:px-0 lg:py-8">
             <HeroVisual />
             <div aria-hidden="true" className="pointer-events-none absolute -bottom-3 left-1/2 -z-10 h-14 w-4/5 -translate-x-1/2 rounded-full bg-violet-950/10 blur-2xl" />
           </div>
