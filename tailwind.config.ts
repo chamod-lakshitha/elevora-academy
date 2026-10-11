@@ -2,7 +2,7 @@ import type { Config } from 'tailwindcss';
 const config: Config = {
   content: ['./app/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
-    screens: { sm: '640px', md: '800px', lg: '1024px', xl: '1280px', '2xl': '1536px' },
+    screens: { sm: '640px', md: '801px', lg: '1024px', xl: '1280px', '2xl': '1536px' },
     extend: {
     colors: { brand: { navy: '#071D57', blue: '#1456B8', violet: '#6325C7', purple: '#7927C8', gold: '#F4AE22', amber: '#F9C34A', ink: '#15213B', muted: '#68748B' } },
     fontFamily: { sans: ['var(--font-inter)', 'sans-serif'] },
