@@ -4,14 +4,14 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import { SITE_URL } from '@/lib/seo';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
-const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? 'https://' + process.env.VERCEL_PROJECT_PRODUCTION_URL : process.env.VERCEL_URL ? 'https://' + process.env.VERCEL_URL : undefined);
-const siteMetadataBase = configuredSiteUrl ? new URL(configuredSiteUrl) : undefined;
+const siteMetadataBase = SITE_URL ? new URL(SITE_URL) : undefined;
 
 export const metadata: Metadata = {
   ...(siteMetadataBase ? { metadataBase: siteMetadataBase } : {}),
-  title: { default: 'Elelora Academy | Learn. Grow. Achieve.', template: '%s | Elelora Academy' },
+  title: { default: 'Elevora Academy | Learn. Grow. Achieve.', template: '%s | Elelora Academy' },
   description: 'Explore engaging online language, technology and academic classes at Elelora Academy. Learn at your pace, build practical skills and take your next step with confidence.',
   applicationName: 'Elelora Academy',
   keywords: ['Elelora Academy','online learning','online classes','language courses','French classes','English classes','German classes','coding classes','Java courses','Python courses'],
@@ -26,8 +26,8 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'EducationalOrganization',
   name: 'Elelora Academy',
-  description: 'An online learning academy offering language, technology and academic classes to support practical skills and lifelong learning.',
-  ...(configuredSiteUrl ? { url: configuredSiteUrl, logo: configuredSiteUrl.replace(/\/$/, '') + '/logo.png' } : {}),
+  description: 'An online learning academy offering French, English, German, Java and Python classes for practical skills and lifelong learning.',
+  ...(SITE_URL ? { url: SITE_URL, logo: SITE_URL + '/logo.png' } : {}),
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
