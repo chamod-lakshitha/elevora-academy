@@ -6,7 +6,7 @@ import { courses } from '@/lib/data';
 import { absoluteUrl, courseSlug } from '@/lib/seo';
 import CourseIcon from '@/components/CourseIcon';
 
-type CoursePageProps = { params: { slug: string } };
+type CoursePageProps = { params: Promise<{ slug: string }> };
 
 function getCourse(slug: string) {
   return courses.find((course) => courseSlug(course.title) === slug);
@@ -17,7 +17,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: CoursePageProps): Promise<Metadata> {
-  const course = getCourse(params.slug);
+  const { slug } = await params;
+  const course = getCourse(slug);
   if (!course) return { title: 'Class not found', robots: { index: false, follow: false } };
 
   const title = `${course.title} | Online ${course.category} Class`;
@@ -51,8 +52,9 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
   };
 }
 
-export default function CoursePage({ params }: CoursePageProps) {
-  const course = getCourse(params.slug);
+export default async function CoursePage({ params }: CoursePageProps) {
+  const { slug } = await params;
+  const course = getCourse(slug);
   if (!course) notFound();
 
   const pageUrl = absoluteUrl(`/classes/${courseSlug(course.title)}`);
