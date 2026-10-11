@@ -196,8 +196,8 @@ input {
 }
 
 
-/* Explicit tablet layout cutoff: under 900px always use the compact navigation and stacked hero. */
-@media (max-width: 799px) {
+/* Tablet layout applies through 800px inclusive; desktop layout starts at 801px. */
+@media (max-width: 800px) {
   .nav-shell nav[aria-label="Main navigation"] {
     display: none !important;
   }
