@@ -45,9 +45,9 @@ export default function HomePage() {
 
       <section aria-label="Learning benefits" className="relative z-20 border-y border-white/80 bg-white/90 shadow-[0_10px_35px_rgba(24,36,74,0.05)] backdrop-blur-xl">
         <div className="container-shell grid gap-0 py-3 sm:grid-cols-3 sm:py-4">
-          {benefits.map((benefit, index) => {
+          {benefits.map((benefit) => {
             const Icon = benefit.icon;
-            return <div key={benefit.title} className={'group flex items-center gap-3 rounded-2xl border border-transparent px-2 py-3 transition duration-300 hover:-translate-y-1 hover:border-slate-100 hover:bg-white hover:shadow-soft sm:px-5 ' + (index ? 'sm:border-l sm:border-slate-200' : '')}>
+            return <div key={benefit.title} className="group flex items-center gap-3 rounded-2xl px-2 py-3 transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-soft sm:px-5">
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-violet-100 text-brand-violet transition duration-300 group-hover:scale-110 group-hover:rotate-3"><Icon size={21} /></span>
               <div><p className="text-sm font-extrabold text-brand-ink">{benefit.title}</p><p className="mt-0.5 text-xs text-slate-500">{benefit.text}</p></div>
             </div>;
