@@ -17,7 +17,7 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
       <div aria-hidden="true" className="hero-orb hero-orb-blue absolute -left-2 bottom-12 h-28 w-28 rounded-full blur-2xl sm:-left-5 sm:h-32 sm:w-32" />
       <div aria-hidden="true" className="hero-orb hero-orb-gold absolute -right-1 top-5 h-24 w-24 rounded-full blur-2xl sm:h-28 sm:w-28" />
 
-      <div className="hero-entrance relative rounded-[1.8rem] border border-white/90 bg-white/75 p-2.5 shadow-[0_28px_80px_rgba(43,34,111,0.18)] backdrop-blur-xl transition-transform duration-300 hover:-translate-y-1 sm:rounded-[2.1rem] sm:p-3.5">
+      <div className="hero-entrance relative rounded-[1.8rem] border border-white/90 bg-white/75 p-2.5 shadow-[0_28px_80px_rgba(43,34,111,0.18)] backdrop-blur-xl sm:rounded-[2.1rem] sm:p-3.5">
         <div className={'hero-panel relative flex h-[445px] flex-col overflow-hidden rounded-[1.4rem] px-4 py-5 text-white sm:h-[525px] sm:rounded-[1.7rem] sm:px-7 sm:py-7 hero-panel-' + variant}>
           <div aria-hidden="true" className="hero-panel-grid absolute inset-0 opacity-30" />
           <div aria-hidden="true" className="absolute -right-24 -top-20 h-72 w-72 rounded-full border border-white/15" />
