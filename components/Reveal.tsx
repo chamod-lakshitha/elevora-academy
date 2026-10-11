@@ -4,12 +4,11 @@ import { Children, type ReactNode, useEffect, useState } from 'react';
 import { motion, useReducedMotion, type Variants } from 'framer-motion';
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 22, filter: 'blur(4px)' },
+  hidden: { opacity: 0, y: 16 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.48, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
@@ -75,7 +74,7 @@ export function Stagger({ children, className = '', delayChildren = 0.04 }: Stag
       viewport={{ once: true, amount: 0.08, margin: '0px 0px -30px 0px' }}
       variants={shouldAnimate ? {
         hidden: {},
-        visible: { transition: { staggerChildren: 0.12, delayChildren } },
+        visible: { transition: { staggerChildren: 0.08, delayChildren } },
       } : undefined}
     >
       {items.map((child, index) => (
