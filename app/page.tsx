@@ -9,15 +9,17 @@ import PageHero from '@/components/PageHero';
 import SectionHeading from '@/components/SectionHeading';
 import HomeCoursesCarousel from '@/components/HomeCoursesCarousel';
 import { courses, pillars } from '@/lib/data';
+import { absoluteUrl, SITE_URL } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Learn Boldly. Become Limitless.',
+  title: 'Online French, English, German & Coding Classes',
   description: 'Explore engaging online language, technology and academic classes at Elelora Academy. Learn at your pace, build practical skills and take your next step with confidence.',
   openGraph: {
     title: 'Learn Boldly. Become Limitless. | Elelora Academy',
     description: 'More knowledge. More confidence. More possibilities. Find your next class at Elelora Academy.',
     images: [{ url: '/logo.png', alt: 'Elelora Academy logo' }],
     type: 'website',
+    ...(absoluteUrl('/') ? { url: absoluteUrl('/') } : {}),
   },
 };
 
@@ -27,9 +29,20 @@ const benefits = [
   { icon: Target, title: 'Make steady progress', text: 'Small steps, big growth' },
 ];
 
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Elevora Academy',
+  alternateName: 'Elevora',
+  ...(SITE_URL ? { url: SITE_URL } : {}),
+  description: 'Online French, English, German, Java and Python classes for practical skills and lifelong learning.',
+  inLanguage: 'en',
+};
+
 export default function HomePage() {
   return (
     <main className="overflow-hidden">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       <PageHero
         variant="home"
         eyebrow="A brighter way to learn"
