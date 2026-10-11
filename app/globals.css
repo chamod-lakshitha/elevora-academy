@@ -370,10 +370,8 @@ input {
 .academy-hero .hero-panel-grid { opacity:.2; }
 .academy-hero .hero-primary-button { background:linear-gradient(135deg,#ffdf80 0%,#f4b934 100%); }
 .academy-hero .hero-secondary-button { background:rgba(255,255,255,.78); }
-.pillar-card,
-section article.rounded-\\[1\\.7rem\\],
-section article.rounded-\\[1\\.6rem\\] { border-color:rgba(105,91,157,.15); }
-section.bg-slate-50\\/80 { background:linear-gradient(180deg,#faf9ff 0%,#f8f7fc 100%); }
+.pillar-card { border-color:rgba(105,91,157,.15); }
+section[class*="bg-slate-50/80"] { background:linear-gradient(180deg,#faf9ff 0%,#f8f7fc 100%); }
 .cta-panel { background:linear-gradient(120deg,#171342 0%,#3e267f 54%,#176b7b 100%); }
 .nav-shell { border-bottom-color:rgba(229,220,190,.8); }
 .nav-shell nav[aria-label="Main navigation"] { background:rgba(249,247,255,.9); }
