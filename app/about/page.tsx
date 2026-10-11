@@ -55,7 +55,7 @@ export default function AboutPage() {
 
           <Reveal delay={0.12} animateOnMount>
             <div className="relative z-10 mx-auto w-full min-w-0 max-w-[580px] px-1 pb-5 pt-1 sm:px-5 lg:px-0 lg:py-8">
-              <HeroVisual />
+              <HeroVisual variant="about" />
             </div>
           </Reveal>
         </div>
