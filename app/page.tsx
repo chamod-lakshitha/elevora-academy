@@ -24,9 +24,9 @@ export const metadata: Metadata = {
 };
 
 const benefits = [
-  { icon: Compass, title: 'Learn your way', text: 'Flexible online learning' },
-  { icon: BookOpenCheck, title: 'Build real skills', text: 'Practical, guided lessons' },
-  { icon: Target, title: 'Make steady progress', text: 'Small steps, big growth' },
+  { icon: Compass, title: 'Learn your way', text: 'Flexible online classes' },
+  { icon: BookOpenCheck, title: 'Learn by doing', text: 'Clear lessons and practice' },
+  { icon: Target, title: 'Grow with guidance', text: 'Small steps, real progress' },
 ];
 
 const websiteSchema = {
@@ -45,15 +45,15 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       <PageHero
         variant="home"
-        eyebrow="A brighter way to learn"
-        title="Learn boldly."
-        highlight="Become limitless."
-        description="Big goals begin with one lesson. Build real-world skills, discover new passions and grow with an online learning community made for your next chapter."
+        eyebrow="Welcome to your learning academy"
+        title="Learn with purpose."
+        highlight="Grow with confidence."
+        description="Great teaching can open new doors. Join supportive online classes in languages and technology, practise new skills and build confidence one lesson at a time."
         primaryLabel="Explore our classes"
         primaryHref="/classes"
         secondaryLabel="Discover Elevora"
         secondaryHref="/about"
-        proofs={["Learn at your pace", "Practical, guided lessons"]}
+        proofs={["Supportive teaching", "Learn step by step"]}
       />
 
       <section aria-label="Learning benefits" className="relative z-20 border-y border-white/80 bg-white/90 shadow-[0_10px_35px_rgba(24,36,74,0.05)] backdrop-blur-xl">
@@ -72,7 +72,7 @@ export default function HomePage() {
         <div aria-hidden="true" className="absolute -right-24 top-16 h-72 w-72 rounded-full bg-violet-100/55 blur-3xl" />
         <div className="container-shell relative">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            <SectionHeading eyebrow="Find your path" title="A class can change your next chapter" description="From languages to technology, find learning experiences that turn curiosity into confidence." />
+            <SectionHeading eyebrow="Explore our subjects" title="Find a class that inspires you" description="Learn with clear explanations, guided practice and a supportive approach—whether you are starting fresh or building on what you know." />
             <Reveal className="shrink-0"><Link href="/classes#class-catalog" aria-label="Explore all classes" className="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-extrabold text-brand-violet shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-violet-200 hover:shadow-soft">Explore classes <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" /></Link></Reveal>
           </div>
           <HomeCoursesCarousel courses={courses.slice(0, 5)} />
@@ -82,7 +82,7 @@ export default function HomePage() {
       <section className="section-space relative overflow-hidden bg-white">
         <div aria-hidden="true" className="absolute -left-32 top-1/3 h-80 w-80 rounded-full bg-blue-50 blur-3xl" />
         <div className="container-shell relative">
-          <SectionHeading eyebrow="The Elevora difference" title="Progress looks different on everyone" description="A great learning experience should be motivating, approachable and practical. We help make every next step feel possible." centered />
+          <SectionHeading eyebrow="The Elevora teaching approach" title="Every learner deserves to thrive" description="Good teaching makes learning feel clear, encouraging and achievable. We focus on understanding, practice and progress—not just getting through a lesson." centered />
           <Stagger className="mt-10 grid gap-5 md:grid-cols-3" delayChildren={0.02}>
             {pillars.map((pillar, index) => <article key={pillar.title} className="pillar-card group h-full rounded-[1.7rem] border border-slate-200/70 bg-white p-6 shadow-[0_5px_22px_rgba(20,35,75,0.035)] transition duration-300 hover:-translate-y-2 hover:border-violet-200 hover:shadow-[0_24px_60px_rgba(49,35,122,0.12)] sm:p-7">
               <div className="flex items-start justify-between gap-3"><span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 via-white to-violet-100 text-2xl font-black text-brand-violet transition duration-300 group-hover:rotate-3 group-hover:scale-105">{pillar.icon}</span><span className="text-xs font-black tracking-[0.2em] text-slate-300">0{index + 1}</span></div>
@@ -104,10 +104,10 @@ export default function HomePage() {
               <div className="relative flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
                 <div className="max-w-2xl">
                   <span className="inline-flex items-center gap-2 rounded-full border border-amber-200/30 bg-white/10 px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.18em] text-amber-200"><WandSparkles size={14} /> Your next step starts here</span>
-                  <h2 className="mt-4 text-3xl font-black leading-tight tracking-[-0.04em] sm:text-4xl lg:text-5xl">Your next big thing starts with one small step.</h2>
-                  <p className="mt-4 max-w-xl text-sm leading-7 text-white/70 sm:text-base">Find a class that sparks your curiosity. Build a skill you’re proud of. Keep becoming.</p>
+                  <h2 className="mt-4 text-3xl font-black leading-tight tracking-[-0.04em] sm:text-4xl lg:text-5xl">A brighter future begins with a lesson.</h2>
+                  <p className="mt-4 max-w-xl text-sm leading-7 text-white/70 sm:text-base">Choose a subject, meet a new challenge and build skills with guidance along the way.</p>
                 </div>
-                <Link href="/classes" className="button-primary group relative min-h-[54px] shrink-0 !px-6">Find your class <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" /></Link>
+                <Link href="/classes" className="button-primary group relative min-h-[54px] shrink-0 !px-6">Choose a class <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" /></Link>
               </div>
             </div>
           </Reveal>
