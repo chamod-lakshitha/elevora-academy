@@ -23,7 +23,7 @@ export default function CourseArtwork({ course, size = 'catalog' }: CourseArtwor
     <div
       className={
         'course-card-art relative isolate flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#171342] via-[#3d247e] to-[#123f61] ' +
-        (isHome ? ' h-32' : ' h-44')
+        (isHome ? ' course-art-home h-32' : ' course-art-catalog h-44')
       }
     >
       {backgroundImage && (
@@ -40,7 +40,7 @@ export default function CourseArtwork({ course, size = 'catalog' }: CourseArtwor
           />
         </div>
       )}
-      <div aria-hidden="true" className="absolute inset-0 z-[1] bg-gradient-to-br from-[#13113d]/75 via-[#33206b]/60 to-[#0b2e4e]/72" />
+      <div aria-hidden="true" className={"absolute inset-0 z-[1] bg-gradient-to-br " + (isHome ? "from-[#13113d]/75 via-[#33206b]/60 to-[#0b2e4e]/72" : "from-[#13113d]/55 via-[#33206b]/35 to-[#0b2e4e]/52")} />
       <div aria-hidden="true" className="absolute -left-10 bottom-[-4rem] z-[2] h-36 w-36 rounded-full bg-violet-500/30 blur-3xl" />
       <div aria-hidden="true" className="absolute -right-8 top-[-3rem] z-[2] h-32 w-32 rounded-full bg-amber-300/20 blur-3xl" />
       <div aria-hidden="true" className="absolute -right-8 -top-12 z-[3] h-44 w-44 rounded-full border border-white/25 transition-transform duration-700 group-hover:translate-x-3 group-hover:translate-y-2 group-hover:rotate-12" />
