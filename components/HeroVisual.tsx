@@ -84,7 +84,7 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
 
           {variant === 'classes' && (
             <>
-              <div aria-hidden="true" className="absolute bottom-[-100px] right-[-80px] h-72 w-72 rounded-full bg-sky-400/25 blur-3xl" />
+              <div aria-hidden="true" className="absolute bottom-[-100px] right-[-80px] h-72 w-72 rounded-full bg-fuchsia-500/25 blur-3xl" />
               <div className="relative z-10 flex items-center justify-between gap-3">
                 <div>
                   <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-white/60">Your learning dashboard</p>
@@ -96,7 +96,7 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
               <div className="relative z-10 mt-6 rounded-2xl border border-white/15 bg-white/[0.08] p-3.5 backdrop-blur-sm sm:p-4">
                 <div className="mb-3 flex items-center justify-between gap-2">
                   <span className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/60">Explore pathways</span>
-                  <span className="rounded-full bg-emerald-300/15 px-2.5 py-1 text-[10px] font-bold text-emerald-200">Made for you</span>
+                  <span className="rounded-full bg-violet-300/15 px-2.5 py-1 text-[10px] font-bold text-violet-100">Made for you</span>
                 </div>
                 <div className="grid grid-cols-3 gap-2.5">
                   <motion.div animate={motionReady ? float(5, 4.4, 0) : undefined} className="rounded-xl border border-white/15 bg-white/10 p-3">
@@ -105,7 +105,7 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
                     <p className="mt-1 text-[10px] text-white/55">Find your voice</p>
                   </motion.div>
                   <motion.div animate={motionReady ? float(6, 5, 0.3) : undefined} className="rounded-xl border border-white/15 bg-white/10 p-3">
-                    <Code2 size={22} className="text-cyan-200" />
+                    <Code2 size={22} className="text-violet-200" />
                     <p className="mt-3 text-xs font-extrabold sm:text-sm">Technology</p>
                     <p className="mt-1 text-[10px] text-white/55">Build something</p>
                   </motion.div>
@@ -122,7 +122,7 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
                   initial={false}
                   animate={motionReady ? { width: ['28%', '78%'] } : { width: '68%' }}
                   transition={{ duration: 2.4, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
-                  className="h-2 rounded-full bg-gradient-to-r from-amber-300 via-violet-300 to-cyan-200"
+                  className="h-2 rounded-full bg-gradient-to-r from-amber-300 via-violet-300 to-fuchsia-300"
                 />
               </div>
               <div className="relative z-10 mt-3 flex items-center justify-between gap-3">
@@ -134,7 +134,7 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
 
           {variant === 'about' && (
             <>
-              <div aria-hidden="true" className="absolute bottom-[-90px] left-[-70px] h-72 w-72 rounded-full bg-blue-400/25 blur-3xl" />
+              <div aria-hidden="true" className="absolute bottom-[-90px] left-[-70px] h-72 w-72 rounded-full bg-fuchsia-500/25 blur-3xl" />
               <div className="relative z-10 flex items-start justify-between gap-3">
                 <div>
                   <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-white/60">Our promise to learners</p>
@@ -144,13 +144,13 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
               </div>
 
               <div className="relative z-10 mt-6 rounded-2xl border border-white/15 bg-white/[0.07] p-4 sm:p-5">
-                <div aria-hidden="true" className="absolute bottom-10 left-[2.05rem] top-10 w-px bg-gradient-to-b from-amber-300 via-violet-300 to-cyan-200 sm:left-[2.3rem]" />
+                <div aria-hidden="true" className="absolute bottom-10 left-[2.05rem] top-10 w-px bg-gradient-to-b from-amber-300 via-violet-300 to-fuchsia-300 sm:left-[2.3rem]" />
                 <div className="relative flex items-center gap-3.5">
                   <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-amber-200/40 bg-amber-300 text-brand-navy shadow-lg"><Compass size={19} /></span>
                   <span><b className="block text-sm font-extrabold">Discover</b><small className="mt-1 block text-xs text-white/60">Find a direction that inspires you.</small></span>
                 </div>
                 <div className="relative mt-4 flex items-center gap-3.5">
-                  <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-cyan-100"><BookOpen size={19} /></span>
+                  <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-violet-200"><BookOpen size={19} /></span>
                   <span><b className="block text-sm font-extrabold">Develop</b><small className="mt-1 block text-xs text-white/60">Practise new skills with guidance.</small></span>
                 </div>
                 <div className="relative mt-4 flex items-center gap-3.5">
@@ -161,7 +161,7 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
 
               <div className="relative z-10 mt-4 flex items-center justify-between gap-3 border-t border-white/15 pt-4">
                 <span className="text-xs font-bold text-white/75">Every learner. Every next step.</span>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-300/15 px-3 py-1.5 text-xs font-extrabold text-emerald-200"><Check size={13} /> Progress matters</span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-violet-300/15 px-3 py-1.5 text-xs font-extrabold text-violet-100"><Check size={13} /> Progress matters</span>
               </div>
             </>
           )}
