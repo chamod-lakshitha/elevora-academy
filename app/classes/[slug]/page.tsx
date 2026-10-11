@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, Clock3, GraduationCap, S
 import { notFound } from 'next/navigation';
 import { courses } from '@/lib/data';
 import { absoluteUrl, courseSlug } from '@/lib/seo';
+import CourseIcon from '@/components/CourseIcon';
 
 type CoursePageProps = { params: { slug: string } };
 
@@ -113,7 +114,7 @@ export default function CoursePage({ params }: CoursePageProps) {
               <div aria-hidden="true" className="absolute -right-10 -top-12 h-56 w-56 rounded-full border border-white/20" />
               <div aria-hidden="true" className="absolute -bottom-16 -left-10 h-48 w-48 rounded-full border border-white/20" />
               <div className="relative">
-                <div className="flex h-20 w-20 items-center justify-center rounded-[1.5rem] border border-white/30 bg-white/15 text-3xl font-black text-white shadow-lg backdrop-blur-md">{course.icon}</div>
+                <CourseIcon icon={course.icon} size="hero" />
                 <p className="mt-8 text-xs font-extrabold uppercase tracking-[0.2em] text-white/70">Learn with Elevora</p>
                 <p className="mt-2 text-2xl font-black leading-tight text-white sm:text-3xl">Build skills one lesson at a time.</p>
                 <div className="mt-8 flex items-center gap-3 border-t border-white/20 pt-5 text-sm font-semibold text-white/85">
