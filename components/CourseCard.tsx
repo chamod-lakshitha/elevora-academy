@@ -5,7 +5,7 @@ import { ArrowUpRight, Clock3, Star, Users } from 'lucide-react';
 import type { Course } from '@/lib/data';
 import Link from 'next/link';
 import { courseSlug } from '@/lib/seo';
-import CourseIcon from '@/components/CourseIcon';
+import CourseArtwork from '@/components/CourseArtwork';
 
 export default function CourseCard({ course, onQuickView }: { course: Course; onQuickView?: (course: Course) => void }) {
   return (
@@ -15,20 +15,7 @@ export default function CourseCard({ course, onQuickView }: { course: Course; on
       transition={{ type: 'spring', stiffness: 260, damping: 22 }}
       className="group h-full overflow-hidden rounded-[1.65rem] border border-slate-200/80 bg-white shadow-[0_5px_22px_rgba(7,29,87,0.045)] transition-shadow duration-300 hover:border-violet-200 hover:shadow-[0_25px_65px_rgba(36,31,99,0.14)]"
     >
-      <div className={'course-card-art relative flex h-44 items-center justify-center overflow-hidden bg-gradient-to-br ' + course.color}>
-        <div aria-hidden="true" className="absolute -right-8 -top-12 h-44 w-44 rounded-full border border-white/20 transition-transform duration-700 group-hover:translate-x-3 group-hover:translate-y-2 group-hover:rotate-12" />
-        <div aria-hidden="true" className="absolute -bottom-20 -left-10 h-48 w-48 rounded-full border border-white/20 transition-transform duration-700 group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:-rotate-12" />
-        <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-white/15 px-3 py-1.5 text-xs font-bold text-white backdrop-blur-md">{course.category}</span>
-        <span className="absolute right-4 top-4 rounded-full bg-white px-3 py-1.5 text-xs font-extrabold text-brand-navy shadow-sm">{course.level}</span>
-        <motion.div
-          className="relative"
-          whileHover={{ rotate: 5, scale: 1.06 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 18 }}
-        >
-          <CourseIcon icon={course.icon} size="hero" />
-        </motion.div>
-        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-slate-950/15 to-transparent" />
-      </div>
+      <CourseArtwork course={course} size="catalog" />
 
       <div className="flex h-[calc(100%-11rem)] flex-col p-5 sm:p-6">
         <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500">
