@@ -301,3 +301,23 @@ input {
     text-align: left;
   }
 }
+
+
+/* Keep hero description and both CTA links centered on mobile widths. */
+@media (max-width: 799px) {
+  .page-hero .hero-copy .muted-copy {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center !important;
+  }
+  .page-hero .hero-actions {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .page-hero .hero-actions a {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
