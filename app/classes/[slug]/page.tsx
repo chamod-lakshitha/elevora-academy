@@ -151,7 +151,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
               <div className="rounded-2xl bg-slate-50 p-4"><dt className="text-xs font-semibold text-slate-500">Subject area</dt><dd className="mt-1 font-bold text-brand-navy">{course.category}</dd></div>
               <div className="rounded-2xl bg-slate-50 p-4"><dt className="text-xs font-semibold text-slate-500">Level</dt><dd className="mt-1 font-bold text-brand-navy">{course.level}</dd></div>
               <div className="rounded-2xl bg-slate-50 p-4"><dt className="text-xs font-semibold text-slate-500">Listed duration</dt><dd className="mt-1 font-bold text-brand-navy">{course.duration}</dd></div>
-              <div className="rounded-2xl bg-slate-50 p-4"><dt className="text-xs font-semibold text-slate-500">Instructor</dt><dd className="mt-1 font-bold text-brand-navy">{course.instructor}</dd></div>
+              <div className="rounded-2xl bg-slate-50 p-4"><dt className="text-xs font-semibold text-slate-500">Instructor</dt><dd className="mt-1 font-bold text-brand-navy"><Link href={'/about#teacher-' + course.instructor.toLowerCase().replace(/\s+/g, '-')} className="text-brand-violet underline decoration-violet-200 underline-offset-4 transition hover:text-brand-navy">{course.instructor}</Link></dd><p className="mt-1 text-xs text-slate-500">View educator profile</p></div>
             </dl>
           </article>
           <aside className="h-fit rounded-[1.75rem] border border-slate-200/70 bg-white p-6 shadow-sm sm:p-7">
