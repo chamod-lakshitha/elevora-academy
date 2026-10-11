@@ -72,26 +72,26 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-amber-200"><Compass size={25} /></span>
               </div>
 
-              <div className="relative z-10 mt-6 rounded-2xl border border-white/15 bg-white/[0.08] p-3.5 backdrop-blur-sm sm:p-4">
-                <div className="mb-3 flex items-center justify-between gap-2">
+              <div className="relative z-10 mt-6 min-w-0 rounded-2xl border border-white/15 bg-white/[0.08] p-2.5 backdrop-blur-sm sm:p-4">
+                <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
                   <span className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/60">Explore pathways</span>
-                  <span className="rounded-full bg-violet-300/15 px-2.5 py-1 text-[10px] font-bold text-violet-100">Made for you</span>
+                  <span className="shrink-0 rounded-full bg-violet-300/15 px-2 py-1 text-[9px] font-bold text-violet-100 sm:px-2.5 sm:text-[10px]">Made for you</span>
                 </div>
-                <div className="grid grid-cols-3 gap-2.5">
-                  <div className="hero-float hero-float-card-one rounded-xl border border-white/15 bg-white/10 p-3">
-                    <Languages size={22} className="text-amber-300" />
-                    <p className="mt-3 text-xs font-extrabold sm:text-sm">Languages</p>
-                    <p className="mt-1 text-[10px] text-white/55">Find your voice</p>
+                <div className="grid min-w-0 grid-cols-3 gap-1.5 sm:gap-2.5">
+                  <div className="hero-float hero-float-card-one min-w-0 overflow-hidden rounded-xl border border-white/15 bg-white/10 p-1.5 sm:p-3">
+                    <Languages size={18} className="text-amber-300 sm:h-[22px] sm:w-[22px]" />
+                    <p className="mt-2 break-words text-[10px] font-extrabold leading-tight [overflow-wrap:anywhere] sm:mt-3 sm:text-sm">Languages</p>
+                    <p className="mt-1 break-words text-[9px] leading-tight text-white/60 sm:text-[10px]">Find your voice</p>
                   </div>
-                  <div className="hero-float hero-float-card-two rounded-xl border border-white/15 bg-white/10 p-3">
-                    <Code2 size={22} className="text-violet-200" />
-                    <p className="mt-3 text-xs font-extrabold sm:text-sm">Technology</p>
-                    <p className="mt-1 text-[10px] text-white/55">Build something</p>
+                  <div className="hero-float hero-float-card-two min-w-0 overflow-hidden rounded-xl border border-white/15 bg-white/10 p-1.5 sm:p-3">
+                    <Code2 size={18} className="text-violet-200 sm:h-[22px] sm:w-[22px]" />
+                    <p className="mt-2 break-words text-[10px] font-extrabold leading-tight [overflow-wrap:anywhere] sm:mt-3 sm:text-sm">Technology</p>
+                    <p className="mt-1 break-words text-[9px] leading-tight text-white/60 sm:text-[10px]">Build something</p>
                   </div>
-                  <div className="hero-float hero-float-card-three rounded-xl border border-white/15 bg-white/10 p-3">
-                    <BookOpen size={22} className="text-violet-200" />
-                    <p className="mt-3 text-xs font-extrabold sm:text-sm">Academic</p>
-                    <p className="mt-1 text-[10px] text-white/55">Grow with purpose</p>
+                  <div className="hero-float hero-float-card-three min-w-0 overflow-hidden rounded-xl border border-white/15 bg-white/10 p-1.5 sm:p-3">
+                    <BookOpen size={18} className="text-violet-200 sm:h-[22px] sm:w-[22px]" />
+                    <p className="mt-2 break-words text-[10px] font-extrabold leading-tight [overflow-wrap:anywhere] sm:mt-3 sm:text-sm">Academic</p>
+                    <p className="mt-1 break-words text-[9px] leading-tight text-white/60 sm:text-[10px]">Grow with purpose</p>
                   </div>
                 </div>
               </div>
@@ -99,9 +99,9 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
               <div className="relative z-10 mt-4 overflow-hidden rounded-full border border-white/15 bg-white/10 p-1">
                 <div className="hero-progress h-2 rounded-full bg-gradient-to-r from-amber-300 via-violet-300 to-fuchsia-300" />
               </div>
-              <div className="relative z-10 mt-auto flex items-center justify-between gap-3 border-t border-white/20 pt-4">
-                <span className="text-xs font-bold text-white/75">Explore. Practise. Progress.</span>
-                <span className="inline-flex items-center gap-1.5 text-xs font-extrabold text-amber-200"><Sparkles size={14} /> Start anywhere</span>
+              <div className="relative z-10 mt-auto flex flex-wrap items-center justify-between gap-2 border-t border-white/20 pt-4">
+                <span className="text-[10px] font-bold text-white/75 sm:text-xs">Explore. Practise. Progress.</span>
+                <span className="inline-flex items-center gap-1.5 text-[10px] font-extrabold text-amber-200 sm:text-xs"><Sparkles size={14} /> Start anywhere</span>
               </div>
             </>
           )}
