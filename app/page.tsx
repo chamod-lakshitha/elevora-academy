@@ -90,15 +90,15 @@ export default function HomePage() {
               <p className="mx-auto mt-4 w-full max-w-md text-sm leading-7 text-slate-600 sm:mt-6 sm:text-base sm:leading-8 lg:mx-0 lg:ml-auto lg:text-lg">Good teaching makes learning feel clear, encouraging and achievable. We focus on understanding, practice and progress—not just getting through a lesson.</p>
               <div aria-hidden="true" className="mt-6 flex items-center justify-center gap-3 sm:mt-8 lg:justify-end"><span className="h-1.5 w-14 rounded-full bg-brand-blue" /><span className="h-1.5 w-8 rounded-full bg-brand-violet" /><span className="h-1.5 w-4 rounded-full bg-brand-gold" /></div>
             </div>
-            <div className="relative min-w-0">
-              <div aria-hidden="true" className="absolute bottom-8 left-[1.35rem] top-7 w-px bg-gradient-to-b from-sky-300 via-violet-300 to-amber-300 sm:left-[1.7rem]" />
+            <div className="relative mx-auto w-full min-w-0 max-w-3xl lg:mx-0 lg:max-w-none">
+              <div aria-hidden="true" className="absolute bottom-8 left-1/2 top-7 w-px -translate-x-1/2 bg-gradient-to-b from-sky-300 via-violet-300 to-amber-300 lg:bottom-8 lg:left-[1.7rem] lg:translate-x-0" />
               <Stagger className="relative" delayChildren={0.08}>
-                {pillars.map((pillar, index) => <article key={pillar.title} className="group relative grid min-w-0 grid-cols-[2.75rem_minmax(0,1fr)] gap-3 py-5 first:pt-0 last:pb-0 sm:grid-cols-[3.5rem_minmax(0,1fr)] sm:gap-6 sm:py-8">
+                {pillars.map((pillar, index) => <article key={pillar.title} className="group relative grid min-w-0 grid-cols-1 justify-items-center gap-3 py-6 text-center first:pt-0 last:pb-0 sm:py-8 lg:grid-cols-[3.5rem_minmax(0,1fr)] lg:justify-items-stretch lg:gap-6 lg:text-left">
                   <div className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full sm:h-14 sm:w-14 border border-white bg-white text-lg font-black text-brand-violet shadow-[0_4px_18px_rgba(64,52,130,0.10)] transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-violet group-hover:text-white sm:text-xl">{pillar.icon}</div>
-                  <div className="min-w-0 pt-1">
-                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1"><span className="text-[11px] font-black tracking-[0.2em] text-slate-400">0{index + 1}</span><span aria-hidden="true" className="h-px w-7 bg-gradient-to-r from-brand-blue to-brand-violet transition-all duration-300 group-hover:w-12" /></div>
-                    <h3 className="mt-2 text-lg font-extrabold tracking-tight text-brand-navy transition-colors duration-300 group-hover:text-brand-violet sm:text-2xl">{pillar.title}</h3>
-                    <p className="muted-copy mt-2 max-w-xl break-words text-sm leading-6 sm:text-base sm:leading-7">{pillar.text}</p>
+                  <div className="mx-auto min-w-0 max-w-2xl pt-1 lg:mx-0 lg:max-w-none">
+                    <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 lg:justify-start"><span className="text-[11px] font-black tracking-[0.2em] text-slate-400">0{index + 1}</span><span aria-hidden="true" className="h-px w-7 bg-gradient-to-r from-brand-blue to-brand-violet transition-all duration-300 group-hover:w-12" /></div>
+                    <h3 className="mt-2 break-words text-lg font-extrabold tracking-tight text-brand-navy transition-colors duration-300 group-hover:text-brand-violet sm:text-2xl">{pillar.title}</h3>
+                    <p className="muted-copy mx-auto mt-2 max-w-xl break-words text-sm leading-6 sm:text-base sm:leading-7 lg:mx-0">{pillar.text}</p>
                   </div>
                 </article>)}
               </Stagger>
