@@ -37,12 +37,7 @@ export default function ClassesPage() {
 
         <div className="container-shell relative pb-12 pt-12 sm:pb-16 sm:pt-16 lg:pb-16 lg:pt-20">
           <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(310px,0.92fr)] xl:gap-14">
-            <motion.div
-              initial={{ opacity: 0, y: 22 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-              className="min-w-0"
-            >
+            <div className="min-w-0">
               <span className="eyebrow"><BookOpenCheck size={15} className="text-amber-500" /> Discover your next skill</span>
               <h1 className="hero-heading mt-6 max-w-[760px] text-[clamp(2.8rem,4.7vw,4.65rem)] font-black leading-[1.02] tracking-[-0.058em] text-brand-ink">
                 Find your next
@@ -55,14 +50,9 @@ export default function ClassesPage() {
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/80 px-4 py-2.5 text-xs font-bold text-slate-700 shadow-sm sm:text-sm"><Globe2 size={16} className="text-brand-blue" /> Learn from anywhere</span>
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/80 px-4 py-2.5 text-xs font-bold text-slate-700 shadow-sm sm:text-sm"><Check size={16} className="text-emerald-500" /> Guided at every step</span>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 24, scale: 0.97 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.75, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-              className="relative mx-auto w-full max-w-[520px]"
-            >
+            <div className="relative mx-auto w-full max-w-[520px]">
               <div aria-hidden="true" className="hero-halo absolute -inset-3 rounded-[2.5rem] sm:-inset-5" />
               <div className="relative rounded-[2rem] border border-white/80 bg-white/75 p-2.5 shadow-[0_28px_80px_rgba(43,34,111,0.16)] backdrop-blur-xl sm:p-3.5">
                 <div className="hero-panel relative overflow-hidden rounded-[1.55rem] p-5 text-white sm:rounded-[1.7rem] sm:p-7">
@@ -100,15 +90,10 @@ export default function ClassesPage() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.28 }}
-            className="relative z-20 mt-10 rounded-[1.65rem] border border-white/90 bg-white/95 p-3 shadow-[0_20px_60px_rgba(20,35,75,0.10)] backdrop-blur-xl sm:mt-12 sm:p-4"
-          >
+          <div id="class-filters" className="relative z-20 mt-10 rounded-[1.65rem] border border-white/90 bg-white/95 p-3 shadow-[0_20px_60px_rgba(20,35,75,0.10)] backdrop-blur-xl sm:mt-12 sm:p-4">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div className="flex flex-wrap gap-2" role="group" aria-label="Filter classes by category">
                 {categories.map((item) => (
@@ -138,7 +123,7 @@ export default function ClassesPage() {
                 <SlidersHorizontal size={16} className="shrink-0 text-slate-300" />
               </label>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -158,31 +143,17 @@ export default function ClassesPage() {
             </div>
           </div>
 
-          <motion.div layout className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            <AnimatePresence mode="popLayout">
-              {filtered.map((course, index) => (
-                <motion.div
-                  key={course.id}
-                  layout
-                  initial={{ opacity: 0, y: 18 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.28, delay: Math.min(index * 0.035, 0.18) }}
-                  className="h-full"
-                >
-                  <CourseCard course={course} onQuickView={setSelected} />
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {filtered.map((course) => <CourseCard key={course.id} course={course} onQuickView={setSelected} />)}
+          </div>
 
           {filtered.length === 0 && (
-            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="rounded-[2rem] border border-dashed border-slate-300 bg-slate-50/80 px-6 py-16 text-center sm:py-20">
+            <div className="rounded-[2rem] border border-dashed border-slate-300 bg-slate-50/80 px-6 py-16 text-center sm:py-20">
               <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-brand-violet shadow-sm"><Search size={25} /></span>
               <h3 className="mt-5 text-xl font-black text-brand-navy">No classes found just yet</h3>
               <p className="mt-2 text-sm text-slate-500">Try another keyword or switch to a different category.</p>
               <button type="button" onClick={() => { setSearch(''); setCategory('All classes'); }} className="button-secondary mt-6">Reset filters <ArrowRight size={16} /></button>
-            </motion.div>
+            </div>
           )}
         </div>
       </section>
@@ -198,7 +169,7 @@ export default function ClassesPage() {
                 <h2 className="mt-4 text-3xl font-black leading-tight tracking-[-0.04em] sm:text-4xl lg:text-5xl">Ready to turn curiosity into progress?</h2>
                 <p className="mt-4 max-w-xl text-sm leading-7 text-white/70 sm:text-base">Choose a class, discover a new strength and take one small step towards a bigger goal.</p>
               </div>
-              <a href="#top" onClick={(event) => event.preventDefault()} className="button-primary group relative min-h-[54px] shrink-0 !px-6" aria-label="Back to the top of the classes page">
+              <a href="#class-filters" className="button-primary group relative min-h-[54px] shrink-0 !px-6" aria-label="Browse class filters">
                 Browse the classes above <ArrowUpRight size={17} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </a>
             </div>
