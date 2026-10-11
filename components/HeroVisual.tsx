@@ -40,11 +40,11 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
               </div>
 
               <div className="relative z-10 mx-auto flex min-h-[118px] w-full max-w-[310px] flex-1 items-center justify-center sm:min-h-[132px] md:min-h-[148px] lg:min-h-[170px] xl:min-h-[200px]">
-                <div aria-hidden="true" className="hero-rotate absolute h-[96px] w-[96px] rounded-full border border-dashed border-white/35 sm:h-[110px] sm:w-[110px] md:h-[126px] md:w-[126px] lg:h-[146px] lg:w-[146px] xl:h-[176px] xl:w-[176px]" />
-                <div aria-hidden="true" className="absolute h-[82px] w-[82px] rounded-full border border-white/15 bg-white/[0.035] sm:h-[94px] sm:w-[94px] md:h-[108px] md:w-[108px] lg:h-[124px] lg:w-[124px] xl:h-[148px] xl:w-[148px]" />
-                <div aria-hidden="true" className="hero-pulse absolute h-[68px] w-[68px] rounded-full bg-white/15 blur-lg sm:h-[80px] sm:w-[80px] md:h-[92px] md:w-[92px] lg:h-[104px] lg:w-[104px] xl:h-[126px] xl:w-[126px]" />
-                <div className="hero-float hero-float-book relative z-10 flex h-[58px] w-[58px] items-center justify-center rounded-[1.1rem] bg-white text-violet-700 shadow-[0_20px_55px_rgba(10,6,45,0.28)] sm:h-[66px] sm:w-[66px] md:h-[76px] md:w-[76px] lg:h-[88px] lg:w-[88px] xl:h-[104px] xl:w-[104px]">
-                  <BookOpen className="h-9 w-9 sm:h-10 sm:w-10 md:h-11 md:w-11 xl:h-13 xl:w-13" strokeWidth={1.65} />
+                <div aria-hidden="true" className="hero-rotate absolute h-[110px] w-[110px] rounded-full border border-dashed border-white/35 sm:h-[126px] sm:w-[126px] md:h-[142px] md:w-[142px] lg:h-[164px] lg:w-[164px] xl:h-[196px] xl:w-[196px]" />
+                <div aria-hidden="true" className="absolute h-[94px] w-[94px] rounded-full border border-white/15 bg-white/[0.035] sm:h-[108px] sm:w-[108px] md:h-[122px] md:w-[122px] lg:h-[140px] lg:w-[140px] xl:h-[166px] xl:w-[166px]" />
+                <div aria-hidden="true" className="hero-pulse absolute h-[78px] w-[78px] rounded-full bg-white/15 blur-lg sm:h-[92px] sm:w-[92px] md:h-[104px] md:w-[104px] lg:h-[118px] lg:w-[118px] xl:h-[142px] xl:w-[142px]" />
+                <div className="hero-float hero-float-book relative z-10 flex h-[64px] w-[64px] items-center justify-center rounded-[1.1rem] bg-white text-violet-700 shadow-[0_20px_55px_rgba(10,6,45,0.28)] sm:h-[74px] sm:w-[74px] md:h-[86px] md:w-[86px] lg:h-[100px] lg:w-[100px] xl:h-[116px] xl:w-[116px]">
+                  <BookOpen className="h-9 w-9 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-13 lg:w-13 xl:h-14 xl:w-14" strokeWidth={1.65} />
                 </div>
                 <OrbitingIcons variant="home" />
               </div>
