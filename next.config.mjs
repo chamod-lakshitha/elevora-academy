@@ -30,6 +30,9 @@ const securityHeaders = [
 
 const nextConfig = {
   poweredByHeader: false,
+  experimental: {
+    optimizePackageImports: ['framer-motion'],
+  },
   images: {
     remotePatterns: [
       {
