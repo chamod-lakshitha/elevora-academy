@@ -79,7 +79,7 @@ export default function ClassesPage() {
         </div>
       </section>
 
-      <section className="section-space relative overflow-hidden bg-white">
+      <section id="class-catalog" className="section-space relative scroll-mt-24 overflow-hidden bg-white">
         <div aria-hidden="true" className="absolute -right-28 top-16 h-80 w-80 rounded-full bg-violet-100/45 blur-3xl" />
         <div aria-hidden="true" className="absolute -left-28 bottom-0 h-72 w-72 rounded-full bg-sky-100/45 blur-3xl" />
         <div className="container-shell relative">
@@ -95,8 +95,8 @@ export default function ClassesPage() {
             </div>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {filtered.map((course) => <CourseCard key={course.id} course={course} onQuickView={setSelected} />)}
+          <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 xl:grid-cols-6">
+            {filtered.map((course, index) => <div key={course.id} className={filtered.length === 5 && index >= 3 ? "xl:col-span-2" : "xl:col-span-2"}><CourseCard course={course} onQuickView={setSelected} /></div>)}
           </div>
 
           {filtered.length === 0 && (
