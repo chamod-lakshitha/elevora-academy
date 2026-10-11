@@ -7,7 +7,7 @@ import {
 import { Reveal, Stagger } from '@/components/Reveal';
 import PageHero from '@/components/PageHero';
 import SectionHeading from '@/components/SectionHeading';
-import HomeCourseCard from '@/components/HomeCourseCard';
+import HomeCoursesCarousel from '@/components/HomeCoursesCarousel';
 import { courses, pillars } from '@/lib/data';
 
 export const metadata: Metadata = {
@@ -62,9 +62,7 @@ export default function HomePage() {
             <SectionHeading eyebrow="Find your path" title="A class can change your next chapter" description="From languages to technology, find learning experiences that turn curiosity into confidence." />
             <Reveal className="shrink-0"><Link href="/classes#class-catalog" aria-label="Explore all classes" className="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-extrabold text-brand-violet shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-violet-200 hover:shadow-soft">Explore classes <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" /></Link></Reveal>
           </div>
-          <Stagger className="mt-9 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-            {courses.map((course) => <div key={course.id} className="h-full"><HomeCourseCard course={course} /></div>)}
-          </Stagger>
+          <HomeCoursesCarousel courses={courses.slice(0, 5)} />
           <div className="mt-8 flex justify-center">
             <Link href="/classes#class-catalog" className="group inline-flex items-center gap-2 rounded-full bg-brand-navy px-5 py-3 text-sm font-extrabold text-white shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-brand-violet focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-violet/20">Explore all classes <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" /></Link>
           </div>
