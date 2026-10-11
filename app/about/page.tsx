@@ -94,25 +94,74 @@ export default function AboutPage() {
 
       <section className="section-space relative overflow-hidden bg-white">
         <div aria-hidden="true" className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-sky-100/50 blur-3xl" />
-        <div className="container-shell relative grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
-          <SectionHeading eyebrow="Our purpose" title="Clear teaching. Confident learners." description="We want every learner to feel welcome to ask questions, take their time, practise and discover what they are capable of." titleClassName="max-w-[18ch] text-[clamp(1.65rem,5.5vw,3rem)] leading-[1.12] tracking-[-0.035em] break-words [overflow-wrap:anywhere] sm:max-w-none sm:text-4xl lg:text-5xl" />
-          <div className="grid gap-5 sm:grid-cols-2">
-            <Reveal>
-              <article className="group h-full rounded-[1.7rem] border border-sky-100 bg-gradient-to-br from-sky-50 via-white to-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft sm:p-7">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-brand-blue shadow-sm"><Compass size={23} /></span>
-                <h3 className="mt-5 text-xl font-extrabold text-brand-navy">Our vision</h3>
-                <p className="muted-copy mt-3 text-sm">To help learners everywhere unlock their potential through accessible, engaging and forward-looking education.</p>
-                <div className="mt-6 h-1 w-12 rounded-full bg-brand-blue transition-all duration-300 group-hover:w-20" />
-              </article>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <article className="group h-full rounded-[1.7rem] border border-sky-100 bg-gradient-to-br from-sky-50 via-white to-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft sm:p-7">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-brand-blue shadow-sm"><Target size={23} /></span>
-                <h3 className="mt-5 text-xl font-extrabold text-brand-navy">Our mission</h3>
-                <p className="muted-copy mt-3 text-sm">To make skill-building feel achievable through clear teaching, flexible learning and a supportive learner experience.</p>
-                <div className="mt-6 h-1 w-12 rounded-full bg-brand-blue transition-all duration-300 group-hover:w-20" />
-              </article>
-            </Reveal>
+        <div aria-hidden="true" className="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-violet-100/50 blur-3xl" />
+        <div className="container-shell relative grid items-start gap-10 xl:grid-cols-[minmax(260px,0.7fr)_minmax(0,1.3fr)] xl:gap-12">
+          <div className="xl:sticky xl:top-28">
+            <SectionHeading eyebrow="Our purpose" title="Clear teaching. Confident learners." description="We want every learner to feel welcome to ask questions, take their time, practise and discover what they are capable of." titleClassName="max-w-[18ch] text-[clamp(1.65rem,5.5vw,3rem)] leading-[1.12] tracking-[-0.035em] break-words [overflow-wrap:anywhere] sm:max-w-none sm:text-4xl lg:text-5xl" />
+            <div className="mt-7 grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
+              <div className="rounded-2xl border border-sky-100 bg-gradient-to-br from-sky-50 to-white p-4">
+                <div className="flex items-center gap-2 text-sm font-extrabold text-brand-navy"><Compass size={18} className="text-brand-blue" /> Our vision</div>
+                <p className="mt-2 text-xs leading-5 text-slate-600">To help learners everywhere unlock their potential through accessible, engaging education.</p>
+              </div>
+              <div className="rounded-2xl border border-violet-100 bg-gradient-to-br from-violet-50 to-white p-4">
+                <div className="flex items-center gap-2 text-sm font-extrabold text-brand-navy"><Target size={18} className="text-brand-violet" /> Our mission</div>
+                <p className="mt-2 text-xs leading-5 text-slate-600">To make skill-building achievable through clear teaching and supportive learning.</p>
+              </div>
+            </div>
+          </div>
+          <div className="min-w-0">
+            <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <span className="eyebrow"><span className="h-1.5 w-1.5 rounded-full bg-brand-gold" /> Meet the educators</span>
+                <h2 className="mt-3 text-2xl font-black tracking-tight text-brand-navy sm:text-3xl">The people behind your progress</h2>
+                <p className="mt-2 max-w-xl text-sm leading-6 text-slate-500">Meet our sample team across languages and technology.</p>
+              </div>
+              <span className="w-fit rounded-full border border-amber-200 bg-amber-50 px-3 py-1.5 text-[10px] font-bold text-amber-800">Demo profiles</span>
+            </div>
+            <div className="mx-auto max-w-3xl rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-5 text-amber-900">
+              Names, qualifications and experience are illustrative placeholders. Replace them with your real teachers’ details before publishing.
+            </div>
+            <Stagger className="mt-5 grid gap-4 sm:grid-cols-2" delayChildren={0.04}>
+            {teachingStaff.map((teacher, index) => {
+              const Icon = teacher.icon;
+              return (
+                <article key={teacher.name} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-[0_5px_18px_rgba(31,35,80,0.05)] transition duration-300 hover:-translate-y-1 hover:border-violet-200 hover:shadow-soft">
+                  <div className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-violet-50 px-5 pb-5 pt-6">
+                    <div aria-hidden="true" className="absolute -right-5 -top-8 h-28 w-28 rounded-full border border-white/80" />
+                    <div aria-hidden="true" className="absolute -bottom-12 left-1/2 h-24 w-32 -translate-x-1/2 rounded-full bg-white/70 blur-xl" />
+                    <div className={'relative mx-auto flex h-24 w-24 items-center justify-center rounded-[1.8rem] bg-gradient-to-br ' + teacher.tone + ' text-2xl font-black tracking-tight text-white shadow-lg ring-4 ring-white transition duration-300 group-hover:rotate-3 group-hover:scale-105'}>
+                      {teacher.initials}
+                    </div>
+                    <div className="relative mt-3 text-center">
+                      <h3 className="text-base font-extrabold tracking-tight text-brand-navy">{teacher.name}</h3>
+                      <p className="mt-1 text-sm font-bold text-brand-violet">{teacher.role}</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-1 flex-col p-4">
+                    <p className="text-xs leading-5 text-slate-600">{teacher.bio}</p>
+                    <div className="mt-4 space-y-2 border-t border-slate-100 pt-3 text-[11px] leading-4 text-slate-600">
+                      <div className="flex items-start gap-2.5">
+                        <GraduationCap size={16} className="mt-0.5 shrink-0 text-brand-violet" />
+                        <span>{teacher.qualification}</span>
+                      </div>
+                      <div className="flex items-start gap-2.5">
+                        <MonitorPlay size={16} className="mt-0.5 shrink-0 text-brand-violet" />
+                        <span>{teacher.experience}</span>
+                      </div>
+                      <div className="flex items-start gap-2.5">
+                        <Icon size={16} className="mt-0.5 shrink-0 text-brand-violet" />
+                        <span>{teacher.subjects}</span>
+                      </div>
+                    </div>
+                    <div className="mt-4 flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.1em] text-slate-400">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      Educator profile 0{index + 1}
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+            </Stagger>
           </div>
         </div>
       </section>
@@ -140,62 +189,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-space relative overflow-hidden bg-white">
-        <div aria-hidden="true" className="absolute -right-24 top-10 h-72 w-72 rounded-full bg-violet-100/50 blur-3xl" />
-        <div className="container-shell relative">
-          <SectionHeading
-            eyebrow="Meet the educators"
-            title="The people behind your progress"
-            description="Our sample teaching team represents the supportive, subject-focused educators we want learners to meet at Elevora Academy."
-            centered
-            titleClassName="leading-[1.2] sm:leading-[1.12]"
-          />
-          <div className="mx-auto mt-5 max-w-3xl rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-center text-xs font-medium leading-5 text-amber-900 sm:text-sm">
-            Demo profiles for the website design. Names, qualifications and experience are illustrative and should be replaced with your real teachers’ details before publication.
-          </div>
-          <Stagger className="mt-9 grid gap-5 sm:grid-cols-2 xl:grid-cols-4" delayChildren={0.05}>
-            {teachingStaff.map((teacher, index) => {
-              const Icon = teacher.icon;
-              return (
-                <article key={teacher.name} className="group flex h-full flex-col overflow-hidden rounded-[1.7rem] border border-slate-200/80 bg-white shadow-[0_8px_30px_rgba(31,35,80,0.06)] transition duration-300 hover:-translate-y-2 hover:border-violet-200 hover:shadow-[0_24px_55px_rgba(49,35,122,0.13)]">
-                  <div className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-violet-50 px-5 pb-5 pt-6">
-                    <div aria-hidden="true" className="absolute -right-5 -top-8 h-28 w-28 rounded-full border border-white/80" />
-                    <div aria-hidden="true" className="absolute -bottom-12 left-1/2 h-24 w-32 -translate-x-1/2 rounded-full bg-white/70 blur-xl" />
-                    <div className={'relative mx-auto flex h-24 w-24 items-center justify-center rounded-[1.8rem] bg-gradient-to-br ' + teacher.tone + ' text-2xl font-black tracking-tight text-white shadow-lg ring-4 ring-white transition duration-300 group-hover:rotate-3 group-hover:scale-105'}>
-                      {teacher.initials}
-                    </div>
-                    <div className="relative mt-4 text-center">
-                      <h3 className="text-lg font-extrabold tracking-tight text-brand-navy">{teacher.name}</h3>
-                      <p className="mt-1 text-sm font-bold text-brand-violet">{teacher.role}</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-1 flex-col p-5">
-                    <p className="text-sm leading-6 text-slate-600">{teacher.bio}</p>
-                    <div className="mt-5 space-y-3 border-t border-slate-100 pt-4 text-xs leading-5 text-slate-600">
-                      <div className="flex items-start gap-2.5">
-                        <GraduationCap size={16} className="mt-0.5 shrink-0 text-brand-violet" />
-                        <span>{teacher.qualification}</span>
-                      </div>
-                      <div className="flex items-start gap-2.5">
-                        <MonitorPlay size={16} className="mt-0.5 shrink-0 text-brand-violet" />
-                        <span>{teacher.experience}</span>
-                      </div>
-                      <div className="flex items-start gap-2.5">
-                        <Icon size={16} className="mt-0.5 shrink-0 text-brand-violet" />
-                        <span>{teacher.subjects}</span>
-                      </div>
-                    </div>
-                    <div className="mt-5 flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.12em] text-slate-400">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                      Educator profile 0{index + 1}
-                    </div>
-                  </div>
-                </article>
-              );
-            })}
-          </Stagger>
-        </div>
-      </section>
+
 
       <section className="section-space">
         <div className="container-shell">
