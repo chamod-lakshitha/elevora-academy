@@ -2,35 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: light; }
+:root { color-scheme: light; --color-ink: #17213e; --color-muted: #68748b; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
-body { margin: 0; background: #fff; color: #15213b; }
-::selection { background: #f9c34a66; }
+body { margin: 0; background: #fff; color: var(--color-ink); }
+::selection { background: #f9c34a66; color: #071d57; }
+a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+
+.hero-backdrop {
+  background:
+    radial-gradient(ellipse at 78% 8%, rgba(139,92,246,.19), transparent 34%),
+    radial-gradient(ellipse at 5% 92%, rgba(56,189,248,.2), transparent 29%),
+    linear-gradient(118deg,#fcfdff 0%,#f3f1ff 52%,#fff8ec 100%);
+}
+.hero-grid {
+  background-image: linear-gradient(rgba(71,85,160,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(71,85,160,.05) 1px,transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom,rgba(0,0,0,.45),transparent 90%);
+  pointer-events:none;
+}
+.hero-blob,.hero-orb { pointer-events:none; }
+.hero-blob-violet { background:rgba(167,139,250,.25); }
+.hero-blob-blue { background:rgba(125,211,252,.32); }
+.hero-halo { background:linear-gradient(145deg,rgba(255,255,255,.86),rgba(221,214,254,.58),rgba(253,230,138,.24)); filter:blur(1px); }
+.hero-orb-blue { background:rgba(59,130,246,.2); }
+.hero-orb-gold { background:rgba(251,191,36,.24); }
+.hero-panel { isolation:isolate; background:linear-gradient(145deg,#20145c 0%,#47248f 47%,#116d83 100%); background-size:175% 175%; animation:hero-gradient-shift 18s ease-in-out infinite; }
+.hero-panel-grid {
+  background-image:linear-gradient(rgba(255,255,255,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.075) 1px,transparent 1px);
+  background-size:28px 28px; mask-image:linear-gradient(135deg,black,transparent 84%); pointer-events:none;
+}
+.hero-heading { text-wrap:balance; }
+.hero-heading-gradient {
+  width:fit-content; max-width:100%; background:linear-gradient(100deg,#5b2bd5 0%,#8354f6 42%,#3272c6 76%,#147c88 100%);
+  background-size:200% 200%; -webkit-background-clip:text; background-clip:text; color:transparent; padding-bottom:.06em;
+  animation:hero-gradient-shift 10s ease-in-out infinite;
+}
+.hero-eyebrow { background:rgba(255,255,255,.78); box-shadow:0 4px 18px rgba(45,39,103,.04); }
+.hero-primary-button { box-shadow:0 12px 28px rgba(221,147,9,.22); }
+.hero-primary-button:hover { box-shadow:0 17px 38px rgba(221,147,9,.31); }
+.hero-secondary-button { border-color:rgba(105,117,154,.28); box-shadow:0 8px 20px rgba(34,46,92,.04); }
+.hero-bottom-line { background:linear-gradient(90deg,transparent,rgba(119,91,210,.24),rgba(244,174,34,.28),transparent); }
+.cta-panel { background:linear-gradient(115deg,#101d58 0%,#3b2186 53%,#155c84 100%); }
+@keyframes hero-gradient-shift { 0%,100% { background-position:0% 50%; } 50% { background-position:100% 50%; } }
+
 @layer components {
-  .container-shell { @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10; }
+  .container-shell { @apply mx-auto w-full max-w-[1380px] px-5 sm:px-8 lg:px-10; }
   .section-space { @apply py-16 sm:py-20 lg:py-24; }
   .eyebrow { @apply inline-flex items-center gap-2 rounded-full border border-brand-gold/30 bg-amber-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-brand-navy; }
   .button-primary { @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-6 py-3.5 text-sm font-extrabold text-brand-navy shadow-glow transition duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-brand-gold/30; }
-  .button-secondary { @apply inline-flex items-center justify-center gap-2 rounded-full border border-brand-navy/20 bg-white/90 px-6 py-3.5 text-sm font-bold text-brand-navy transition duration-300 hover:-translate-y-0.5 hover:border-brand-blue hover:bg-blue-50 focus:outline-none focus:ring-4 focus:ring-brand-blue/15; }
+  .button-secondary { @apply inline-flex items-center justify-center gap-2 rounded-full border border-brand-navy/20 bg-white px-6 py-3.5 text-sm font-bold text-brand-navy transition duration-300 hover:-translate-y-0.5 hover:border-brand-blue hover:bg-blue-50 focus:outline-none focus:ring-4 focus:ring-brand-blue/15; }
   .section-title { @apply text-3xl font-black tracking-tight text-brand-ink sm:text-4xl lg:text-5xl; }
   .muted-copy { @apply leading-7 text-brand-muted; }
 }
-.hero-stage { background: radial-gradient(ellipse at 82% 18%, rgba(139,92,246,.18), transparent 34%), radial-gradient(ellipse at 12% 78%, rgba(56,189,248,.14), transparent 32%), linear-gradient(135deg,#fbfcff 0%,#f4f2ff 48%,#fff8e9 100%); }
-.hero-title-gradient { background: linear-gradient(100deg,#5b35c7 4%,#8b5cf6 48%,#0e7490 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
-.hero-art { background:linear-gradient(145deg,rgba(255,255,255,.88),rgba(235,231,255,.78)); border:1px solid rgba(255,255,255,.95); box-shadow:0 30px 90px rgba(45,35,105,.14); }
-.hero-art-inner { background:linear-gradient(145deg,#20145f 0%,#5432a4 48%,#0d7490 100%); }
-.hero-orb { position:absolute; pointer-events:none; border-radius:9999px; filter:blur(1px); }
-.hero-orb-one { width:20rem; height:20rem; right:-8rem; top:3rem; background:rgba(167,139,250,.13); }
-.hero-orb-two { width:15rem; height:15rem; left:-7rem; bottom:1rem; background:rgba(125,211,252,.16); }
-.hero-float-card { animation:float-card 5.5s ease-in-out infinite; }
-.floating-chip { animation:float-card 4s ease-in-out infinite; }
-.animate-orbit { animation:orbit-spin 28s linear infinite; }
-.quick-strip { transform:translateY(0); }
-.feature-card { will-change:transform; }
-.cta-panel { background:radial-gradient(ellipse at 90% 0%,rgba(167,139,250,.4),transparent 38%),linear-gradient(120deg,#20145f 0%,#5030a0 55%,#0f7490 100%); box-shadow:0 24px 70px rgba(48,35,112,.18); }
-@keyframes float-card { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-9px); } }
-@keyframes orbit-spin { to { transform:rotate(360deg); } }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+@media (max-width:640px) {
+  .hero-heading-gradient { letter-spacing:-.07em; }
+  .hero-panel-grid { background-size:24px 24px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.01ms !important; }
+  .hero-panel,.hero-heading-gradient { animation:none !important; }
 }
