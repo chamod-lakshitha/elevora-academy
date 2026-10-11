@@ -94,7 +94,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="pb-16 sm:pb-20">
+      <section className="pb-10 sm:pb-12 lg:pb-14">
         <div className="container-shell">
           <Reveal>
             <div className="cta-panel relative overflow-hidden rounded-[2rem] px-6 py-10 text-white shadow-[0_30px_85px_rgba(30,27,93,0.22)] sm:px-10 sm:py-14 lg:px-14">
