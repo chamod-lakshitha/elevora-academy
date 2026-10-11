@@ -80,17 +80,28 @@ export default function HomePage() {
       </section>
 
       <section className="section-space relative overflow-hidden bg-white">
-        <div aria-hidden="true" className="absolute -left-32 top-1/3 h-80 w-80 rounded-full bg-blue-50 blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute -left-32 top-1/3 h-80 w-80 rounded-full bg-blue-50/80 blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-violet-50/80 blur-3xl" />
         <div className="container-shell relative">
-          <SectionHeading eyebrow="The Elevora teaching approach" title="Every learner deserves to thrive" description="Good teaching makes learning feel clear, encouraging and achievable. We focus on understanding, practice and progress—not just getting through a lesson." centered />
-          <Stagger className="mt-10 grid gap-5 md:grid-cols-3" delayChildren={0.02}>
-            {pillars.map((pillar, index) => <article key={pillar.title} className="pillar-card group h-full rounded-[1.7rem] border border-slate-200/70 bg-white p-6 shadow-[0_5px_22px_rgba(20,35,75,0.035)] transition duration-300 hover:-translate-y-2 hover:border-violet-200 hover:shadow-[0_24px_60px_rgba(49,35,122,0.12)] sm:p-7">
-              <div className="flex items-start justify-between gap-3"><span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 via-white to-violet-100 text-2xl font-black text-brand-violet transition duration-300 group-hover:rotate-3 group-hover:scale-105">{pillar.icon}</span><span className="text-xs font-black tracking-[0.2em] text-slate-300">0{index + 1}</span></div>
-              <h3 className="mt-6 text-xl font-extrabold tracking-tight text-brand-ink">{pillar.title}</h3>
-              <p className="muted-copy mt-3 text-sm">{pillar.text}</p>
-              <div className="mt-6 h-1 w-12 rounded-full bg-gradient-to-r from-brand-blue via-brand-violet to-brand-gold transition-all duration-500 group-hover:w-20" />
-            </article>)}
-          </Stagger>
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+            <div className="max-w-xl">
+              <SectionHeading eyebrow="The Elevora teaching approach" title="Every learner deserves to thrive" description="Good teaching makes learning feel clear, encouraging and achievable. We focus on understanding, practice and progress—not just getting through a lesson." />
+              <div aria-hidden="true" className="mt-7 h-1 w-20 rounded-full bg-gradient-to-r from-brand-blue via-brand-violet to-brand-gold" />
+            </div>
+            <Stagger className="divide-y divide-slate-200/90" delayChildren={0.08}>
+              {pillars.map((pillar, index) => <article key={pillar.title} className="group grid gap-4 py-6 first:pt-0 last:pb-0 sm:grid-cols-[4.5rem_1fr] sm:gap-6 sm:py-7">
+                <div className="flex items-start gap-3 sm:block">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-violet-100 text-2xl font-black text-brand-violet transition duration-300 group-hover:scale-105 group-hover:rotate-[-4deg]">{pillar.icon}</span>
+                  <span className="pt-3 text-xs font-black tracking-[0.2em] text-slate-300 sm:block">0{index + 1}</span>
+                </div>
+                <div className="min-w-0">
+                  <h3 className="text-xl font-extrabold tracking-tight text-brand-ink transition-colors duration-300 group-hover:text-brand-violet sm:text-2xl">{pillar.title}</h3>
+                  <p className="muted-copy mt-2 max-w-xl text-sm leading-7">{pillar.text}</p>
+                  <div aria-hidden="true" className="mt-4 h-px w-0 bg-gradient-to-r from-brand-blue to-brand-violet transition-all duration-500 group-hover:w-16" />
+                </div>
+              </article>)}
+            </Stagger>
+          </div>
         </div>
       </section>
 
