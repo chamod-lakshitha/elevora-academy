@@ -79,28 +79,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space relative overflow-hidden bg-white">
-        <div aria-hidden="true" className="pointer-events-none absolute -left-32 top-1/3 h-80 w-80 rounded-full bg-blue-50/80 blur-3xl" />
-        <div aria-hidden="true" className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-violet-50/80 blur-3xl" />
+      <section className="relative isolate overflow-hidden bg-[#f8f9ff] py-14 sm:py-18 lg:py-24">
+        <div aria-hidden="true" className="pointer-events-none absolute -left-28 top-10 h-72 w-72 rounded-full bg-sky-100/70 blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-violet-100/70 blur-3xl" />
         <div className="container-shell relative">
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-            <div className="max-w-xl">
-              <SectionHeading eyebrow="The Elevora teaching approach" title="Every learner deserves to thrive" description="Good teaching makes learning feel clear, encouraging and achievable. We focus on understanding, practice and progress—not just getting through a lesson." />
-              <div aria-hidden="true" className="mt-7 h-1 w-20 rounded-full bg-gradient-to-r from-brand-blue via-brand-violet to-brand-gold" />
+          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-20">
+            <div className="lg:sticky lg:top-28">
+              <span className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.22em] text-brand-violet"><span aria-hidden="true" className="h-2 w-2 rounded-full bg-brand-gold" />The Elevora teaching approach</span>
+              <h2 className="mt-5 max-w-lg text-4xl font-black leading-[1.08] tracking-[-0.045em] text-brand-navy sm:text-5xl lg:text-6xl">Every learner deserves to <span className="bg-gradient-to-r from-brand-blue via-brand-violet to-fuchsia-500 bg-clip-text text-transparent">thrive.</span></h2>
+              <p className="mt-6 max-w-md text-base leading-8 text-slate-600 sm:text-lg">Good teaching makes learning feel clear, encouraging and achievable. We focus on understanding, practice and progress—not just getting through a lesson.</p>
+              <div aria-hidden="true" className="mt-8 flex items-center gap-3"><span className="h-1.5 w-14 rounded-full bg-brand-blue" /><span className="h-1.5 w-8 rounded-full bg-brand-violet" /><span className="h-1.5 w-4 rounded-full bg-brand-gold" /></div>
             </div>
-            <Stagger className="divide-y divide-slate-200/90" delayChildren={0.08}>
-              {pillars.map((pillar, index) => <article key={pillar.title} className="group grid gap-4 py-6 first:pt-0 last:pb-0 sm:grid-cols-[4.5rem_1fr] sm:gap-6 sm:py-7">
-                <div className="flex items-start gap-3 sm:block">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-violet-100 text-2xl font-black text-brand-violet transition duration-300 group-hover:scale-105 group-hover:rotate-[-4deg]">{pillar.icon}</span>
-                  <span className="pt-3 text-xs font-black tracking-[0.2em] text-slate-300 sm:block">0{index + 1}</span>
-                </div>
-                <div className="min-w-0">
-                  <h3 className="text-xl font-extrabold tracking-tight text-brand-ink transition-colors duration-300 group-hover:text-brand-violet sm:text-2xl">{pillar.title}</h3>
-                  <p className="muted-copy mt-2 max-w-xl text-sm leading-7">{pillar.text}</p>
-                  <div aria-hidden="true" className="mt-4 h-px w-0 bg-gradient-to-r from-brand-blue to-brand-violet transition-all duration-500 group-hover:w-16" />
-                </div>
-              </article>)}
-            </Stagger>
+            <div className="relative">
+              <div aria-hidden="true" className="absolute bottom-8 left-[1.45rem] top-8 w-px bg-gradient-to-b from-sky-300 via-violet-300 to-amber-300 sm:left-[1.7rem]" />
+              <Stagger className="relative" delayChildren={0.08}>
+                {pillars.map((pillar, index) => <article key={pillar.title} className="group relative grid grid-cols-[3rem_1fr] gap-4 py-6 first:pt-0 last:pb-0 sm:grid-cols-[3.5rem_1fr] sm:gap-6 sm:py-8">
+                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white bg-white text-xl font-black text-brand-violet shadow-[0_4px_18px_rgba(64,52,130,0.10)] transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-violet group-hover:text-white sm:h-14 sm:w-14">{pillar.icon}</div>
+                  <div className="min-w-0 pt-1">
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1"><span className="text-[11px] font-black tracking-[0.2em] text-slate-400">0{index + 1}</span><span aria-hidden="true" className="h-px w-7 bg-gradient-to-r from-brand-blue to-brand-violet transition-all duration-300 group-hover:w-12" /></div>
+                    <h3 className="mt-2 text-xl font-extrabold tracking-tight text-brand-navy transition-colors duration-300 group-hover:text-brand-violet sm:text-2xl">{pillar.title}</h3>
+                    <p className="muted-copy mt-2 max-w-xl text-sm leading-7 sm:text-base">{pillar.text}</p>
+                  </div>
+                </article>)}
+              </Stagger>
+            </div>
           </div>
         </div>
       </section>
