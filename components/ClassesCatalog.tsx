@@ -6,6 +6,7 @@ import {
   ArrowRight, ArrowUpRight, Search, SlidersHorizontal, Sparkles, Star, X, CheckCircle2,
 } from 'lucide-react';
 import Link from 'next/link';
+import { createPortal } from 'react-dom';
 import CourseCard from '@/components/CourseCard';
 import CourseIcon from '@/components/CourseIcon';
 import { courses, type Course } from '@/lib/data';
@@ -197,7 +198,8 @@ export default function ClassesCatalog() {
         </div>
       </section>
 
-      <AnimatePresence>
+      {typeof document !== 'undefined' && createPortal(
+        <AnimatePresence>
         {selected && (
           <motion.div
             className="fixed inset-0 z-[60] flex items-center justify-center bg-brand-navy/60 p-4 backdrop-blur-md"
@@ -243,7 +245,9 @@ export default function ClassesCatalog() {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+        </AnimatePresence>,
+        document.body,
+      )}
     </>
   );
 }
