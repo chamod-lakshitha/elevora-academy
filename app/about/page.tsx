@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   ArrowRight, ArrowUpRight, Award, CheckCircle2, Clock3, Compass,
-  GraduationCap, HeartHandshake, Lightbulb, Quote, Sparkles, Target,
+  GraduationCap, HeartHandshake, Quote, Target,
 } from 'lucide-react';
 import { Reveal, Stagger } from '@/components/Reveal';
+import OrbitingIcons from '@/components/OrbitingIcons';
 import SectionHeading from '@/components/SectionHeading';
 
 export const metadata: Metadata = {
@@ -32,7 +33,7 @@ export default function AboutPage() {
         <div aria-hidden="true" className="hero-blob hero-blob-violet absolute -right-24 -top-24 h-96 w-96 rounded-full blur-3xl" />
         <div aria-hidden="true" className="hero-blob hero-blob-blue absolute -bottom-24 -left-20 h-80 w-80 rounded-full blur-3xl" />
 
-        <div className="container-shell relative grid items-center gap-10 pb-14 pt-12 sm:pb-16 sm:pt-16 lg:min-h-[650px] lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:gap-12 lg:pb-20 lg:pt-20">
+        <div className="container-shell relative grid items-center gap-10 pb-12 pt-12 sm:pb-16 sm:pt-14 lg:min-h-[690px] lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:gap-10 lg:pb-16 lg:pt-12 xl:min-h-[720px] xl:gap-14">
           <Reveal animateOnMount>
             <span className="eyebrow"><Compass size={15} className="text-amber-500" /> The story behind Elelora</span>
             <h1 className="hero-heading mt-6 max-w-[760px] text-[clamp(2.8rem,4.6vw,4.65rem)] font-black leading-[1.02] tracking-[-0.058em] text-brand-ink">
@@ -71,8 +72,7 @@ export default function AboutPage() {
                     <div className="absolute h-44 w-44 rounded-full border border-dashed border-white/25 sm:h-52 sm:w-52" />
                     <div className="absolute h-36 w-36 rounded-full border border-white/15 bg-white/[0.04] sm:h-44 sm:w-44" />
                     <div className="flex h-28 w-28 items-center justify-center rounded-[2rem] bg-white text-brand-violet shadow-[0_20px_55px_rgba(10,6,45,0.28)] sm:h-32 sm:w-32"><GraduationCap size={68} strokeWidth={1.4} /></div>
-                    <span className="absolute right-[18%] top-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-300 text-brand-navy shadow-lg"><Sparkles size={20} /></span>
-                    <span className="absolute bottom-1 left-[18%] flex h-9 w-9 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white"><Lightbulb size={18} /></span>
+                    <OrbitingIcons variant="about" />
                   </div>
                   <div className="relative z-10 grid grid-cols-3 gap-2 border-t border-white/15 pt-4 sm:gap-3 sm:pt-5">
                     <div><p className="text-lg font-black sm:text-xl">Learn</p><p className="mt-1 text-[10px] text-white/60 sm:text-xs">with purpose</p></div>
@@ -80,10 +80,6 @@ export default function AboutPage() {
                     <div><p className="text-lg font-black sm:text-xl">Achieve</p><p className="mt-1 text-[10px] text-white/60 sm:text-xs">step by step</p></div>
                   </div>
                 </div>
-              </div>
-              <div className="relative z-10 mx-auto -mt-4 flex max-w-[370px] items-center gap-3 rounded-2xl border border-white bg-white/95 p-4 shadow-[0_16px_45px_rgba(22,29,74,0.13)] sm:absolute sm:-bottom-5 sm:-left-5 sm:mt-0">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600"><CheckCircle2 size={22} /></span>
-                <span><b className="block text-sm text-brand-navy">Progress over perfection</b><small className="mt-1 block text-xs text-slate-500">Every small step counts.</small></span>
               </div>
             </div>
           </Reveal>
