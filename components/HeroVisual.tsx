@@ -1,13 +1,21 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { ArrowUpRight, BookOpen, Check, GraduationCap } from 'lucide-react';
 import OrbitingIcons from '@/components/OrbitingIcons';
 
 export default function HeroVisual() {
   const reduceMotion = useReducedMotion();
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  const motionReady = hasMounted && !reduceMotion;
   const float = (distance: number, duration: number, delay = 0) => ({
-    y: reduceMotion ? 0 : [0, -distance, 0],
+    y: [0, -distance, 0],
     transition: { duration, delay, repeat: Infinity, ease: 'easeInOut' as const },
   });
 
@@ -18,10 +26,10 @@ export default function HeroVisual() {
       <div aria-hidden="true" className="hero-orb hero-orb-gold absolute -right-1 top-5 h-24 w-24 rounded-full blur-2xl sm:h-28 sm:w-28" />
 
       <motion.div
-        initial={reduceMotion ? false : { opacity: 0, y: 28, scale: 0.965 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
+        initial={motionReady ? { opacity: 0, y: 28, scale: 0.965 } : false}
+        animate={motionReady ? { opacity: 1, y: 0, scale: 1 } : undefined}
         transition={{ duration: 0.85, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-        whileHover={reduceMotion ? undefined : { y: -4, transition: { duration: 0.25 } }}
+        whileHover={motionReady ? { y: -4, transition: { duration: 0.25 } } : undefined}
         className="relative rounded-[1.8rem] border border-white/90 bg-white/75 p-2.5 shadow-[0_28px_80px_rgba(43,34,111,0.18)] backdrop-blur-xl sm:rounded-[2.1rem] sm:p-3.5"
       >
         <div className="hero-panel relative min-h-[415px] overflow-hidden rounded-[1.4rem] px-4 py-5 text-white sm:min-h-[470px] sm:rounded-[1.7rem] sm:px-7 sm:py-7">
@@ -43,7 +51,7 @@ export default function HeroVisual() {
             </div>
             <motion.div
               aria-hidden="true"
-              animate={float(7, 4.8)}
+              animate={motionReady ? float(7, 4.8) : undefined}
               className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-white/20 bg-white/10 shadow-lg backdrop-blur-md sm:h-14 sm:w-14"
             >
               <GraduationCap size={26} strokeWidth={1.8} />
@@ -53,19 +61,19 @@ export default function HeroVisual() {
           <div className="relative z-10 mx-auto mt-5 flex h-[180px] w-full max-w-[310px] items-center justify-center sm:mt-3 sm:h-[220px]">
             <motion.div
               aria-hidden="true"
-              animate={reduceMotion ? undefined : { rotate: 360 }}
+              animate={motionReady ? { rotate: 360 } : undefined}
               transition={{ duration: 38, repeat: Infinity, ease: 'linear' }}
               className="absolute h-[172px] w-[172px] rounded-full border border-dashed border-white/35 sm:h-[210px] sm:w-[210px]"
             />
             <div aria-hidden="true" className="absolute h-[145px] w-[145px] rounded-full border border-white/15 bg-white/[0.035] sm:h-[175px] sm:w-[175px]" />
             <motion.div
               aria-hidden="true"
-              animate={reduceMotion ? undefined : { scale: [1, 1.07, 1], opacity: [0.3, 0.55, 0.3] }}
+              animate={motionReady ? { scale: [1, 1.07, 1], opacity: [0.3, 0.55, 0.3] } : undefined}
               transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut' }}
               className="absolute h-[130px] w-[130px] rounded-full bg-white/15 blur-xl sm:h-[155px] sm:w-[155px]"
             />
             <motion.div
-              animate={float(7, 4)}
+              animate={motionReady ? float(7, 4) : undefined}
               className="relative z-10 flex h-[100px] w-[100px] items-center justify-center rounded-[1.8rem] bg-white text-violet-700 shadow-[0_20px_55px_rgba(10,6,45,0.28)] sm:h-[120px] sm:w-[120px]"
             >
               <BookOpen size={56} strokeWidth={1.65} />
