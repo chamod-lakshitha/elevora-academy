@@ -94,7 +94,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#f7f5ff] py-16 sm:py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-[#f7f5ff] py-12 sm:py-16 lg:py-20">
         <div aria-hidden="true" className="absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-amber-100/60 blur-3xl" />
         <div aria-hidden="true" className="absolute -right-24 top-0 h-72 w-72 rounded-full bg-violet-100/70 blur-3xl" />
         <div className="container-shell relative">
@@ -139,7 +139,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-12 lg:pb-14">
+      <section className="pt-8 pb-10 sm:pt-10 sm:pb-12 lg:pt-12 lg:pb-14">
         <div className="container-shell">
           <Reveal>
             <div className="cta-panel relative overflow-hidden rounded-[2rem] px-6 py-10 text-white shadow-[0_30px_85px_rgba(30,27,93,0.22)] sm:px-10 sm:py-14 lg:px-14">
