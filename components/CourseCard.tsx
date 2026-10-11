@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Clock3, Star, Users } from 'lucide-react';
 import type { Course } from '@/lib/data';
+import Link from 'next/link';
+import { courseSlug } from '@/lib/seo';
 
 export default function CourseCard({ course, onQuickView }: { course: Course; onQuickView?: (course: Course) => void }) {
   return (
@@ -41,8 +43,10 @@ export default function CourseCard({ course, onQuickView }: { course: Course; on
           <span className="flex items-center gap-1.5"><Users size={14} className="text-brand-blue" />{course.instructor}</span>
           <span className="flex items-center gap-1.5"><Clock3 size={14} className="text-brand-violet" />{course.duration}</span>
         </div>
-        <div className="mt-5 flex items-center justify-between gap-3">
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
           <span className="text-xl font-black text-brand-navy">{course.price}<span className="ml-1 text-xs font-medium text-slate-400">/ course</span></span>
+          <div className="flex items-center gap-2">
+          <Link href={'/classes/' + courseSlug(course.title)} aria-label={'Read about ' + course.title} className="inline-flex items-center gap-1.5 rounded-full bg-violet-50 px-3 py-2.5 text-xs font-extrabold text-brand-violet transition hover:bg-violet-100 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-violet/20">Course details <ArrowUpRight size={14} /></Link>
           <button
             type="button"
             onClick={() => onQuickView?.(course)}
@@ -51,6 +55,7 @@ export default function CourseCard({ course, onQuickView }: { course: Course; on
           >
             Quick view <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </button>
+          </div>
         </div>
       </div>
     </motion.article>
