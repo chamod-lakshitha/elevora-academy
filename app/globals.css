@@ -95,32 +95,31 @@ nav a { transition: color .2s ease, background-color .2s ease, border-color .2s 
 }
 
 
-/* Three page-specific hero compositions, sharing the academy's core palette */
-.page-hero-home {
-  background:
-    radial-gradient(ellipse at 80% 12%, rgba(124,58,237,.22), transparent 35%),
-    radial-gradient(ellipse at 8% 88%, rgba(56,189,248,.22), transparent 30%),
-    linear-gradient(118deg,#fcfdff 0%,#f3f1ff 53%,#fff9ed 100%);
-}
-.page-hero-classes {
-  background:
-    radial-gradient(ellipse at 82% 18%, rgba(37,99,235,.19), transparent 35%),
-    radial-gradient(ellipse at 10% 90%, rgba(45,212,191,.17), transparent 30%),
-    linear-gradient(118deg,#fbfdff 0%,#f0f5ff 53%,#f8f4ff 100%);
-}
+/* Unified hero theme: all pages use the Home page's purple-led background and artwork palette. */
+.page-hero-home,
+.page-hero-classes,
 .page-hero-about {
   background:
-    radial-gradient(ellipse at 16% 12%, rgba(245,158,11,.17), transparent 32%),
-    radial-gradient(ellipse at 85% 88%, rgba(99,102,241,.18), transparent 32%),
-    linear-gradient(118deg,#fffdf8 0%,#f6f3ff 55%,#f2f8ff 100%);
+    radial-gradient(ellipse at 80% 8%, rgba(139,92,246,.19), transparent 34%),
+    radial-gradient(ellipse at 5% 92%, rgba(56,189,248,.2), transparent 29%),
+    linear-gradient(118deg,#fcfdff 0%,#f3f1ff 52%,#fff8ec 100%);
 }
-.hero-panel-home { background:linear-gradient(145deg,#20145c 0%,#47248f 47%,#116d83 100%); }
-.hero-panel-classes { background:linear-gradient(145deg,#111c50 0%,#234b91 48%,#087f8c 100%); }
-.hero-panel-about { background:linear-gradient(145deg,#1c1c5b 0%,#403080 48%,#126c84 100%); }
-.hero-panel { background-size:175% 175%; }
-.hero-visual-classes .hero-halo { background:linear-gradient(145deg,rgba(255,255,255,.9),rgba(191,219,254,.58),rgba(221,214,254,.35)); }
-.hero-visual-about .hero-halo { background:linear-gradient(145deg,rgba(255,255,255,.9),rgba(253,230,138,.45),rgba(221,214,254,.45)); }
-.page-hero .hero-heading-gradient { background-image:linear-gradient(100deg,#5b2bd5 0%,#3272c6 55%,#147c88 100%); }
+.hero-panel-home,
+.hero-panel-classes,
+.hero-panel-about {
+  background:linear-gradient(145deg,#20145c 0%,#47248f 47%,#116d83 100%);
+  background-size:175% 175%;
+}
+.hero-visual-classes .hero-halo,
+.hero-visual-about .hero-halo {
+  background:linear-gradient(145deg,rgba(255,255,255,.86),rgba(221,214,254,.58),rgba(253,230,138,.24));
+}
+.page-hero .hero-heading-gradient {
+  background-image:linear-gradient(100deg,#5b2bd5 0%,#8354f6 42%,#3272c6 76%,#147c88 100%);
+}
 @media (max-width: 1023px) {
-  .page-hero .lg\\:order-1, .page-hero .lg\\:order-2 { order: initial; }
+  .page-hero .lg\\:order-1,
+  .page-hero .lg\\:order-2 {
+    order: initial;
+  }
 }
