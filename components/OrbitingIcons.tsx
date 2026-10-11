@@ -11,7 +11,7 @@ export default function OrbitingIcons({ variant }: OrbitingIconsProps) {
   const SecondaryIcon = variant === 'about' ? Lightbulb : Globe2;
   const orbitSize = variant === 'about'
     ? 'h-44 w-44 sm:h-52 sm:w-52'
-    : 'h-[172px] w-[172px] sm:h-[210px] sm:w-[210px]';
+    : 'h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] xl:h-[190px] xl:w-[190px]';
   const starStyle = variant === 'about'
     ? 'bg-amber-300 text-brand-navy'
     : 'bg-amber-400 text-blue-950';
