@@ -216,3 +216,25 @@ input {
     min-height: 0 !important;
   }
 }
+
+
+/* Explicit responsive cutoff: mobile/tablet below 800px, desktop at 800px and up. */
+@media (max-width: 799px) {
+  .nav-shell nav[aria-label="Main navigation"] { display: none !important; }
+  .nav-shell > .container-shell > button[aria-controls="mobile-navigation"] { display: inline-flex !important; }
+  .nav-shell > .container-shell > a.button-primary { display: none !important; }
+  .page-hero > .container-shell { grid-template-columns: minmax(0, 1fr) !important; }
+  .page-hero > .container-shell > div:nth-of-type(1),
+  .page-hero > .container-shell > div:nth-of-type(2) { order: initial !important; min-height: 0 !important; }
+}
+@media (min-width: 800px) {
+  .nav-shell nav[aria-label="Main navigation"] { display: flex !important; }
+  .nav-shell > .container-shell > button[aria-controls="mobile-navigation"] { display: none !important; }
+  .nav-shell > .container-shell > a.button-primary { display: inline-flex !important; }
+  .nav-shell nav#mobile-navigation { display: none !important; }
+  .page-hero > .container-shell {
+    grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr) !important;
+  }
+  .page-hero > .container-shell > div:nth-of-type(1) { order: 1 !important; }
+  .page-hero > .container-shell > div:nth-of-type(2) { order: 2 !important; }
+}
