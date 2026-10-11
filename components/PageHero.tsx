@@ -37,8 +37,8 @@ export default function PageHero({
       <div aria-hidden="true" className="hero-blob hero-blob-violet absolute -right-24 top-[-5rem] h-[28rem] w-[28rem] rounded-full blur-3xl" />
       <div aria-hidden="true" className="hero-blob hero-blob-blue absolute -left-28 bottom-[-6rem] h-[24rem] w-[24rem] rounded-full blur-3xl" />
 
-      <div className="container-shell relative grid items-center gap-8 pb-10 pt-10 sm:gap-10 sm:pb-16 sm:pt-14 xl:min-h-[720px] xl:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] xl:gap-14 xl:pb-16 xl:pt-12">
-        <div className="relative z-10 min-w-0 xl:order-1 xl:flex xl:min-h-[620px] xl:flex-col xl:justify-center">
+      <div className="container-shell relative grid items-center gap-8 pb-10 pt-10 sm:gap-10 sm:pb-16 sm:pt-14 lg:min-h-[680px] lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:gap-8 xl:gap-12 lg:pb-14 lg:pt-10 xl:pb-16 xl:pt-12">
+        <div className="relative z-10 min-w-0 lg:order-1 lg:flex lg:min-h-[560px] lg:flex-col lg:justify-center xl:min-h-[600px]">
           <Reveal animateOnMount>
             <span className="eyebrow hero-eyebrow"><Sparkles size={15} className="text-amber-500" /> {eyebrow}</span>
           </Reveal>
@@ -72,7 +72,7 @@ export default function PageHero({
           </Reveal>
         </div>
 
-        <div className="relative z-10 mx-auto w-full min-w-0 max-w-[600px] px-1 pb-5 pt-1 sm:px-5 xl:px-0 xl:py-8 xl:order-2">
+        <div className="relative z-10 mx-auto w-full min-w-0 max-w-[600px] px-1 pb-5 pt-1 sm:px-5 lg:px-0 lg:py-6 lg:order-2 xl:py-8">
           <HeroVisual variant={variant} />
           <div aria-hidden="true" className="pointer-events-none absolute -bottom-3 left-1/2 -z-10 h-14 w-4/5 -translate-x-1/2 rounded-full bg-violet-950/10 blur-2xl" />
         </div>
