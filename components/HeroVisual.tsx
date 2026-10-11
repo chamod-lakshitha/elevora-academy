@@ -5,9 +5,14 @@ import { useEffect, useState } from 'react';
 import { ArrowUpRight, BookOpen, Check, GraduationCap } from 'lucide-react';
 import OrbitingIcons from '@/components/OrbitingIcons';
 
-export default function HeroVisual() {
+type HeroVisualProps = {
+  variant?: 'home' | 'about';
+};
+
+export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
   const reduceMotion = useReducedMotion();
   const [hasMounted, setHasMounted] = useState(false);
+  const isAbout = variant === 'about';
 
   useEffect(() => {
     setHasMounted(true);
@@ -18,6 +23,7 @@ export default function HeroVisual() {
     y: [0, -distance, 0],
     transition: { duration, delay, repeat: Infinity, ease: 'easeInOut' as const },
   });
+  const CenterIcon = isAbout ? GraduationCap : BookOpen;
 
   return (
     <div className="hero-visual relative mx-auto w-full max-w-[520px]">
@@ -32,21 +38,25 @@ export default function HeroVisual() {
         whileHover={motionReady ? { y: -4, transition: { duration: 0.25 } } : undefined}
         className="relative rounded-[1.8rem] border border-white/90 bg-white/75 p-2.5 shadow-[0_28px_80px_rgba(43,34,111,0.18)] backdrop-blur-xl sm:rounded-[2.1rem] sm:p-3.5"
       >
-        <div className="hero-panel relative min-h-[415px] overflow-hidden rounded-[1.4rem] px-4 py-5 text-white sm:min-h-[470px] sm:rounded-[1.7rem] sm:px-7 sm:py-7">
+        <div className={'hero-panel relative min-h-[415px] overflow-hidden rounded-[1.4rem] px-4 py-5 text-white sm:min-h-[470px] sm:rounded-[1.7rem] sm:px-7 sm:py-7 ' + (isAbout ? 'hero-panel-about' : '')}>
           <div aria-hidden="true" className="hero-panel-grid absolute inset-0 opacity-30" />
           <div aria-hidden="true" className="absolute -right-24 -top-20 h-72 w-72 rounded-full border border-white/15" />
           <div aria-hidden="true" className="absolute right-[-2rem] top-20 h-56 w-56 rounded-full border border-white/15" />
-          <div aria-hidden="true" className="absolute bottom-[-110px] left-[-70px] h-72 w-72 rounded-full bg-fuchsia-500/25 blur-3xl" />
+          <div aria-hidden="true" className={'absolute bottom-[-110px] left-[-70px] h-72 w-72 rounded-full blur-3xl ' + (isAbout ? 'bg-sky-400/25' : 'bg-fuchsia-500/25')} />
           <div aria-hidden="true" className="absolute bottom-[-95px] right-[-45px] h-64 w-64 rounded-full bg-cyan-400/20 blur-3xl" />
 
           <div className="relative z-10 flex items-start justify-between gap-3">
             <div className="min-w-0">
-              <p className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-white/65 sm:text-xs sm:tracking-[0.24em]">Your future starts here</p>
+              <p className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-white/65 sm:text-xs sm:tracking-[0.24em]">
+                {isAbout ? 'Learn · Grow · Achieve' : 'Your future starts here'}
+              </p>
               <h2 className="mt-3 max-w-[270px] text-[1.8rem] font-black leading-[1.04] tracking-[-0.045em] sm:text-[2.35rem]">
-                Make room <span className="text-amber-300">for more.</span>
+                {isAbout ? <>Grow <span className="text-cyan-200">with purpose.</span></> : <>Make room <span className="text-amber-300">for more.</span></>}
               </h2>
               <p className="mt-3 max-w-[280px] text-xs leading-5 text-white/75 sm:text-[15px] sm:leading-6">
-                More knowledge. More confidence. More possibilities.
+                {isAbout
+                  ? 'A welcoming place to explore new ideas, strengthen skills and grow with every lesson.'
+                  : 'More knowledge. More confidence. More possibilities.'}
               </p>
             </div>
             <motion.div
@@ -74,25 +84,27 @@ export default function HeroVisual() {
             />
             <motion.div
               animate={motionReady ? float(7, 4) : undefined}
-              className="relative z-10 flex h-[100px] w-[100px] items-center justify-center rounded-[1.8rem] bg-white text-violet-700 shadow-[0_20px_55px_rgba(10,6,45,0.28)] sm:h-[120px] sm:w-[120px]"
+              className={'relative z-10 flex h-[100px] w-[100px] items-center justify-center rounded-[1.8rem] shadow-[0_20px_55px_rgba(10,6,45,0.28)] sm:h-[120px] sm:w-[120px] ' + (isAbout ? 'bg-cyan-50 text-cyan-800' : 'bg-white text-violet-700')}
             >
-              <BookOpen size={56} strokeWidth={1.65} />
+              <CenterIcon size={isAbout ? 62 : 56} strokeWidth={1.65} />
             </motion.div>
-            <OrbitingIcons variant="home" />
+            <OrbitingIcons variant={isAbout ? 'about' : 'home'} />
           </div>
 
           <div className="relative z-10 mt-2 border-t border-white/20 pt-4 sm:mt-3 sm:pt-5">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <div><p className="text-sm font-extrabold">One lesson at a time.</p><p className="mt-1 text-xs text-white/65">A world of skills is waiting.</p></div>
+              <div>
+                <p className="text-sm font-extrabold">{isAbout ? 'Grow a little every day.' : 'One lesson at a time.'}</p>
+                <p className="mt-1 text-xs text-white/65">{isAbout ? 'Your potential is always in progress.' : 'A world of skills is waiting.'}</p>
+              </div>
               <div className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-2 text-[10px] font-bold text-white/90 backdrop-blur-sm sm:text-[11px]">
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-300 text-emerald-950"><Check size={12} strokeWidth={3} /></span>
-                Keep growing <ArrowUpRight size={14} className="text-amber-300" />
+                {isAbout ? 'Keep exploring' : 'Keep growing'} <ArrowUpRight size={14} className="text-amber-300" />
               </div>
             </div>
           </div>
         </div>
       </motion.div>
-
     </div>
   );
 }
