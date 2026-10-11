@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   ArrowRight, ArrowUpRight, BookOpenCheck, CheckCircle2, Compass,
-  MoveUpRight, Sparkles, Target, WandSparkles,
+  MoveUpRight, Sparkles, Target, WandSparkles, MessageCircle, NotebookPen, TrendingUp,
 } from 'lucide-react';
 import { Reveal, Stagger } from '@/components/Reveal';
 import PageHero from '@/components/PageHero';
@@ -91,6 +91,43 @@ export default function HomePage() {
               <div className="mt-6 h-1 w-12 rounded-full bg-gradient-to-r from-brand-blue via-brand-violet to-brand-gold transition-all duration-500 group-hover:w-20" />
             </article>)}
           </Stagger>
+        </div>
+      </section>
+
+      <section className="section-space relative overflow-hidden bg-[#f7f5ff]">
+        <div aria-hidden="true" className="absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-amber-100/60 blur-3xl" />
+        <div className="container-shell relative">
+          <SectionHeading
+            eyebrow="Your learning journey"
+            title="Small steps. Real progress."
+            description="A clear, supportive path helps you move from curious beginner to confident learner."
+            centered
+          />
+          <Stagger className="mt-10 grid gap-5 md:grid-cols-3" delayChildren={0.06}>
+            {[
+              { number: '01', icon: MessageCircle, title: 'Choose your subject', text: 'Explore our language and technology classes and find the subject that fits your goals.' },
+              { number: '02', icon: NotebookPen, title: 'Learn and practise', text: 'Build understanding with clear explanations, guided activities and practical examples.' },
+              { number: '03', icon: TrendingUp, title: 'Grow with confidence', text: 'Keep practising, ask questions and celebrate each new skill you master.' },
+            ].map((step) => {
+              const Icon = step.icon;
+              return (
+                <article key={step.number} className="group relative overflow-hidden rounded-[1.7rem] border border-violet-100 bg-white p-6 shadow-[0_8px_28px_rgba(40,30,95,0.05)] transition duration-300 hover:-translate-y-2 hover:border-violet-200 hover:shadow-[0_22px_50px_rgba(49,35,122,0.12)] sm:p-7">
+                  <div className="flex items-center justify-between">
+                    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-50 text-brand-violet transition duration-300 group-hover:scale-105 group-hover:rotate-3"><Icon size={25} /></span>
+                    <span className="text-sm font-black tracking-[0.18em] text-violet-200">{step.number}</span>
+                  </div>
+                  <h3 className="mt-6 text-xl font-extrabold tracking-tight text-brand-navy">{step.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{step.text}</p>
+                  <div className="mt-6 h-1 w-10 rounded-full bg-amber-300 transition-all duration-300 group-hover:w-16" />
+                </article>
+              );
+            })}
+          </Stagger>
+          <Reveal className="mt-8 text-center">
+            <Link href="/classes" className="inline-flex items-center gap-2 rounded-full bg-brand-violet px-6 py-3.5 text-sm font-extrabold text-white shadow-lg shadow-violet-900/15 transition hover:-translate-y-0.5 hover:bg-brand-navy">
+              Start learning <ArrowRight size={17} />
+            </Link>
+          </Reveal>
         </div>
       </section>
 
