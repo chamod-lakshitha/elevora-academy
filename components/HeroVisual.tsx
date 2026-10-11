@@ -11,16 +11,14 @@ type HeroVisualProps = {
 };
 
 export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
-  const isHome = variant === 'home';
-
   return (
-    <div className={'hero-visual relative mx-auto w-full ' + (isHome ? 'max-w-[480px] sm:max-w-[500px] ' : 'max-w-[520px] ') + 'hero-visual-' + variant}>
+    <div className={'hero-visual relative mx-auto w-full max-w-[520px] hero-visual-' + variant}>
       <div aria-hidden="true" className="hero-halo absolute -inset-3 rounded-[2.5rem] sm:-inset-5 sm:rounded-[3rem]" />
       <div aria-hidden="true" className="hero-orb hero-orb-blue absolute -left-2 bottom-12 h-28 w-28 rounded-full blur-2xl sm:-left-5 sm:h-32 sm:w-32" />
       <div aria-hidden="true" className="hero-orb hero-orb-gold absolute -right-1 top-5 h-24 w-24 rounded-full blur-2xl sm:h-28 sm:w-28" />
 
       <div className="hero-entrance relative rounded-[1.8rem] border border-white/90 bg-white/75 p-2.5 shadow-[0_28px_80px_rgba(43,34,111,0.18)] backdrop-blur-xl sm:rounded-[2.1rem] sm:p-3.5">
-        <div className={'hero-panel relative flex flex-col overflow-hidden rounded-[1.4rem] px-4 py-5 text-white sm:rounded-[1.7rem] sm:px-7 sm:py-7 hero-panel-' + variant + (isHome ? ' h-[min(112vw,410px)] min-h-[350px] sm:h-[470px] sm:min-h-0 md:h-[490px] lg:h-[510px]' : ' h-[445px] sm:h-[525px]')}>
+        <div className={'hero-panel relative flex h-[445px] flex-col overflow-hidden rounded-[1.4rem] px-4 py-5 text-white sm:h-[525px] sm:rounded-[1.7rem] sm:px-7 sm:py-7 hero-panel-' + variant}>
           <div aria-hidden="true" className="hero-panel-grid absolute inset-0 opacity-30" />
           <div aria-hidden="true" className="absolute -right-24 -top-20 h-72 w-72 rounded-full border border-white/15" />
 
@@ -33,25 +31,25 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
               <div className="relative z-10 flex items-start justify-between gap-3">
                 <div className="min-w-0">
                   <p className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-white/65 sm:text-xs sm:tracking-[0.24em]">Your learning journey</p>
-                  <h2 className="mt-3 max-w-[270px] text-[1.65rem] font-black leading-[1.04] tracking-[-0.045em] min-[420px]:text-[1.8rem] sm:text-[2.2rem]">Learn more. <span className="text-amber-300">Grow further.</span></h2>
+                  <h2 className="mt-3 max-w-[270px] text-[1.8rem] font-black leading-[1.04] tracking-[-0.045em] sm:text-[2.35rem]">Learn more. <span className="text-amber-300">Grow further.</span></h2>
                   <p className="mt-3 max-w-[280px] text-xs leading-5 text-white/75 sm:text-[15px] sm:leading-6">Clear lessons. Useful skills. New possibilities.</p>
                 </div>
-                <div aria-hidden="true" className="hero-float hero-float-slow flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/10 shadow-lg backdrop-blur-md sm:h-12 sm:w-12 sm:rounded-2xl">
-                  <GraduationCap className="h-5 w-5 sm:h-[26px] sm:w-[26px]" strokeWidth={1.8} />
+                <div aria-hidden="true" className="hero-float hero-float-slow flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-white/20 bg-white/10 shadow-lg backdrop-blur-md sm:h-14 sm:w-14">
+                  <GraduationCap size={26} strokeWidth={1.8} />
                 </div>
               </div>
 
-              <div className="relative z-10 mx-auto flex min-h-[100px] w-full max-w-[290px] flex-1 items-center justify-center sm:min-h-[118px] sm:max-w-[310px] md:min-h-[132px]">
-                <div aria-hidden="true" className="hero-rotate absolute h-[96px] w-[96px] rounded-full border border-dashed border-white/35 sm:h-[110px] sm:w-[110px] md:h-[124px] md:w-[124px] lg:h-[138px] lg:w-[138px] xl:h-[150px] xl:w-[150px]" />
-                <div aria-hidden="true" className="absolute h-[82px] w-[82px] rounded-full border border-white/15 bg-white/[0.035] sm:h-[94px] sm:w-[94px] md:h-[106px] md:w-[106px] lg:h-[118px] lg:w-[118px] xl:h-[130px] xl:w-[130px]" />
-                <div aria-hidden="true" className="hero-pulse absolute h-[68px] w-[68px] rounded-full bg-white/15 blur-lg sm:h-[78px] sm:w-[78px] md:h-[90px] md:w-[90px] lg:h-[100px] lg:w-[100px] xl:h-[112px] xl:w-[112px]" />
+              <div className="relative z-10 mx-auto flex min-h-[118px] w-full max-w-[310px] flex-1 items-center justify-center sm:min-h-[132px] md:min-h-[148px] lg:min-h-[170px] xl:min-h-[200px]">
+                <div aria-hidden="true" className="hero-rotate absolute h-[110px] w-[110px] rounded-full border border-dashed border-white/35 sm:h-[126px] sm:w-[126px] md:h-[142px] md:w-[142px] lg:h-[164px] lg:w-[164px] xl:h-[196px] xl:w-[196px]" />
+                <div aria-hidden="true" className="absolute h-[94px] w-[94px] rounded-full border border-white/15 bg-white/[0.035] sm:h-[108px] sm:w-[108px] md:h-[122px] md:w-[122px] lg:h-[140px] lg:w-[140px] xl:h-[166px] xl:w-[166px]" />
+                <div aria-hidden="true" className="hero-pulse absolute h-[78px] w-[78px] rounded-full bg-white/15 blur-lg sm:h-[92px] sm:w-[92px] md:h-[104px] md:w-[104px] lg:h-[118px] lg:w-[118px] xl:h-[142px] xl:w-[142px]" />
                 <div className="hero-float hero-float-book relative z-10 flex h-[88px] w-[88px] items-center justify-center rounded-[1.6rem] border border-white/30 bg-gradient-to-br from-white/25 via-violet-200/15 to-cyan-200/20 text-amber-200 shadow-[0_20px_55px_rgba(10,6,45,0.32)] backdrop-blur-md sm:h-[100px] sm:w-[100px] sm:rounded-[1.8rem] md:h-[112px] md:w-[112px]">
                   <BookOpen className="h-12 w-12 drop-shadow-lg sm:h-14 sm:w-14 md:h-16 md:w-16" strokeWidth={1.5} />
                 </div>
                 <OrbitingIcons variant="home" />
               </div>
 
-              <div className="relative z-10 mt-auto border-t border-white/20 pt-3 sm:pt-4">
+              <div className="relative z-10 mt-auto border-t border-white/20 pt-4 sm:pt-5">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div><p className="text-sm font-extrabold">Every lesson counts.</p><p className="mt-1 text-xs text-white/65">Learn something new today.</p></div>
                   <div className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-2 text-[10px] font-bold text-white/90 backdrop-blur-sm sm:text-[11px]">
