@@ -39,11 +39,11 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
                 </div>
               </div>
 
-              <div className="relative z-10 mx-auto mt-5 flex h-[180px] w-full max-w-[310px] items-center justify-center sm:mt-3 sm:h-[220px]">
-                <div aria-hidden="true" className="hero-rotate absolute h-[172px] w-[172px] rounded-full border border-dashed border-white/35 sm:h-[210px] sm:w-[210px]" />
-                <div aria-hidden="true" className="absolute h-[145px] w-[145px] rounded-full border border-white/15 bg-white/[0.035] sm:h-[175px] sm:w-[175px]" />
-                <div aria-hidden="true" className="hero-pulse absolute h-[130px] w-[130px] rounded-full bg-white/15 blur-xl sm:h-[155px] sm:w-[155px]" />
-                <div className="hero-float hero-float-book relative z-10 flex h-[100px] w-[100px] items-center justify-center rounded-[1.8rem] bg-white text-violet-700 shadow-[0_20px_55px_rgba(10,6,45,0.28)] sm:h-[120px] sm:w-[120px]">
+              <div className="relative z-10 mx-auto mt-5 flex h-[160px] w-full max-w-[310px] items-center justify-center sm:mt-3 sm:h-[190px] xl:h-[200px]">
+                <div aria-hidden="true" className="hero-rotate absolute h-[150px] w-[150px] rounded-full border border-dashed border-white/35 sm:h-[180px] sm:w-[180px] xl:h-[190px] xl:w-[190px]" />
+                <div aria-hidden="true" className="absolute h-[126px] w-[126px] rounded-full border border-white/15 bg-white/[0.035] sm:h-[150px] sm:w-[150px] xl:h-[160px] xl:w-[160px]" />
+                <div aria-hidden="true" className="hero-pulse absolute h-[110px] w-[110px] rounded-full bg-white/15 blur-xl sm:h-[132px] sm:w-[132px] xl:h-[142px] xl:w-[142px]" />
+                <div className="hero-float hero-float-book relative z-10 flex h-[88px] w-[88px] items-center justify-center rounded-[1.6rem] bg-white text-violet-700 shadow-[0_20px_55px_rgba(10,6,45,0.28)] sm:h-[105px] sm:w-[105px] xl:h-[110px] xl:w-[110px]">
                   <BookOpen size={56} strokeWidth={1.65} />
                 </div>
                 <OrbitingIcons variant="home" />
