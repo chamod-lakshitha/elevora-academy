@@ -68,6 +68,17 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section-space relative overflow-hidden bg-slate-50/80">
+        <div aria-hidden="true" className="absolute -right-24 top-16 h-72 w-72 rounded-full bg-violet-100/55 blur-3xl" />
+        <div className="container-shell relative">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <SectionHeading eyebrow="Explore our subjects" title="Find a class that inspires you" description="Learn with clear explanations, guided practice and a supportive approach—whether you are starting fresh or building on what you know." />
+            <Reveal className="shrink-0"><Link href="/classes#class-catalog" aria-label="Explore all classes" className="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-extrabold text-brand-violet shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-violet-200 hover:shadow-soft">Explore classes <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" /></Link></Reveal>
+          </div>
+          <HomeCoursesCarousel courses={courses.slice(0, 5)} />
+        </div>
+      </section>
+
       <section className="relative overflow-hidden bg-[#f7f5ff] py-16 sm:py-20 lg:py-24">
         <div aria-hidden="true" className="absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-amber-100/60 blur-3xl" />
         <div aria-hidden="true" className="absolute -right-24 top-0 h-72 w-72 rounded-full bg-violet-100/70 blur-3xl" />
@@ -110,17 +121,6 @@ export default function HomePage() {
               Start learning <ArrowRight size={17} />
             </Link>
           </Reveal>
-        </div>
-      </section>
-
-      <section className="section-space relative overflow-hidden bg-slate-50/80">
-        <div aria-hidden="true" className="absolute -right-24 top-16 h-72 w-72 rounded-full bg-violet-100/55 blur-3xl" />
-        <div className="container-shell relative">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            <SectionHeading eyebrow="Explore our subjects" title="Find a class that inspires you" description="Learn with clear explanations, guided practice and a supportive approach—whether you are starting fresh or building on what you know." />
-            <Reveal className="shrink-0"><Link href="/classes#class-catalog" aria-label="Explore all classes" className="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-extrabold text-brand-violet shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-violet-200 hover:shadow-soft">Explore classes <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" /></Link></Reveal>
-          </div>
-          <HomeCoursesCarousel courses={courses.slice(0, 5)} />
         </div>
       </section>
 
