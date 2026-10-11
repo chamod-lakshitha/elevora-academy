@@ -43,8 +43,19 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
                 <div aria-hidden="true" className="hero-rotate absolute h-[110px] w-[110px] rounded-full border border-dashed border-white/35 sm:h-[126px] sm:w-[126px] md:h-[142px] md:w-[142px] lg:h-[164px] lg:w-[164px] xl:h-[196px] xl:w-[196px]" />
                 <div aria-hidden="true" className="absolute h-[94px] w-[94px] rounded-full border border-white/15 bg-white/[0.035] sm:h-[108px] sm:w-[108px] md:h-[122px] md:w-[122px] lg:h-[140px] lg:w-[140px] xl:h-[166px] xl:w-[166px]" />
                 <div aria-hidden="true" className="hero-pulse absolute h-[78px] w-[78px] rounded-full bg-white/15 blur-lg sm:h-[92px] sm:w-[92px] md:h-[104px] md:w-[104px] lg:h-[118px] lg:w-[118px] xl:h-[142px] xl:w-[142px]" />
-                <div className="hero-float hero-float-book relative z-10 flex h-[64px] w-[64px] items-center justify-center rounded-[1.1rem] bg-white text-violet-700 shadow-[0_20px_55px_rgba(10,6,45,0.28)] sm:h-[74px] sm:w-[74px] md:h-[86px] md:w-[86px] lg:h-[100px] lg:w-[100px] xl:h-[116px] xl:w-[116px]">
-                  <BookOpen className="h-9 w-9 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-13 lg:w-13 xl:h-14 xl:w-14" strokeWidth={1.65} />
+                <div className="hero-float hero-float-book relative z-10 h-[116px] w-[94px] overflow-visible sm:h-[142px] sm:w-[112px] md:h-[154px] md:w-[122px]">
+                  <div className="absolute inset-0 overflow-hidden rounded-[1.2rem] border-2 border-white/90 bg-white shadow-[0_20px_55px_rgba(10,6,45,0.32)] sm:rounded-[1.5rem]">
+                    <img
+                      src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=480&q=85"
+                      alt="Schoolboy concentrating on his studies"
+                      className="h-full w-full object-cover object-center"
+                      loading="eager"
+                    />
+                    <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#171342]/35 via-transparent to-white/5" />
+                  </div>
+                  <div aria-hidden="true" className="absolute -bottom-2 -right-3 flex h-10 w-10 items-center justify-center rounded-xl border-2 border-white bg-amber-300 text-violet-900 shadow-lg sm:-bottom-3 sm:-right-4 sm:h-12 sm:w-12">
+                    <BookOpen className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1.8} />
+                  </div>
                 </div>
                 <OrbitingIcons variant="home" />
               </div>
