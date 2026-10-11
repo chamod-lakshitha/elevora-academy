@@ -70,14 +70,14 @@ export default function HomeCoursesCarousel({ courses }: { courses: Course[] }) 
 
         <div
           ref={trackRef}
-          className="flex w-full min-w-0 snap-x snap-mandatory gap-5 overflow-x-auto overscroll-x-contain scroll-smooth pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden xl:px-0"
+          className="flex min-w-0 flex-1 snap-x snap-mandatory gap-5 overflow-x-auto overscroll-x-contain scroll-smooth pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden xl:px-0"
           aria-label="All five Elevora Academy classes"
         >
           {courses.slice(0, 5).map((course) => (
             <div
               data-course-card
               key={course.id}
-              className="min-w-0 flex-[0_0_100%] snap-center sm:flex-[0_0_calc(50%-10px)] sm:snap-start xl:flex-[0_0_calc(33.333%-13.333px)]"
+              className="w-full shrink-0 snap-center sm:w-[calc(50%-10px)] sm:snap-start xl:w-[calc(33.333%-13.333px)]"
             >
               <HomeCourseCard course={course} />
             </div>
