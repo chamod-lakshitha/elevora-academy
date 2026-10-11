@@ -78,20 +78,32 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
                   <span className="shrink-0 rounded-full bg-violet-300/15 px-2 py-1 text-[9px] font-bold text-violet-100 sm:px-2.5 sm:text-[10px]">Made for you</span>
                 </div>
                 <div className="grid min-w-0 grid-cols-3 gap-1.5 sm:gap-2.5">
-                  <div className="hero-float hero-float-card-one min-w-0 overflow-hidden rounded-xl border border-white/15 bg-white/10 p-1.5 sm:p-3">
-                    <Languages size={18} className="text-amber-300 sm:h-[22px] sm:w-[22px]" />
-                    <p className="mt-2 break-words text-[10px] font-extrabold leading-tight [overflow-wrap:anywhere] sm:mt-3 sm:text-sm">Languages</p>
-                    <p className="mt-1 break-words text-[9px] leading-tight text-white/60 sm:text-[10px]">Find your voice</p>
+                  <div className="hero-float hero-float-card-one relative min-w-0 overflow-hidden rounded-xl border border-white/20 p-1.5 sm:p-3">
+                    <div aria-hidden="true" className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80')" }} />
+                    <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-[#171342]/80 via-[#33206b]/70 to-[#123f61]/80" />
+                    <div className="relative z-10">
+                      <Languages size={18} className="text-amber-300 sm:h-[22px] sm:w-[22px]" />
+                      <p className="mt-2 break-words text-[10px] font-extrabold leading-tight [overflow-wrap:anywhere] sm:mt-3 sm:text-sm">Languages</p>
+                      <p className="mt-1 break-words text-[9px] leading-tight text-white/75 sm:text-[10px]">Find your voice</p>
+                    </div>
                   </div>
-                  <div className="hero-float hero-float-card-two min-w-0 overflow-hidden rounded-xl border border-white/15 bg-white/10 p-1.5 sm:p-3">
-                    <Code2 size={18} className="text-violet-200 sm:h-[22px] sm:w-[22px]" />
-                    <p className="mt-2 break-words text-[10px] font-extrabold leading-tight [overflow-wrap:anywhere] sm:mt-3 sm:text-sm">Technology</p>
-                    <p className="mt-1 break-words text-[9px] leading-tight text-white/60 sm:text-[10px]">Build something</p>
+                  <div className="hero-float hero-float-card-two relative min-w-0 overflow-hidden rounded-xl border border-white/20 p-1.5 sm:p-3">
+                    <div aria-hidden="true" className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=600&q=80')" }} />
+                    <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-[#171342]/80 via-[#33206b]/70 to-[#123f61]/80" />
+                    <div className="relative z-10">
+                      <Code2 size={18} className="text-violet-200 sm:h-[22px] sm:w-[22px]" />
+                      <p className="mt-2 break-words text-[10px] font-extrabold leading-tight [overflow-wrap:anywhere] sm:mt-3 sm:text-sm">Technology</p>
+                      <p className="mt-1 break-words text-[9px] leading-tight text-white/75 sm:text-[10px]">Build something</p>
+                    </div>
                   </div>
-                  <div className="hero-float hero-float-card-three min-w-0 overflow-hidden rounded-xl border border-white/15 bg-white/10 p-1.5 sm:p-3">
-                    <BookOpen size={18} className="text-violet-200 sm:h-[22px] sm:w-[22px]" />
-                    <p className="mt-2 break-words text-[10px] font-extrabold leading-tight [overflow-wrap:anywhere] sm:mt-3 sm:text-sm">Academic</p>
-                    <p className="mt-1 break-words text-[9px] leading-tight text-white/60 sm:text-[10px]">Grow with purpose</p>
+                  <div className="hero-float hero-float-card-three relative min-w-0 overflow-hidden rounded-xl border border-white/20 p-1.5 sm:p-3">
+                    <div aria-hidden="true" className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=600&q=80')" }} />
+                    <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-[#171342]/80 via-[#33206b]/70 to-[#123f61]/80" />
+                    <div className="relative z-10">
+                      <BookOpen size={18} className="text-violet-200 sm:h-[22px] sm:w-[22px]" />
+                      <p className="mt-2 break-words text-[10px] font-extrabold leading-tight [overflow-wrap:anywhere] sm:mt-3 sm:text-sm">Academic</p>
+                      <p className="mt-1 break-words text-[9px] leading-tight text-white/75 sm:text-[10px]">Grow with purpose</p>
+                    </div>
                   </div>
                 </div>
               </div>
