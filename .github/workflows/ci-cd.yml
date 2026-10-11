@@ -64,6 +64,22 @@ jobs:
             echo "::notice title=Netlify deployment skipped::Add NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID under Settings > Secrets and variables > Actions to enable automatic production deployment."
           fi
 
+      - name: Verify Netlify credentials and site access
+        if: steps.credentials.outputs.configured == 'true'
+        shell: bash
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          http_status=$(curl --silent --show-error --output /dev/null --write-out "%{http_code}" \
+            --header "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID" || true)
+
+          if [[ "$http_status" != "200" ]]; then
+            echo "::error title=Netlify authorization failed::The configured NETLIFY_AUTH_TOKEN was rejected or does not have access to NETLIFY_SITE_ID (HTTP $http_status). Create a fresh Netlify personal access token from the account that owns elevora-academy.netlify.app and update the NETLIFY_AUTH_TOKEN GitHub Actions secret. Do not share the token in chat."
+            exit 1
+          fi
+
       - name: Check out repository
         if: steps.credentials.outputs.configured == 'true'
         uses: actions/checkout@v4
