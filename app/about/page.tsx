@@ -68,7 +68,7 @@ export default function AboutPage() {
 
       <section className="section-space relative overflow-hidden bg-slate-50/80">
         <div className="container-shell relative">
-          <SectionHeading eyebrow="What guides us" title="Built on progress, powered by possibility" description="Our values shape how we design lessons, support learners and keep improving." centered />
+          <SectionHeading eyebrow="What guides us" title="Built on progress, powered by possibility" description="Our values shape how we design lessons, support learners and keep improving." centered titleClassName="leading-tight sm:leading-[1.12] lg:leading-[1.12]" />
           <Stagger className="mt-10 grid gap-5 md:grid-cols-3" delayChildren={0.03}>
             {values.map((value, index) => {
               const Icon = value.icon;
@@ -91,7 +91,7 @@ export default function AboutPage() {
 
       <section className="section-space">
         <div className="container-shell">
-          <SectionHeading eyebrow="Designed around learners" title="The support to keep moving forward" description="Learning is personal. We aim to make the journey feel structured, encouraging and relevant to your goals." centered />
+          <SectionHeading eyebrow="Designed around learners" title="The support to keep moving forward" description="Learning is personal. We aim to make the journey feel structured, encouraging and relevant to your goals." centered titleClassName="leading-tight sm:leading-[1.12] lg:leading-[1.12]" />
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {pillars.map((pillar, index) => {
               const Icon = pillar.icon;
