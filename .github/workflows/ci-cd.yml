@@ -1,4 +1,4 @@
-name: CI and CD
+name: CI checks
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: ci-cd-${{ github.workflow }}-${{ github.ref }}
+  group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -37,68 +37,7 @@ jobs:
       - name: Type-check
         run: npx tsc --noEmit
 
-      - name: Build production app
+      - name: Build static website
         run: npm run build
         env:
-          NEXT_TELEMETRY_DISABLED: 1
-
-  deploy:
-    name: Deploy to Netlify
-    needs: ci
-    if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main')
-    runs-on: ubuntu-latest
-    environment:
-      name: production
-    steps:
-      - name: Check Netlify secrets
-        id: credentials
-        shell: bash
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: |
-          if [[ -n "$NETLIFY_AUTH_TOKEN" && -n "$NETLIFY_SITE_ID" ]]; then
-            echo "configured=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "configured=false" >> "$GITHUB_OUTPUT"
-            echo "::notice title=Netlify deployment skipped::Add NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID under Settings > Secrets and variables > Actions to enable automatic production deployment."
-          fi
-
-      - name: Verify Netlify credentials and site access
-        if: steps.credentials.outputs.configured == 'true'
-        shell: bash
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: |
-          http_status=$(curl --silent --show-error --output /dev/null --write-out "%{http_code}" \
-            --header "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
-            "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID" || true)
-
-          if [[ "$http_status" != "200" ]]; then
-            echo "::error title=Netlify authorization failed::The configured NETLIFY_AUTH_TOKEN was rejected or does not have access to NETLIFY_SITE_ID (HTTP $http_status). Create a fresh Netlify personal access token from the account that owns elevora-academy.netlify.app and update the NETLIFY_AUTH_TOKEN GitHub Actions secret. Do not share the token in chat."
-            exit 1
-          fi
-
-      - name: Check out repository
-        if: steps.credentials.outputs.configured == 'true'
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        if: steps.credentials.outputs.configured == 'true'
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-
-      - name: Install locked dependencies
-        if: steps.credentials.outputs.configured == 'true'
-        run: npm ci
-
-      - name: Deploy production site
-        if: steps.credentials.outputs.configured == 'true'
-        run: npx --yes netlify-cli deploy --auth "$NETLIFY_AUTH_TOKEN" --build --prod --site "$NETLIFY_SITE_ID"
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NEXT_TELEMETRY_DISABLED: 1
