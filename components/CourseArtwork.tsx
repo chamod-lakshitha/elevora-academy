@@ -33,9 +33,8 @@ export default function CourseArtwork({ course, size = 'catalog' }: CourseArtwor
             alt=""
             aria-hidden="true"
             fill
-            unoptimized
             loading="lazy"
-            sizes={isHome ? '(max-width: 640px) 80vw, 340px' : '(max-width: 768px) 90vw, 420px'}
+            sizes={isHome ? '(max-width: 640px) 80vw, 340px' : '(max-width: 768px) 90vw, 529px'}
             className="object-cover object-center blur-[5px] saturate-[0.8] transition-transform duration-700 group-hover:scale-110"
           />
         </div>
