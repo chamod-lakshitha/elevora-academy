@@ -69,3 +69,27 @@ nav a { transition: color .2s ease, background-color .2s ease, border-color .2s 
   *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.01ms !important; }
   .hero-panel,.hero-heading-gradient { animation:none !important; }
 }
+
+/* Active-page navigation and interactive polish */
+.nav-shell { box-shadow: 0 8px 26px rgba(20, 33, 70, 0.035); }
+.nav-link-active { position: relative; }
+.course-card-art { isolation: isolate; }
+.course-card-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(125deg, rgba(255,255,255,.12), transparent 42%, rgba(255,255,255,.08));
+  opacity: .85;
+  transition: opacity .3s ease;
+}
+.group:hover .course-card-art::after { opacity: 1; }
+.hero-panel-about {
+  background: linear-gradient(145deg, #102152 0%, #234e9b 44%, #087f8c 100%);
+  background-size: 175% 175%;
+}
+.pillar-card { transform: translateZ(0); }
+@media (prefers-reduced-motion: reduce) {
+  .course-card-art::after { transition: none; }
+  .nav-link, .group, .button-primary, .button-secondary { transition: none !important; }
+}
