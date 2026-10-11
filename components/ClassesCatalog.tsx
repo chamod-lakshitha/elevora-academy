@@ -211,6 +211,7 @@ export default function ClassesCatalog() {
                   initial={reduceMotion ? false : { opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={reduceMotion ? undefined : { opacity: 0 }}
+                  transition={{ duration: reduceMotion ? 0 : 0.2, ease: 'easeOut' }}
                   onClick={(event) => {
                     if (event.target === event.currentTarget) setSelected(null);
                   }}
