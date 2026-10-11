@@ -26,8 +26,8 @@ export default function OrbitingIcons({ variant }: OrbitingIconsProps) {
     >
       <div className="hero-orbit-spin absolute inset-0">
         <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
-          <span className={'hero-orbit-counter flex h-10 w-10 items-center justify-center rounded-2xl shadow-xl sm:h-11 sm:w-11 ' + starStyle}>
-            <Sparkles size={21} />
+          <span className={'hero-orbit-counter flex h-9 w-9 items-center justify-center rounded-xl shadow-xl sm:h-10 sm:w-10 ' + starStyle}>
+            <Sparkles className="h-[18px] w-[18px]" />
           </span>
         </span>
         <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
