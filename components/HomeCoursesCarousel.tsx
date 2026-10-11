@@ -38,38 +38,38 @@ export default function HomeCoursesCarousel({ courses }: { courses: Course[] }) 
     if (!track) return;
 
     const firstCard = track.querySelector<HTMLElement>('[data-course-card]');
-    const gap = 20;
-    const distance = firstCard ? firstCard.getBoundingClientRect().width + gap : 320;
+    const distance = firstCard ? firstCard.getBoundingClientRect().width + 20 : 320;
     track.scrollBy({ left: direction === 'right' ? distance : -distance, behavior: 'smooth' });
   };
 
+  const arrowClasses = 'pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full border border-amber-200 bg-amber-50/95 text-amber-900 shadow-lg backdrop-blur-sm transition hover:border-amber-300 hover:bg-amber-100 disabled:cursor-not-allowed disabled:opacity-35 disabled:shadow-none disabled:hover:border-amber-200 disabled:hover:bg-amber-50 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-300/40 sm:h-11 sm:w-11';
+
   return (
     <div>
-      <div
-        ref={trackRef}
-        className="mt-9 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        aria-label="All five Elevora Academy classes"
-      >
-        {courses.slice(0, 5).map((course) => (
-          <div
-            data-course-card
-            key={course.id}
-            className="w-[86%] shrink-0 snap-start sm:w-[calc(50%-10px)] xl:w-[calc(33.333%-13.333px)]"
-          >
-            <HomeCourseCard course={course} />
-          </div>
-        ))}
-      </div>
+      <div className="relative mt-9">
+        <div
+          ref={trackRef}
+          className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth px-[11%] pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:px-14 xl:px-0"
+          aria-label="All five Elevora Academy classes"
+        >
+          {courses.slice(0, 5).map((course) => (
+            <div
+              data-course-card
+              key={course.id}
+              className="w-[78%] shrink-0 snap-center sm:w-[calc(50%-10px)] sm:snap-start xl:w-[calc(33.333%-13.333px)]"
+            >
+              <HomeCourseCard course={course} />
+            </div>
+          ))}
+        </div>
 
-      <div className="mt-1 flex items-center justify-between gap-4">
-        <p className="text-sm font-semibold text-slate-500">Showing {Math.min(courses.length, 5)} classes</p>
-        <div className="flex items-center gap-2">
+        <div className="pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between px-1 pb-5 sm:px-1.5 xl:hidden">
           <button
             type="button"
             onClick={() => move('left')}
             aria-label="Previous classes"
             disabled={!canScrollLeft}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-amber-200 bg-amber-50 text-amber-800 transition hover:border-amber-300 hover:bg-amber-100 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:border-amber-200 disabled:hover:bg-amber-50 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-300/40"
+            className={arrowClasses}
           >
             <ArrowLeft size={19} />
           </button>
@@ -78,7 +78,31 @@ export default function HomeCoursesCarousel({ courses }: { courses: Course[] }) 
             onClick={() => move('right')}
             aria-label="Next classes"
             disabled={!canScrollRight}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-amber-200 bg-amber-50 text-amber-800 transition hover:border-amber-300 hover:bg-amber-100 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:border-amber-200 disabled:hover:bg-amber-50 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-300/40"
+            className={arrowClasses}
+          >
+            <ArrowRight size={19} />
+          </button>
+        </div>
+      </div>
+
+      <div className="mt-1 flex items-center justify-between gap-4">
+        <p className="text-sm font-semibold text-slate-500">Showing {Math.min(courses.length, 5)} classes</p>
+        <div className="hidden items-center gap-2 xl:flex">
+          <button
+            type="button"
+            onClick={() => move('left')}
+            aria-label="Previous classes"
+            disabled={!canScrollLeft}
+            className={arrowClasses}
+          >
+            <ArrowLeft size={19} />
+          </button>
+          <button
+            type="button"
+            onClick={() => move('right')}
+            aria-label="Next classes"
+            disabled={!canScrollRight}
+            className={arrowClasses}
           >
             <ArrowRight size={19} />
           </button>
