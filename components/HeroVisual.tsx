@@ -1,7 +1,8 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowUpRight, BookOpen, Check, Globe2, GraduationCap, Sparkles } from 'lucide-react';
+import { ArrowUpRight, BookOpen, Check, GraduationCap } from 'lucide-react';
+import OrbitingIcons from '@/components/OrbitingIcons';
 
 export default function HeroVisual() {
   const reduceMotion = useReducedMotion();
@@ -69,16 +70,7 @@ export default function HeroVisual() {
             >
               <BookOpen size={56} strokeWidth={1.65} />
             </motion.div>
-            <motion.span
-              animate={reduceMotion ? undefined : { rotate: [0, 9, 0], y: [0, -4, 0] }}
-              transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute right-[12%] top-[12%] z-20 flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-400 text-blue-950 shadow-xl sm:h-12 sm:w-12"
-            >
-              <Sparkles size={22} />
-            </motion.span>
-            <span className="absolute bottom-[12%] left-[12%] z-20 flex h-9 w-9 items-center justify-center rounded-xl border border-white/25 bg-white/10 text-white shadow-md backdrop-blur-sm">
-              <Globe2 size={18} />
-            </span>
+            <OrbitingIcons variant="home" />
           </div>
 
           <div className="relative z-10 mt-2 border-t border-white/20 pt-4 sm:mt-3 sm:pt-5">
@@ -93,25 +85,6 @@ export default function HeroVisual() {
         </div>
       </motion.div>
 
-      <motion.div
-        initial={reduceMotion ? false : { opacity: 0, x: -16 }}
-        animate={{ opacity: 1, x: 0, y: reduceMotion ? 0 : [0, -5, 0] }}
-        transition={{ opacity: { delay: 0.55, duration: 0.5 }, x: { delay: 0.55, duration: 0.5 }, y: { delay: 1, duration: 5.4, repeat: Infinity, ease: 'easeInOut' } }}
-        className="absolute -left-5 top-[43%] z-20 hidden max-w-[205px] lg:-left-7 xl:-left-10 items-center gap-2.5 rounded-2xl border border-white bg-white/95 px-3 py-3 shadow-[0_16px_45px_rgba(22,29,74,0.13)] backdrop-blur-md md:flex"
-      >
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-700"><Sparkles size={18} /></span>
-        <span><b className="block text-xs text-slate-900 sm:text-sm">Curiosity first</b><small className="mt-0.5 block text-[10px] text-slate-500 sm:text-xs">Progress that feels good</small></span>
-      </motion.div>
-
-      <motion.div
-        initial={reduceMotion ? false : { opacity: 0, x: 16 }}
-        animate={{ opacity: 1, x: 0, y: reduceMotion ? 0 : [0, 5, 0] }}
-        transition={{ opacity: { delay: 0.7, duration: 0.5 }, x: { delay: 0.7, duration: 0.5 }, y: { delay: 1.2, duration: 5.8, repeat: Infinity, ease: 'easeInOut' } }}
-        className="absolute -right-5 top-[43%] z-20 hidden max-w-[205px] lg:-right-7 xl:-right-10 items-center gap-2.5 rounded-2xl border border-white bg-white/95 px-3 py-3 shadow-[0_16px_45px_rgba(22,29,74,0.13)] backdrop-blur-md md:flex"
-      >
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-violet-100 text-violet-700"><GraduationCap size={19} /></span>
-        <span><b className="block text-xs text-slate-900 sm:text-sm">Skills for tomorrow</b><small className="mt-0.5 block text-[10px] text-slate-500 sm:text-xs">Start with one class</small></span>
-      </motion.div>
     </div>
   );
 }
