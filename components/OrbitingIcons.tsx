@@ -33,7 +33,7 @@ export default function OrbitingIcons({ variant }: OrbitingIconsProps) {
         <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
           <span className={'hero-orbit-counter flex items-center justify-center ' + secondaryStyle}>
             <SecondaryIcon size={18} />
-          </motion.span>
+          </span>
         </span>
       </div>
     </div>
