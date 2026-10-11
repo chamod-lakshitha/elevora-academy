@@ -38,7 +38,7 @@ export default function PageHero({
       <div aria-hidden="true" className="hero-blob hero-blob-blue absolute -left-28 bottom-[-6rem] h-[24rem] w-[24rem] rounded-full blur-3xl" />
 
       <div className="container-shell relative grid grid-cols-1 items-center gap-8 pb-10 pt-10 sm:gap-10 sm:pb-16 sm:pt-14 md:min-h-[640px] md:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] md:gap-5 xl:gap-10 md:pb-14 md:pt-10 xl:pb-16 xl:pt-12">
-        <div className="relative z-10 min-w-0 md:order-1 md:flex md:min-h-[540px] md:flex-col md:justify-center xl:min-h-[600px]">
+        <div className="hero-copy relative z-10 min-w-0 md:order-1 md:flex md:min-h-[540px] md:flex-col md:justify-center xl:min-h-[600px]">
           <Reveal animateOnMount>
             <span className="eyebrow hero-eyebrow"><Sparkles size={15} className="text-amber-500" /> {eyebrow}</span>
           </Reveal>
@@ -54,7 +54,7 @@ export default function PageHero({
             </p>
           </Reveal>
           <Reveal animateOnMount delay={0.23}>
-            <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
+            <div className="hero-actions mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
               <Link href={primaryHref} className="button-primary hero-primary-button group min-h-[56px] !px-7">
                 {primaryLabel} <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
@@ -65,7 +65,7 @@ export default function PageHero({
             </div>
           </Reveal>
           <Reveal animateOnMount delay={0.3}>
-            <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-xs font-bold text-slate-600 sm:mt-8 sm:gap-x-7 sm:text-sm">
+            <div className="hero-proofs mt-7 flex flex-wrap gap-x-5 gap-y-3 text-xs font-bold text-slate-600 sm:mt-8 sm:gap-x-7 sm:text-sm">
               <span className="inline-flex items-center gap-2"><CheckCircle2 size={17} className="text-emerald-500" /> {proofs[0]}</span>
               <span className="inline-flex items-center gap-2"><CheckCircle2 size={17} className="text-emerald-500" /> {proofs[1]}</span>
             </div>
