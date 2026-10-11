@@ -46,43 +46,42 @@ export default function HomeCoursesCarousel({ courses }: { courses: Course[] }) 
 
   return (
     <div>
-      <div className="relative mt-9">
+      <div className="mt-9 flex items-center gap-2 sm:gap-3 xl:block">
+        <button
+          type="button"
+          onClick={() => move('left')}
+          aria-label="Previous classes"
+          disabled={!canScrollLeft}
+          className={`shrink-0 xl:hidden ${arrowClasses.replace('h-10 w-10', 'h-9 w-9')}`}
+        >
+          <ArrowLeft size={19} />
+        </button>
+
         <div
           ref={trackRef}
-          className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth px-[11%] pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:px-14 xl:px-0"
+          className="flex min-w-0 flex-1 snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden xl:px-0"
           aria-label="All five Elevora Academy classes"
         >
           {courses.slice(0, 5).map((course) => (
             <div
               data-course-card
               key={course.id}
-              className="w-[78%] shrink-0 snap-center sm:w-[calc(50%-10px)] sm:snap-start xl:w-[calc(33.333%-13.333px)]"
+              className="w-full shrink-0 snap-center sm:w-[calc(50%-10px)] sm:snap-start xl:w-[calc(33.333%-13.333px)]"
             >
               <HomeCourseCard course={course} />
             </div>
           ))}
         </div>
 
-        <div className="pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between px-1 pb-5 sm:px-1.5 xl:hidden">
-          <button
-            type="button"
-            onClick={() => move('left')}
-            aria-label="Previous classes"
-            disabled={!canScrollLeft}
-            className={arrowClasses}
-          >
-            <ArrowLeft size={19} />
-          </button>
-          <button
-            type="button"
-            onClick={() => move('right')}
-            aria-label="Next classes"
-            disabled={!canScrollRight}
-            className={arrowClasses}
-          >
-            <ArrowRight size={19} />
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={() => move('right')}
+          aria-label="Next classes"
+          disabled={!canScrollRight}
+          className={`shrink-0 xl:hidden ${arrowClasses.replace('h-10 w-10', 'h-9 w-9')}`}
+        >
+          <ArrowRight size={19} />
+        </button>
       </div>
 
       <div className="mt-1 flex items-center justify-between gap-4">
