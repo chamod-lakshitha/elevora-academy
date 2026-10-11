@@ -29,6 +29,7 @@ export default function AboutPage() {
   return (
     <main className="overflow-hidden">
       <PageHero
+        variant="about"
         eyebrow="The story behind Elelora"
         title="Education that opens"
         highlight="new possibilities."
