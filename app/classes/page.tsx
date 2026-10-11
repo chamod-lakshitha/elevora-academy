@@ -31,6 +31,7 @@ export default function ClassesPage() {
   return (
     <main className="overflow-hidden">
       <PageHero
+        variant="classes"
         eyebrow="Discover your next skill"
         title="Find your next"
         highlight="big opportunity."
