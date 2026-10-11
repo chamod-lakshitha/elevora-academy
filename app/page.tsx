@@ -13,11 +13,11 @@ import { absoluteUrl, SITE_URL } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Online French, English, German & Coding Classes',
-  description: 'Explore engaging online language, technology and academic classes at Elelora Academy. Learn at your pace, build practical skills and take your next step with confidence.',
+  description: 'Learn French, English or German online, or start coding with Java and Python at Elevora Academy. Explore flexible beginner-friendly classes and build practical skills.',
   openGraph: {
-    title: 'Learn Boldly. Become Limitless. | Elelora Academy',
-    description: 'More knowledge. More confidence. More possibilities. Find your next class at Elelora Academy.',
-    images: [{ url: '/logo.png', alt: 'Elelora Academy logo' }],
+    title: 'Online Language & Coding Classes | Elevora Academy',
+    description: 'Explore online French, English, German, Java and Python classes. Find your next learning path at Elevora Academy.',
+    images: [{ url: '/logo.png', alt: 'Elevora Academy logo' }],
     type: 'website',
     ...(absoluteUrl('/') ? { url: absoluteUrl('/') } : {}),
   },
@@ -51,7 +51,7 @@ export default function HomePage() {
         description="Big goals begin with one lesson. Build real-world skills, discover new passions and grow with an online learning community made for your next chapter."
         primaryLabel="Explore our classes"
         primaryHref="/classes"
-        secondaryLabel="Discover Elelora"
+        secondaryLabel="Discover Elevora"
         secondaryHref="/about"
         proofs={["Learn at your pace", "Practical, guided lessons"]}
       />
@@ -82,7 +82,7 @@ export default function HomePage() {
       <section className="section-space relative overflow-hidden bg-white">
         <div aria-hidden="true" className="absolute -left-32 top-1/3 h-80 w-80 rounded-full bg-blue-50 blur-3xl" />
         <div className="container-shell relative">
-          <SectionHeading eyebrow="The Elelora difference" title="Progress looks different on everyone" description="A great learning experience should be motivating, approachable and practical. We help make every next step feel possible." centered />
+          <SectionHeading eyebrow="The Elevora difference" title="Progress looks different on everyone" description="A great learning experience should be motivating, approachable and practical. We help make every next step feel possible." centered />
           <Stagger className="mt-10 grid gap-5 md:grid-cols-3" delayChildren={0.02}>
             {pillars.map((pillar, index) => <article key={pillar.title} className="pillar-card group h-full rounded-[1.7rem] border border-slate-200/70 bg-white p-6 shadow-[0_5px_22px_rgba(20,35,75,0.035)] transition duration-300 hover:-translate-y-2 hover:border-violet-200 hover:shadow-[0_24px_60px_rgba(49,35,122,0.12)] sm:p-7">
               <div className="flex items-start justify-between gap-3"><span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 via-white to-violet-100 text-2xl font-black text-brand-violet transition duration-300 group-hover:rotate-3 group-hover:scale-105">{pillar.icon}</span><span className="text-xs font-black tracking-[0.2em] text-slate-300">0{index + 1}</span></div>
