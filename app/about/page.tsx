@@ -131,7 +131,7 @@ export default function AboutPage() {
             {teachingStaff.map((teacher, index) => {
               const Icon = teacher.icon;
               return (
-                <article key={teacher.name} className="group flex h-full flex-col overflow-hidden rounded-[1.7rem] border border-slate-200/80 bg-white shadow-[0_8px_30px_rgba(31,35,80,0.06)] transition duration-300 hover:-translate-y-2 hover:border-violet-200 hover:shadow-[0_24px_55px_rgba(49,35,122,0.13)]">
+                <article id={'teacher-' + teacher.name.toLowerCase().replace(/\s+/g, '-')} key={teacher.name} className="group flex h-full flex-col overflow-hidden rounded-[1.7rem] border border-slate-200/80 bg-white shadow-[0_8px_30px_rgba(31,35,80,0.06)] transition duration-300 hover:-translate-y-2 hover:border-violet-200 hover:shadow-[0_24px_55px_rgba(49,35,122,0.13)]">
                   <div className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-violet-50 px-5 pb-5 pt-6">
                     <div aria-hidden="true" className="absolute -right-5 -top-8 h-28 w-28 rounded-full border border-white/80" />
                     <div aria-hidden="true" className="absolute -bottom-12 left-1/2 h-24 w-32 -translate-x-1/2 rounded-full bg-white/70 blur-xl" />
