@@ -196,8 +196,8 @@ input {
 }
 
 
-/* Tablet layout applies through 800px inclusive; desktop layout starts at 801px. */
-@media (max-width: 800px) {
+/* Tablet layout applies only below 800px; laptop layout remains at 800px and above. */
+@media (max-width: 799px) {
   .nav-shell nav[aria-label="Main navigation"] {
     display: none !important;
   }
