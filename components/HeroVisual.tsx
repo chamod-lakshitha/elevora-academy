@@ -30,9 +30,9 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
 
               <div className="relative z-10 flex items-start justify-between gap-3">
                 <div className="min-w-0">
-                  <p className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-white/65 sm:text-xs sm:tracking-[0.24em]">Your future starts here</p>
-                  <h2 className="mt-3 max-w-[270px] text-[1.8rem] font-black leading-[1.04] tracking-[-0.045em] sm:text-[2.35rem]">Make room <span className="text-amber-300">for more.</span></h2>
-                  <p className="mt-3 max-w-[280px] text-xs leading-5 text-white/75 sm:text-[15px] sm:leading-6">More knowledge. More confidence. More possibilities.</p>
+                  <p className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-white/65 sm:text-xs sm:tracking-[0.24em]">Your learning journey</p>
+                  <h2 className="mt-3 max-w-[270px] text-[1.8rem] font-black leading-[1.04] tracking-[-0.045em] sm:text-[2.35rem]">Learn more. <span className="text-amber-300">Grow further.</span></h2>
+                  <p className="mt-3 max-w-[280px] text-xs leading-5 text-white/75 sm:text-[15px] sm:leading-6">Clear lessons. Useful skills. New possibilities.</p>
                 </div>
                 <div aria-hidden="true" className="hero-float hero-float-slow flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-white/20 bg-white/10 shadow-lg backdrop-blur-md sm:h-14 sm:w-14">
                   <GraduationCap size={26} strokeWidth={1.8} />
@@ -51,7 +51,7 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
 
               <div className="relative z-10 mt-auto border-t border-white/20 pt-4 sm:pt-5">
                 <div className="flex flex-wrap items-center justify-between gap-3">
-                  <div><p className="text-sm font-extrabold">One lesson at a time.</p><p className="mt-1 text-xs text-white/65">A world of skills is waiting.</p></div>
+                  <div><p className="text-sm font-extrabold">Every lesson counts.</p><p className="mt-1 text-xs text-white/65">Learn something new today.</p></div>
                   <div className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-2 text-[10px] font-bold text-white/90 backdrop-blur-sm sm:text-[11px]">
                     <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-300 text-emerald-950"><Check size={12} strokeWidth={3} /></span>
                     Keep growing <ArrowUpRight size={14} className="text-amber-300" />
@@ -66,16 +66,16 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
               <div aria-hidden="true" className="absolute bottom-[-100px] right-[-80px] h-72 w-72 rounded-full bg-fuchsia-500/25 blur-3xl" />
               <div className="relative z-10 flex items-center justify-between gap-3">
                 <div>
-                  <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-white/60">Your learning dashboard</p>
-                  <h2 className="mt-3 max-w-[300px] text-2xl font-black leading-tight sm:text-3xl">Find your next <span className="text-amber-300">favourite skill.</span></h2>
+                  <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-white/60">Your classroom</p>
+                  <h2 className="mt-3 max-w-[300px] text-2xl font-black leading-tight sm:text-3xl">Choose a subject. <span className="text-amber-300">Start growing.</span></h2>
                 </div>
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-amber-200"><Compass size={25} /></span>
               </div>
 
               <div className="relative z-10 mt-6 min-w-0 rounded-2xl border border-white/15 bg-white/[0.08] p-2.5 backdrop-blur-sm sm:p-4">
                 <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-                  <span className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/60">Explore pathways</span>
-                  <span className="shrink-0 rounded-full bg-violet-300/15 px-2 py-1 text-[9px] font-bold text-violet-100 sm:px-2.5 sm:text-[10px]">Made for you</span>
+                  <span className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/60">Explore subjects</span>
+                  <span className="shrink-0 rounded-full bg-violet-300/15 px-2 py-1 text-[9px] font-bold text-violet-100 sm:px-2.5 sm:text-[10px]">Learn your way</span>
                 </div>
                 <div className="grid min-w-0 grid-cols-3 gap-1.5 sm:gap-2.5">
                   <div className="hero-float hero-float-card-one relative min-w-0 overflow-hidden rounded-xl border border-white/20 p-1.5 sm:p-3">
@@ -112,7 +112,7 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
                 <div className="hero-progress h-2 rounded-full bg-gradient-to-r from-amber-300 via-violet-300 to-fuchsia-300" />
               </div>
               <div className="relative z-10 mt-auto flex flex-wrap items-center justify-between gap-2 border-t border-white/20 pt-4">
-                <span className="text-[10px] font-bold text-white/75 sm:text-xs">Explore. Practise. Progress.</span>
+                <span className="text-[10px] font-bold text-white/75 sm:text-xs">Learn. Practise. Progress.</span>
                 <span className="inline-flex items-center gap-1.5 text-[10px] font-extrabold text-amber-200 sm:text-xs"><Sparkles size={14} /> Start anywhere</span>
               </div>
             </>
@@ -123,8 +123,8 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
               <div aria-hidden="true" className="absolute bottom-[-90px] left-[-70px] h-72 w-72 rounded-full bg-fuchsia-500/25 blur-3xl" />
               <div className="relative z-10 flex items-start justify-between gap-3">
                 <div>
-                  <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-white/60">Our promise to learners</p>
-                  <h2 className="mt-3 max-w-[290px] text-2xl font-black leading-tight sm:text-3xl">A journey built around <span className="text-amber-300">you.</span></h2>
+                  <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-white/60">Our teaching promise</p>
+                  <h2 className="mt-3 max-w-[290px] text-2xl font-black leading-tight sm:text-3xl">Teaching that puts <span className="text-amber-300">you first.</span></h2>
                 </div>
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-amber-200"><Lightbulb size={24} /></div>
               </div>
