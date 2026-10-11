@@ -5,7 +5,7 @@ import {
   GraduationCap, HeartHandshake, Lightbulb, Quote, Target,
 } from 'lucide-react';
 import { Reveal, Stagger } from '@/components/Reveal';
-import OrbitingIcons from '@/components/OrbitingIcons';
+import HeroVisual from '@/components/HeroVisual';
 import SectionHeading from '@/components/SectionHeading';
 
 export const metadata: Metadata = {
@@ -54,33 +54,8 @@ export default function AboutPage() {
           </Reveal>
 
           <Reveal delay={0.12} animateOnMount>
-            <div className="relative mx-auto w-full max-w-[540px]">
-              <div aria-hidden="true" className="hero-halo absolute -inset-3 rounded-[2.5rem] sm:-inset-5" />
-              <div className="relative rounded-[2rem] border border-white/80 bg-white/75 p-2.5 shadow-[0_28px_80px_rgba(43,34,111,0.17)] backdrop-blur-xl sm:p-3.5">
-                <div className="hero-panel relative overflow-hidden rounded-[1.6rem] p-5 text-white sm:rounded-[1.75rem] sm:p-7">
-                  <div aria-hidden="true" className="hero-panel-grid absolute inset-0 opacity-30" />
-                  <div aria-hidden="true" className="absolute -right-20 -top-20 h-72 w-72 rounded-full border border-white/15" />
-                  <div aria-hidden="true" className="absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-fuchsia-500/20 blur-3xl" />
-                  <div className="relative z-10 flex items-start justify-between gap-4">
-                    <div>
-                      <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-white/65 sm:text-xs">Learn · Grow · Achieve</p>
-                      <h2 className="mt-3 max-w-xs text-2xl font-black leading-tight tracking-tight sm:text-3xl">Big goals begin with one lesson.</h2>
-                    </div>
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-amber-300 sm:h-14 sm:w-14"><GraduationCap size={27} /></span>
-                  </div>
-                  <div className="relative z-10 my-7 flex items-center justify-center">
-                    <div className="absolute h-44 w-44 rounded-full border border-dashed border-white/25 sm:h-52 sm:w-52" />
-                    <div className="absolute h-36 w-36 rounded-full border border-white/15 bg-white/[0.04] sm:h-44 sm:w-44" />
-                    <div className="flex h-28 w-28 items-center justify-center rounded-[2rem] bg-white text-brand-violet shadow-[0_20px_55px_rgba(10,6,45,0.28)] sm:h-32 sm:w-32"><GraduationCap size={68} strokeWidth={1.4} /></div>
-                    <OrbitingIcons variant="about" />
-                  </div>
-                  <div className="relative z-10 grid grid-cols-3 gap-2 border-t border-white/15 pt-4 sm:gap-3 sm:pt-5">
-                    <div><p className="text-lg font-black sm:text-xl">Learn</p><p className="mt-1 text-[10px] text-white/60 sm:text-xs">with purpose</p></div>
-                    <div><p className="text-lg font-black sm:text-xl">Grow</p><p className="mt-1 text-[10px] text-white/60 sm:text-xs">with confidence</p></div>
-                    <div><p className="text-lg font-black sm:text-xl">Achieve</p><p className="mt-1 text-[10px] text-white/60 sm:text-xs">step by step</p></div>
-                  </div>
-                </div>
-              </div>
+            <div className="relative z-10 mx-auto w-full min-w-0 max-w-[580px] px-1 pb-5 pt-1 sm:px-5 lg:px-0 lg:py-8">
+              <HeroVisual />
             </div>
           </Reveal>
         </div>
