@@ -79,26 +79,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-white py-14 sm:py-18 lg:py-24">
+      <section className="relative isolate overflow-hidden bg-white py-12 sm:py-16 lg:py-24">
         
         
         <div className="container-shell relative">
-          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-20">
-            <div className="text-right lg:sticky lg:top-28">
-              <span className="inline-flex items-center justify-end gap-2 text-xs font-extrabold uppercase tracking-[0.22em] text-brand-violet"><span aria-hidden="true" className="h-2 w-2 rounded-full bg-brand-gold" />The Elevora teaching approach</span>
-              <h2 className="ml-auto mt-5 max-w-lg text-4xl font-black leading-[1.08] tracking-[-0.045em] text-brand-navy sm:text-5xl lg:text-6xl">Every learner deserves to <span className="bg-gradient-to-r from-brand-blue via-brand-violet to-fuchsia-500 bg-clip-text text-transparent">thrive.</span></h2>
-              <p className="ml-auto mt-6 max-w-md text-base leading-8 text-slate-600 sm:text-lg">Good teaching makes learning feel clear, encouraging and achievable. We focus on understanding, practice and progress—not just getting through a lesson.</p>
-              <div aria-hidden="true" className="mt-8 flex items-center justify-end gap-3"><span className="h-1.5 w-14 rounded-full bg-brand-blue" /><span className="h-1.5 w-8 rounded-full bg-brand-violet" /><span className="h-1.5 w-4 rounded-full bg-brand-gold" /></div>
+          <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 sm:gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-16 xl:gap-20">
+            <div className="min-w-0 text-right lg:sticky lg:top-28">
+              <span className="inline-flex max-w-full flex-wrap items-center justify-end gap-2 text-[10px] font-extrabold uppercase tracking-[0.16em] text-brand-violet sm:text-xs sm:tracking-[0.22em]"><span aria-hidden="true" className="h-2 w-2 rounded-full bg-brand-gold" />The Elevora teaching approach</span>
+              <h2 className="ml-auto mt-4 w-full max-w-lg break-words text-3xl font-black leading-[1.1] tracking-[-0.04em] text-brand-navy min-[420px]:text-4xl sm:mt-5 sm:text-5xl lg:text-6xl">Every learner deserves to <span className="bg-gradient-to-r from-brand-blue via-brand-violet to-fuchsia-500 bg-clip-text text-transparent">thrive.</span></h2>
+              <p className="ml-auto mt-4 w-full max-w-md text-sm leading-7 text-slate-600 sm:mt-6 sm:text-base sm:leading-8 lg:text-lg">Good teaching makes learning feel clear, encouraging and achievable. We focus on understanding, practice and progress—not just getting through a lesson.</p>
+              <div aria-hidden="true" className="mt-6 flex items-center justify-end gap-3 sm:mt-8"><span className="h-1.5 w-14 rounded-full bg-brand-blue" /><span className="h-1.5 w-8 rounded-full bg-brand-violet" /><span className="h-1.5 w-4 rounded-full bg-brand-gold" /></div>
             </div>
-            <div className="relative">
-              <div aria-hidden="true" className="absolute bottom-8 left-[1.45rem] top-8 w-px bg-gradient-to-b from-sky-300 via-violet-300 to-amber-300 sm:left-[1.7rem]" />
+            <div className="relative min-w-0">
+              <div aria-hidden="true" className="absolute bottom-8 left-[1.35rem] top-7 w-px bg-gradient-to-b from-sky-300 via-violet-300 to-amber-300 sm:left-[1.7rem]" />
               <Stagger className="relative" delayChildren={0.08}>
-                {pillars.map((pillar, index) => <article key={pillar.title} className="group relative grid grid-cols-[3rem_1fr] gap-4 py-6 first:pt-0 last:pb-0 sm:grid-cols-[3.5rem_1fr] sm:gap-6 sm:py-8">
-                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white bg-white text-xl font-black text-brand-violet shadow-[0_4px_18px_rgba(64,52,130,0.10)] transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-violet group-hover:text-white sm:h-14 sm:w-14">{pillar.icon}</div>
+                {pillars.map((pillar, index) => <article key={pillar.title} className="group relative grid min-w-0 grid-cols-[2.75rem_minmax(0,1fr)] gap-3 py-5 first:pt-0 last:pb-0 sm:grid-cols-[3.5rem_minmax(0,1fr)] sm:gap-6 sm:py-8">
+                  <div className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full sm:h-14 sm:w-14 border border-white bg-white text-lg font-black text-brand-violet shadow-[0_4px_18px_rgba(64,52,130,0.10)] transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-violet group-hover:text-white sm:text-xl">{pillar.icon}</div>
                   <div className="min-w-0 pt-1">
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-1"><span className="text-[11px] font-black tracking-[0.2em] text-slate-400">0{index + 1}</span><span aria-hidden="true" className="h-px w-7 bg-gradient-to-r from-brand-blue to-brand-violet transition-all duration-300 group-hover:w-12" /></div>
-                    <h3 className="mt-2 text-xl font-extrabold tracking-tight text-brand-navy transition-colors duration-300 group-hover:text-brand-violet sm:text-2xl">{pillar.title}</h3>
-                    <p className="muted-copy mt-2 max-w-xl text-sm leading-7 sm:text-base">{pillar.text}</p>
+                    <h3 className="mt-2 text-lg font-extrabold tracking-tight text-brand-navy transition-colors duration-300 group-hover:text-brand-violet sm:text-2xl">{pillar.title}</h3>
+                    <p className="muted-copy mt-2 max-w-xl break-words text-sm leading-6 sm:text-base sm:leading-7">{pillar.text}</p>
                   </div>
                 </article>)}
               </Stagger>
