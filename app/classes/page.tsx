@@ -35,7 +35,7 @@ export default function ClassesPage() {
         eyebrow="Discover your next skill"
         title="Find your next"
         highlight="big opportunity."
-        description="Explore welcoming classes in languages, technology and academics. Find a learning path that fits your goals and start making progress."
+        description={'Explore welcoming classes in languages, technology\nand academics. Find a learning path that fits your goals\nand start making progress with greater confidence.'}
         primaryLabel="Browse classes"
         primaryHref="#class-filters"
         secondaryLabel="Our approach"
