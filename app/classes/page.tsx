@@ -96,7 +96,7 @@ export default function ClassesPage() {
           </div>
 
           <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 xl:grid-cols-6">
-            {filtered.map((course, index) => <div key={course.id} className={filtered.length === 5 && index >= 3 ? (index === 3 ? "xl:col-start-2 xl:col-span-2" : "xl:col-start-4 xl:col-span-2") : "xl:col-span-2"}><CourseCard course={course} onQuickView={setSelected} /></div>)}
+            {filtered.map((course, index) => <div id={'class-' + course.id} key={course.id} className={(filtered.length === 5 && index >= 3 ? (index === 3 ? "xl:col-start-2 xl:col-span-2" : "xl:col-start-4 xl:col-span-2") : "xl:col-span-2") + " scroll-mt-28"}><CourseCard course={course} onQuickView={setSelected} /></div>)}
           </div>
 
           {filtered.length === 0 && (
