@@ -5,7 +5,7 @@ import {
   GraduationCap, HeartHandshake, Lightbulb, Quote, Target,
 } from 'lucide-react';
 import { Reveal, Stagger } from '@/components/Reveal';
-import HeroVisual from '@/components/HeroVisual';
+import PageHero from '@/components/PageHero';
 import SectionHeading from '@/components/SectionHeading';
 
 export const metadata: Metadata = {
@@ -28,38 +28,17 @@ const pillars = [
 export default function AboutPage() {
   return (
     <main className="overflow-hidden">
-      <section className="hero-backdrop relative isolate overflow-hidden">
-        <div aria-hidden="true" className="hero-grid absolute inset-0" />
-        <div aria-hidden="true" className="hero-blob hero-blob-violet absolute -right-24 -top-24 h-96 w-96 rounded-full blur-3xl" />
-        <div aria-hidden="true" className="hero-blob hero-blob-blue absolute -bottom-24 -left-20 h-80 w-80 rounded-full blur-3xl" />
-
-        <div className="container-shell relative grid items-center gap-10 pb-12 pt-12 sm:pb-16 sm:pt-14 lg:min-h-[690px] lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:gap-10 lg:pb-16 lg:pt-12 xl:min-h-[720px] xl:gap-14">
-          <Reveal animateOnMount>
-            <span className="eyebrow"><Compass size={15} className="text-amber-500" /> The story behind Elelora</span>
-            <h1 className="hero-heading mt-6 max-w-[760px] text-[clamp(2.8rem,4.6vw,4.65rem)] font-black leading-[1.02] tracking-[-0.058em] text-brand-ink">
-              Education that opens
-              <span className="hero-heading-gradient mt-2 block max-w-full">new possibilities.</span>
-            </h1>
-            <p className="muted-copy mt-6 max-w-2xl text-base sm:mt-7 sm:text-lg sm:leading-8">
-              We believe learning should feel accessible, motivating and useful. Elelora Academy helps curious minds build skills, grow confidence and take their next step.
-            </p>
-            <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
-              <Link href="/classes" className="button-primary group min-h-[54px] !px-6">Explore our classes <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" /></Link>
-              <Link href="/" className="button-secondary min-h-[54px] !px-6"><span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-50 text-brand-blue"><ArrowUpRight size={15} /></span> Back to home</Link>
-            </div>
-            <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-xs font-bold text-slate-600 sm:mt-8 sm:text-sm">
-              <span className="inline-flex items-center gap-2"><CheckCircle2 size={17} className="text-emerald-500" /> Learner-first approach</span>
-              <span className="inline-flex items-center gap-2"><CheckCircle2 size={17} className="text-emerald-500" /> Skills for real life</span>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.12} animateOnMount>
-            <div className="relative z-10 mx-auto w-full min-w-0 max-w-[580px] px-1 pb-5 pt-1 sm:px-5 lg:px-0 lg:py-8">
-              <HeroVisual variant="about" />
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="The story behind Elelora"
+        title="Education that opens"
+        highlight="new possibilities."
+        description="We believe learning should feel accessible, motivating and useful. Elelora Academy helps curious minds build skills, grow confidence and take their next step."
+        primaryLabel="Explore our classes"
+        primaryHref="/classes"
+        secondaryLabel="Back to home"
+        secondaryHref="/"
+        proofs={["Learner-first approach", "Skills for real life"]}
+      />
 
       <section className="section-space relative overflow-hidden bg-white">
         <div aria-hidden="true" className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-sky-100/50 blur-3xl" />
