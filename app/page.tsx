@@ -79,6 +79,21 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section-space relative overflow-hidden bg-white">
+        <div aria-hidden="true" className="absolute -left-32 top-1/3 h-80 w-80 rounded-full bg-blue-50 blur-3xl" />
+        <div className="container-shell relative">
+          <SectionHeading eyebrow="The Elevora teaching approach" title="Every learner deserves to thrive" description="Good teaching makes learning feel clear, encouraging and achievable. We focus on understanding, practice and progress—not just getting through a lesson." centered />
+          <Stagger className="mt-10 grid gap-5 md:grid-cols-3" delayChildren={0.02}>
+            {pillars.map((pillar, index) => <article key={pillar.title} className="pillar-card group h-full rounded-[1.7rem] border border-slate-200/70 bg-white p-6 shadow-[0_5px_22px_rgba(20,35,75,0.035)] transition duration-300 hover:-translate-y-2 hover:border-violet-200 hover:shadow-[0_24px_60px_rgba(49,35,122,0.12)] sm:p-7">
+              <div className="flex items-start justify-between gap-3"><span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 via-white to-violet-100 text-2xl font-black text-brand-violet transition duration-300 group-hover:rotate-3 group-hover:scale-105">{pillar.icon}</span><span className="text-xs font-black tracking-[0.2em] text-slate-300">0{index + 1}</span></div>
+              <h3 className="mt-6 text-xl font-extrabold tracking-tight text-brand-ink">{pillar.title}</h3>
+              <p className="muted-copy mt-3 text-sm">{pillar.text}</p>
+              <div className="mt-6 h-1 w-12 rounded-full bg-gradient-to-r from-brand-blue via-brand-violet to-brand-gold transition-all duration-500 group-hover:w-20" />
+            </article>)}
+          </Stagger>
+        </div>
+      </section>
+
       <section className="relative overflow-hidden bg-[#f7f5ff] py-16 sm:py-20 lg:py-24">
         <div aria-hidden="true" className="absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-amber-100/60 blur-3xl" />
         <div aria-hidden="true" className="absolute -right-24 top-0 h-72 w-72 rounded-full bg-violet-100/70 blur-3xl" />
