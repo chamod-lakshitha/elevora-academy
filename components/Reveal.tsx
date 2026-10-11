@@ -33,7 +33,7 @@ export function Reveal({ children, className = '', delay = 0, animateOnMount = f
       animate={animateOnMount ? 'visible' : undefined}
       whileInView={animateOnMount ? undefined : 'visible'}
       viewport={{ once: true, amount: 0.12, margin: '0px 0px -40px 0px' }}
-      transition={{ delay }}
+      transition={{ delay, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
