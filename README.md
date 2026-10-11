@@ -56,3 +56,12 @@ This repository includes a GitHub Actions workflow at `.github/workflows/ci-cd.y
 5. Push to `main`, or run the “CI and CD” workflow manually from the Actions tab while the selected branch is `main`.
 
 The deploy job safely skips deployment when those secrets are not configured yet. Do not commit access tokens or site credentials to the repository.
+
+## SEO and search indexing
+
+- Set `NEXT_PUBLIC_SITE_URL` in the production environment to the canonical public origin, including `https://` (for example, your own production domain). This value powers canonical metadata, structured data, robots.txt and the XML sitemap.
+- After deployment, confirm that `/robots.txt` and `/sitemap.xml` load on the production domain.
+- Verify the site in [Google Search Console](https://search.google.com/search-console/about) and submit the full production `/sitemap.xml` URL. Use URL Inspection to request indexing for the homepage, classes directory, and each course page.
+- Optionally verify the site in [Bing Webmaster Tools](https://www.bing.com/webmasters/about) and submit the same sitemap.
+- Search engines decide when and where to list pages. Correct technical SEO and sitemap submission improve discoverability but do not guarantee indexing, ranking, or a specific search position.
+- Keep class names, course descriptions, instructor details, prices, and any ratings accurate and updated. Current course ratings, learner counts, instructor names, and prices are illustrative placeholders until verified.
