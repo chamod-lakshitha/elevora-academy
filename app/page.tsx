@@ -84,11 +84,11 @@ export default function HomePage() {
         
         <div className="container-shell relative">
           <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 sm:gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-16 xl:gap-20">
-            <div className="min-w-0 text-right lg:sticky lg:top-28">
-              <span className="inline-flex max-w-full flex-wrap items-center justify-end gap-2 text-[10px] font-extrabold uppercase tracking-[0.16em] text-brand-violet sm:text-xs sm:tracking-[0.22em]"><span aria-hidden="true" className="h-2 w-2 rounded-full bg-brand-gold" />The Elevora teaching approach</span>
-              <h2 className="ml-auto mt-4 w-full max-w-lg break-words text-3xl font-black leading-[1.1] tracking-[-0.04em] text-brand-navy min-[420px]:text-4xl sm:mt-5 sm:text-5xl lg:text-6xl">Every learner deserves to <span className="bg-gradient-to-r from-brand-blue via-brand-violet to-fuchsia-500 bg-clip-text text-transparent">thrive.</span></h2>
-              <p className="ml-auto mt-4 w-full max-w-md text-sm leading-7 text-slate-600 sm:mt-6 sm:text-base sm:leading-8 lg:text-lg">Good teaching makes learning feel clear, encouraging and achievable. We focus on understanding, practice and progress—not just getting through a lesson.</p>
-              <div aria-hidden="true" className="mt-6 flex items-center justify-end gap-3 sm:mt-8"><span className="h-1.5 w-14 rounded-full bg-brand-blue" /><span className="h-1.5 w-8 rounded-full bg-brand-violet" /><span className="h-1.5 w-4 rounded-full bg-brand-gold" /></div>
+            <div className="mx-auto w-full min-w-0 max-w-2xl text-center lg:mx-0 lg:max-w-none lg:text-right lg:sticky lg:top-28">
+              <span className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.16em] text-brand-violet sm:text-xs sm:tracking-[0.22em] lg:justify-end"><span aria-hidden="true" className="h-2 w-2 rounded-full bg-brand-gold" />The Elevora teaching approach</span>
+              <h2 className="mx-auto mt-4 w-full max-w-lg break-words text-3xl font-black leading-[1.1] tracking-[-0.04em] text-brand-navy min-[420px]:text-4xl sm:mt-5 sm:text-5xl lg:mx-0 lg:ml-auto lg:text-6xl">Every learner deserves to <span className="bg-gradient-to-r from-brand-blue via-brand-violet to-fuchsia-500 bg-clip-text text-transparent">thrive.</span></h2>
+              <p className="mx-auto mt-4 w-full max-w-md text-sm leading-7 text-slate-600 sm:mt-6 sm:text-base sm:leading-8 lg:mx-0 lg:ml-auto lg:text-lg">Good teaching makes learning feel clear, encouraging and achievable. We focus on understanding, practice and progress—not just getting through a lesson.</p>
+              <div aria-hidden="true" className="mt-6 flex items-center justify-center gap-3 sm:mt-8 lg:justify-end"><span className="h-1.5 w-14 rounded-full bg-brand-blue" /><span className="h-1.5 w-8 rounded-full bg-brand-violet" /><span className="h-1.5 w-4 rounded-full bg-brand-gold" /></div>
             </div>
             <div className="relative min-w-0">
               <div aria-hidden="true" className="absolute bottom-8 left-[1.35rem] top-7 w-px bg-gradient-to-b from-sky-300 via-violet-300 to-amber-300 sm:left-[1.7rem]" />
