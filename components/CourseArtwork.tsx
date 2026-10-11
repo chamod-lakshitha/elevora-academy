@@ -21,19 +21,20 @@ export default function CourseArtwork({ course, size = 'catalog' }: CourseArtwor
   return (
     <div
       className={
-        'course-card-art relative isolate flex items-center justify-center overflow-hidden bg-gradient-to-br ' +
-        course.color +
+        'course-card-art relative isolate flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#171342] via-[#3d247e] to-[#123f61] ' +
         (isHome ? ' h-32' : ' h-44')
       }
     >
       {backgroundImage && (
         <div
           aria-hidden="true"
-          className="absolute inset-[-8px] scale-110 bg-cover bg-center blur-[4px] saturate-75 transition-transform duration-700 group-hover:scale-125"
+          className="absolute inset-[-10px] scale-110 bg-cover bg-center blur-[5px] saturate-[0.8] transition-transform duration-700 group-hover:scale-125"
           style={{ backgroundImage: `url("${backgroundImage}")` }}
         />
       )}
-      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-slate-950/65 via-indigo-950/42 to-slate-950/60" />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-[#13113d]/75 via-[#33206b]/60 to-[#0b2e4e]/72" />
+      <div aria-hidden="true" className="absolute -left-10 bottom-[-4rem] h-36 w-36 rounded-full bg-violet-500/30 blur-3xl" />
+      <div aria-hidden="true" className="absolute -right-8 top-[-3rem] h-32 w-32 rounded-full bg-amber-300/20 blur-3xl" />
       <div aria-hidden="true" className="absolute -right-8 -top-12 h-44 w-44 rounded-full border border-white/25 transition-transform duration-700 group-hover:translate-x-3 group-hover:translate-y-2 group-hover:rotate-12" />
       <div aria-hidden="true" className="absolute -bottom-20 -left-10 h-48 w-48 rounded-full border border-white/20 transition-transform duration-700 group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:-rotate-12" />
 
@@ -54,7 +55,7 @@ export default function CourseArtwork({ course, size = 'catalog' }: CourseArtwor
         {course.level}
       </span>
 
-      <div className="relative z-10 rounded-[1.7rem] border border-white/40 bg-white/15 p-2.5 shadow-[0_14px_40px_rgba(5,10,35,0.28)] backdrop-blur-sm transition duration-300 group-hover:scale-[1.04]">
+      <div className="relative z-10 rounded-[1.7rem] border border-amber-100/40 bg-white/20 p-2.5 shadow-[0_14px_40px_rgba(5,10,35,0.32)] backdrop-blur-md transition duration-300 group-hover:scale-[1.04]">
         <CourseIcon icon={course.icon} size={isHome ? 'card' : 'hero'} />
       </div>
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-slate-950/25 to-transparent" />
