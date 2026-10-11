@@ -3,7 +3,7 @@ import ClassesCatalog from '@/components/ClassesCatalog';
 
 export default function ClassesPage() {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-x-clip">
       <PageHero
         variant="classes"
         eyebrow="Discover your next skill"
