@@ -4,7 +4,9 @@
 
 :root { color-scheme: light; --color-ink: #17213e; --color-muted: #68748b; }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+html { scroll-behavior: smooth; scroll-padding-top: 5.75rem; }
+:target { scroll-margin-top: 5.75rem; }
+main section[id] { scroll-margin-top: 5.75rem; }
 body { margin: 0; background: #fff; color: var(--color-ink); }
 ::selection { background: #f9c34a66; color: #071d57; }
 a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
@@ -45,6 +47,7 @@ a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation
 .hero-primary-button:hover { box-shadow:0 17px 38px rgba(221,147,9,.31); }
 .hero-secondary-button { border-color:rgba(105,117,154,.28); box-shadow:0 8px 20px rgba(34,46,92,.04); }
 .hero-bottom-line { background:linear-gradient(90deg,transparent,rgba(119,91,210,.24),rgba(244,174,34,.28),transparent); }
+nav a { transition: color .2s ease, background-color .2s ease, border-color .2s ease; }
 .cta-panel { background:linear-gradient(115deg,#101d58 0%,#3b2186 53%,#155c84 100%); }
 @keyframes hero-gradient-shift { 0%,100% { background-position:0% 50%; } 50% { background-position:100% 50%; } }
 
