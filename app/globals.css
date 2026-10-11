@@ -247,3 +247,57 @@ input {
     white-space: nowrap;
   }
 }
+
+
+/* Mobile-style hero copy below 800px: centered, compact, and easy to scan. */
+@media (max-width: 799px) {
+  .page-hero .hero-copy {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+  .page-hero .hero-eyebrow {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 10px;
+    letter-spacing: .12em;
+    padding: .5rem .75rem;
+  }
+  .page-hero .hero-heading {
+    width: 100%;
+    margin-top: 1.15rem;
+    font-size: clamp(2rem, 7.5vw, 3.2rem) !important;
+    line-height: 1.05;
+    letter-spacing: -.055em;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+  .page-hero .hero-heading-gradient {
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: -.055em;
+  }
+  .page-hero .hero-copy .muted-copy {
+    margin-top: 1rem;
+    max-width: 38rem;
+    font-size: 1rem;
+    line-height: 1.65;
+    text-align: center;
+  }
+  .page-hero .hero-actions {
+    width: 100%;
+    max-width: 24rem;
+    margin-top: 1.35rem;
+    align-items: stretch;
+  }
+  .page-hero .hero-actions a {
+    width: 100%;
+    justify-content: center;
+  }
+  .page-hero .hero-proofs {
+    justify-content: center;
+    margin-top: 1.25rem;
+    gap: .65rem 1rem;
+    text-align: left;
+  }
+}
