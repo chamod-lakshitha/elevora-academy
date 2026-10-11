@@ -55,11 +55,11 @@ export default function AboutPage() {
               </article>
             </Reveal>
             <Reveal delay={0.08}>
-              <article className="group h-full rounded-[1.7rem] border border-amber-100 bg-gradient-to-br from-amber-50/80 via-white to-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft sm:p-7">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-amber-600 shadow-sm"><Target size={23} /></span>
+              <article className="group h-full rounded-[1.7rem] border border-sky-100 bg-gradient-to-br from-sky-50 via-white to-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft sm:p-7">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-brand-blue shadow-sm"><Target size={23} /></span>
                 <h3 className="mt-5 text-xl font-extrabold text-brand-navy">Our mission</h3>
                 <p className="muted-copy mt-3 text-sm">To make skill-building feel achievable through clear teaching, flexible learning and a supportive learner experience.</p>
-                <div className="mt-6 h-1 w-12 rounded-full bg-brand-gold transition-all duration-300 group-hover:w-20" />
+                <div className="mt-6 h-1 w-12 rounded-full bg-brand-blue transition-all duration-300 group-hover:w-20" />
               </article>
             </Reveal>
           </div>
