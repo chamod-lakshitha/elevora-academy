@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   ArrowRight, ArrowUpRight, BookOpenCheck, CheckCircle2, Compass,
-  MoveUpRight, Sparkles, Target, WandSparkles, MessageCircle, NotebookPen, TrendingUp,
+  MoveUpRight, Sparkles, Target, WandSparkles,
 } from 'lucide-react';
 import { Reveal, Stagger } from '@/components/Reveal';
 import PageHero from '@/components/PageHero';
@@ -94,36 +94,44 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space relative overflow-hidden bg-[#f7f5ff]">
+      <section className="relative overflow-hidden bg-[#f7f5ff] py-16 sm:py-20 lg:py-24">
         <div aria-hidden="true" className="absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-amber-100/60 blur-3xl" />
+        <div aria-hidden="true" className="absolute -right-24 top-0 h-72 w-72 rounded-full bg-violet-100/70 blur-3xl" />
         <div className="container-shell relative">
-          <SectionHeading
-            eyebrow="Your learning journey"
-            title="Small steps. Real progress."
-            description="A clear, supportive path helps you move from curious beginner to confident learner."
-            centered
-          />
-          <Stagger className="mt-10 grid gap-5 md:grid-cols-3" delayChildren={0.06}>
+          <div className="mx-auto max-w-2xl text-center">
+            <SectionHeading
+              eyebrow="Your learning journey"
+              title="Small steps. Real progress."
+              description="A clear, supportive path helps you move from curious beginner to confident learner."
+              centered
+            />
+          </div>
+          <div className="relative mt-12 grid gap-9 md:grid-cols-3 md:gap-8">
+            <div aria-hidden="true" className="absolute left-[16%] right-[16%] top-7 hidden h-px bg-gradient-to-r from-sky-200 via-violet-300 to-amber-300 md:block" />
             {[
-              { number: '01', icon: MessageCircle, title: 'Choose your subject', text: 'Explore our language and technology classes and find the subject that fits your goals.' },
-              { number: '02', icon: NotebookPen, title: 'Learn and practise', text: 'Build understanding with clear explanations, guided activities and practical examples.' },
-              { number: '03', icon: TrendingUp, title: 'Grow with confidence', text: 'Keep practising, ask questions and celebrate each new skill you master.' },
-            ].map((step) => {
+              { number: '01', icon: Compass, title: 'Choose your subject', text: 'Explore our language and technology classes and find the subject that fits your goals.', tone: 'bg-sky-100 text-sky-700', line: 'bg-sky-400' },
+              { number: '02', icon: BookOpenCheck, title: 'Learn and practise', text: 'Build understanding with clear explanations, guided activities and practical examples.', tone: 'bg-violet-100 text-violet-700', line: 'bg-violet-400' },
+              { number: '03', icon: Target, title: 'Grow with confidence', text: 'Keep practising, ask questions and celebrate each new skill you master.', tone: 'bg-amber-100 text-amber-800', line: 'bg-amber-400' },
+            ].map((step, index) => {
               const Icon = step.icon;
               return (
-                <article key={step.number} className="group relative overflow-hidden rounded-[1.7rem] border border-violet-100 bg-white p-6 shadow-[0_8px_28px_rgba(40,30,95,0.05)] transition duration-300 hover:-translate-y-2 hover:border-violet-200 hover:shadow-[0_22px_50px_rgba(49,35,122,0.12)] sm:p-7">
-                  <div className="flex items-center justify-between">
-                    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-50 text-brand-violet transition duration-300 group-hover:scale-105 group-hover:rotate-3"><Icon size={25} /></span>
-                    <span className="text-sm font-black tracking-[0.18em] text-violet-200">{step.number}</span>
+                <Reveal key={step.number} delay={index * 0.08} className="relative">
+                  <div className="flex flex-col items-center text-center md:items-start md:text-left">
+                    <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border-4 border-[#f7f5ff] bg-white shadow-[0_5px_18px_rgba(40,30,95,0.10)]">
+                      <span className={'flex h-10 w-10 items-center justify-center rounded-full ' + step.tone}><Icon size={20} /></span>
+                    </div>
+                    <div className="mt-5 flex items-center gap-3">
+                      <span className="text-xs font-black tracking-[0.18em] text-violet-400">{step.number}</span>
+                      <span className={'h-1 w-8 rounded-full ' + step.line} />
+                    </div>
+                    <h3 className="mt-3 text-xl font-extrabold tracking-tight text-brand-navy">{step.title}</h3>
+                    <p className="mt-3 max-w-sm text-sm leading-6 text-slate-600">{step.text}</p>
                   </div>
-                  <h3 className="mt-6 text-xl font-extrabold tracking-tight text-brand-navy">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{step.text}</p>
-                  <div className="mt-6 h-1 w-10 rounded-full bg-amber-300 transition-all duration-300 group-hover:w-16" />
-                </article>
+                </Reveal>
               );
             })}
-          </Stagger>
-          <Reveal className="mt-8 text-center">
+          </div>
+          <Reveal className="mt-10 text-center">
             <Link href="/classes" className="inline-flex items-center gap-2 rounded-full bg-brand-violet px-6 py-3.5 text-sm font-extrabold text-white shadow-lg shadow-violet-900/15 transition hover:-translate-y-0.5 hover:bg-brand-navy">
               Start learning <ArrowRight size={17} />
             </Link>
