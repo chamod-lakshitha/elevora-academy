@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import type { Course } from '@/lib/data';
 import { courseSlug } from '@/lib/seo';
+import CourseIcon from '@/components/CourseIcon';
 
 export default function HomeCourseCard({ course }: { course: Course }) {
   return (
@@ -13,7 +14,7 @@ export default function HomeCourseCard({ course }: { course: Course }) {
         <div aria-hidden="true" className="absolute -bottom-16 -left-8 h-36 w-36 rounded-full border border-white/20 transition-transform duration-700 group-hover:-rotate-12 group-hover:-translate-x-2" />
         <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-white/15 px-3 py-1.5 text-[11px] font-bold text-white backdrop-blur-md">{course.category}</span>
         <span className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1.5 text-[11px] font-extrabold text-brand-navy">{course.level}</span>
-        <span className="relative flex h-16 w-16 items-center justify-center rounded-[1.25rem] border border-white/30 bg-white/15 text-xl font-black text-white shadow-lg backdrop-blur-md">{course.icon}</span>
+        <CourseIcon icon={course.icon} size="card" />
       </div>
       <div className="flex flex-1 flex-col p-5">
         <h3 className="text-lg font-extrabold leading-snug tracking-tight text-brand-ink transition-colors group-hover:text-brand-violet">{course.title}</h3>
