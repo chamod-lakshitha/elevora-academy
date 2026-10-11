@@ -106,8 +106,8 @@ export default function HomePage() {
               centered
             />
           </div>
-          <div className="relative mt-12 grid gap-9 md:grid-cols-3 md:gap-8">
-            <div aria-hidden="true" className="absolute left-[16%] right-[16%] top-7 hidden h-px bg-gradient-to-r from-sky-200 via-violet-300 to-amber-300 md:block" />
+          <div className="relative mt-12 grid gap-10 md:grid-cols-3 md:gap-8">
+            <div aria-hidden="true" className="pointer-events-none absolute left-[16.666%] right-[16.666%] top-7 hidden h-[2px] rounded-full bg-gradient-to-r from-sky-300 via-violet-300 to-amber-300 md:block" />
             {[
               { number: '01', icon: Compass, title: 'Choose your subject', text: 'Explore our language and technology classes and find the subject that fits your goals.', tone: 'bg-sky-100 text-sky-700', line: 'bg-sky-400' },
               { number: '02', icon: BookOpenCheck, title: 'Learn and practise', text: 'Build understanding with clear explanations, guided activities and practical examples.', tone: 'bg-violet-100 text-violet-700', line: 'bg-violet-400' },
@@ -115,17 +115,17 @@ export default function HomePage() {
             ].map((step, index) => {
               const Icon = step.icon;
               return (
-                <Reveal key={step.number} delay={index * 0.08} className="relative">
-                  <div className="flex flex-col items-center text-center md:items-start md:text-left">
-                    <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border-4 border-[#f7f5ff] bg-white shadow-[0_5px_18px_rgba(40,30,95,0.10)]">
-                      <span className={'flex h-10 w-10 items-center justify-center rounded-full ' + step.tone}><Icon size={20} /></span>
+                <Reveal key={step.number} delay={index * 0.08} className="relative z-10 min-w-0">
+                  <div className="flex h-full flex-col items-center text-center">
+                    <div className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-4 border-[#f7f5ff] bg-white shadow-[0_5px_18px_rgba(40,30,95,0.10)]">
+                      <span className={'flex h-10 w-10 items-center justify-center rounded-full ' + step.tone}><Icon size={20} strokeWidth={2} /></span>
                     </div>
-                    <div className="mt-5 flex items-center gap-3">
-                      <span className="text-xs font-black tracking-[0.18em] text-violet-400">{step.number}</span>
-                      <span className={'h-1 w-8 rounded-full ' + step.line} />
+                    <div className="mt-5 flex min-h-5 items-center justify-center gap-3">
+                      <span className="text-xs font-black tracking-[0.18em] text-violet-500">{step.number}</span>
+                      <span aria-hidden="true" className={'h-1 w-8 rounded-full ' + step.line} />
                     </div>
-                    <h3 className="mt-3 text-xl font-extrabold tracking-tight text-brand-navy">{step.title}</h3>
-                    <p className="mt-3 max-w-sm text-sm leading-6 text-slate-600">{step.text}</p>
+                    <h3 className="mt-3 min-h-[3.5rem] max-w-xs text-xl font-extrabold leading-snug tracking-tight text-brand-navy">{step.title}</h3>
+                    <p className="mt-2 max-w-sm text-sm leading-6 text-slate-600 md:min-h-[4.5rem]">{step.text}</p>
                   </div>
                 </Reveal>
               );
