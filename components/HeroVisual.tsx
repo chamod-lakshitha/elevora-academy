@@ -39,7 +39,7 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
         whileHover={motionReady ? { y: -4, transition: { duration: 0.25 } } : undefined}
         className="relative rounded-[1.8rem] border border-white/90 bg-white/75 p-2.5 shadow-[0_28px_80px_rgba(43,34,111,0.18)] backdrop-blur-xl sm:rounded-[2.1rem] sm:p-3.5"
       >
-        <div className={'hero-panel relative min-h-[415px] overflow-hidden rounded-[1.4rem] px-4 py-5 text-white sm:min-h-[470px] sm:rounded-[1.7rem] sm:px-7 sm:py-7 hero-panel-' + variant}>
+        <div className={'hero-panel relative flex h-[445px] flex-col overflow-hidden rounded-[1.4rem] px-4 py-5 text-white sm:h-[525px] sm:rounded-[1.7rem] sm:px-7 sm:py-7 hero-panel-' + variant}>
           <div aria-hidden="true" className="hero-panel-grid absolute inset-0 opacity-30" />
           <div aria-hidden="true" className="absolute -right-24 -top-20 h-72 w-72 rounded-full border border-white/15" />
 
@@ -70,7 +70,7 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
                 <OrbitingIcons variant="home" />
               </div>
 
-              <div className="relative z-10 mt-2 border-t border-white/20 pt-4 sm:mt-3 sm:pt-5">
+              <div className="relative z-10 mt-auto border-t border-white/20 pt-4 sm:pt-5">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div><p className="text-sm font-extrabold">One lesson at a time.</p><p className="mt-1 text-xs text-white/65">A world of skills is waiting.</p></div>
                   <div className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-2 text-[10px] font-bold text-white/90 backdrop-blur-sm sm:text-[11px]">
@@ -125,7 +125,7 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
                   className="h-2 rounded-full bg-gradient-to-r from-amber-300 via-violet-300 to-fuchsia-300"
                 />
               </div>
-              <div className="relative z-10 mt-3 flex items-center justify-between gap-3">
+              <div className="relative z-10 mt-auto flex items-center justify-between gap-3 border-t border-white/20 pt-4">
                 <span className="text-xs font-bold text-white/75">Explore. Practise. Progress.</span>
                 <span className="inline-flex items-center gap-1.5 text-xs font-extrabold text-amber-200"><Sparkles size={14} /> Start anywhere</span>
               </div>
@@ -159,7 +159,7 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
                 </div>
               </div>
 
-              <div className="relative z-10 mt-4 flex items-center justify-between gap-3 border-t border-white/15 pt-4">
+              <div className="relative z-10 mt-auto flex items-center justify-between gap-3 border-t border-white/20 pt-4">
                 <span className="text-xs font-bold text-white/75">Every learner. Every next step.</span>
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-violet-300/15 px-3 py-1.5 text-xs font-extrabold text-violet-100"><Check size={13} /> Progress matters</span>
               </div>
