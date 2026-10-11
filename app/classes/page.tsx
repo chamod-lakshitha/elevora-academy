@@ -3,10 +3,10 @@
 import { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
-  ArrowRight, ArrowUpRight, BookOpenCheck, Check, Clock3, Globe2,
-  GraduationCap, Laptop, Languages, Search, SlidersHorizontal, Sparkles, Star, Users, X,
+  ArrowRight, ArrowUpRight, Search, SlidersHorizontal, Sparkles, Star, X,
 } from 'lucide-react';
 import CourseCard from '@/components/CourseCard';
+import PageHero from '@/components/PageHero';
 import { courses, type Course } from '@/lib/data';
 
 const categories = ['All classes', 'Languages', 'Technology', 'Academic'];
@@ -30,70 +30,21 @@ export default function ClassesPage() {
 
   return (
     <main className="overflow-hidden">
-      <section className="hero-backdrop relative isolate overflow-hidden">
-        <div aria-hidden="true" className="hero-grid absolute inset-0" />
-        <div aria-hidden="true" className="hero-blob hero-blob-violet absolute -right-24 -top-24 h-96 w-96 rounded-full blur-3xl" />
-        <div aria-hidden="true" className="hero-blob hero-blob-blue absolute -bottom-24 -left-20 h-80 w-80 rounded-full blur-3xl" />
+      <PageHero
+        eyebrow="Discover your next skill"
+        title="Find your next"
+        highlight="big opportunity."
+        description="Explore welcoming classes in languages, technology and academics. Find a learning path that fits your goals and start making progress."
+        primaryLabel="Browse classes"
+        primaryHref="#class-filters"
+        secondaryLabel="Our approach"
+        secondaryHref="/about"
+        proofs={["Learn from anywhere", "Guided at every step"]}
+      />
 
-        <div className="container-shell relative pb-12 pt-12 sm:pb-16 sm:pt-16 lg:pb-16 lg:pt-20">
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(310px,0.92fr)] xl:gap-14">
-            <div className="min-w-0">
-              <span className="eyebrow"><BookOpenCheck size={15} className="text-amber-500" /> Discover your next skill</span>
-              <h1 className="hero-heading mt-6 max-w-[760px] text-[clamp(2.8rem,4.7vw,4.65rem)] font-black leading-[1.02] tracking-[-0.058em] text-brand-ink">
-                Find your next
-                <span className="hero-heading-gradient mt-2 block max-w-full">big opportunity.</span>
-              </h1>
-              <p className="muted-copy mt-6 max-w-2xl text-base sm:mt-7 sm:text-lg sm:leading-8">
-                Explore welcoming classes in languages, technology and academics. Find a learning path that fits your goals and start making progress.
-              </p>
-              <div className="mt-7 flex flex-wrap gap-3 sm:mt-8">
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/80 px-4 py-2.5 text-xs font-bold text-slate-700 shadow-sm sm:text-sm"><Globe2 size={16} className="text-brand-blue" /> Learn from anywhere</span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/80 px-4 py-2.5 text-xs font-bold text-slate-700 shadow-sm sm:text-sm"><Check size={16} className="text-emerald-500" /> Guided at every step</span>
-              </div>
-            </div>
-
-            <div className="relative mx-auto w-full max-w-[520px]">
-              <div aria-hidden="true" className="hero-halo absolute -inset-3 rounded-[2.5rem] sm:-inset-5" />
-              <div className="relative rounded-[2rem] border border-white/80 bg-white/75 p-2.5 shadow-[0_28px_80px_rgba(43,34,111,0.16)] backdrop-blur-xl sm:p-3.5">
-                <div className="hero-panel relative overflow-hidden rounded-[1.55rem] p-5 text-white sm:rounded-[1.7rem] sm:p-7">
-                  <div aria-hidden="true" className="hero-panel-grid absolute inset-0 opacity-30" />
-                  <div aria-hidden="true" className="absolute -right-16 -top-20 h-64 w-64 rounded-full border border-white/15" />
-                  <div aria-hidden="true" className="absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-cyan-400/20 blur-3xl" />
-                  <div className="relative z-10 flex items-start justify-between gap-4">
-                    <div>
-                      <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-white/65 sm:text-xs">Your next chapter</p>
-                      <h2 className="mt-3 max-w-sm text-2xl font-black leading-tight tracking-tight sm:text-3xl">Curiosity can take you anywhere.</h2>
-                    </div>
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-amber-300 sm:h-14 sm:w-14"><GraduationCap size={27} /></span>
-                  </div>
-                  <p className="relative z-10 mt-4 max-w-sm text-sm leading-6 text-white/70">One skill at a time, you can turn a new interest into real confidence.</p>
-                  <div className="relative z-10 mt-7 grid grid-cols-3 gap-2 sm:gap-3">
-                    <div className="rounded-2xl border border-white/15 bg-white/10 p-3 backdrop-blur-sm sm:p-4">
-                      <Languages size={20} className="text-amber-300" />
-                      <p className="mt-3 text-xs font-extrabold sm:text-sm">Languages</p>
-                      <p className="mt-1 text-[10px] text-white/55 sm:text-xs">Find your voice</p>
-                    </div>
-                    <div className="rounded-2xl border border-white/15 bg-white/10 p-3 backdrop-blur-sm sm:p-4">
-                      <Laptop size={20} className="text-cyan-200" />
-                      <p className="mt-3 text-xs font-extrabold sm:text-sm">Technology</p>
-                      <p className="mt-1 text-[10px] text-white/55 sm:text-xs">Build new skills</p>
-                    </div>
-                    <div className="rounded-2xl border border-white/15 bg-white/10 p-3 backdrop-blur-sm sm:p-4">
-                      <BookOpenCheck size={20} className="text-violet-200" />
-                      <p className="mt-3 text-xs font-extrabold sm:text-sm">Academic</p>
-                      <p className="mt-1 text-[10px] text-white/55 sm:text-xs">Grow with purpose</p>
-                    </div>
-                  </div>
-                  <div className="relative z-10 mt-5 flex items-center justify-between gap-3 border-t border-white/15 pt-4">
-                    <span className="text-xs font-bold text-white/75">Your pace. Your potential.</span>
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-300 text-brand-navy"><ArrowUpRight size={17} /></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="class-filters" className="relative z-20 mt-10 rounded-[1.65rem] border border-white/90 bg-white/95 p-3 shadow-[0_20px_60px_rgba(20,35,75,0.10)] backdrop-blur-xl sm:mt-12 sm:p-4">
+      <section className="relative z-20 -mt-6 pb-8 sm:-mt-8 sm:pb-10">
+        <div className="container-shell">
+          <div id="class-filters" className="rounded-[1.65rem] border border-white/90 bg-white/95 p-3 shadow-[0_20px_60px_rgba(20,35,75,0.10)] backdrop-blur-xl sm:p-4">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div className="flex flex-wrap gap-2" role="group" aria-label="Filter classes by category">
                 {categories.map((item) => (
