@@ -238,3 +238,12 @@ input {
   .page-hero > .container-shell > div:nth-of-type(1) { order: 1 !important; }
   .page-hero > .container-shell > div:nth-of-type(2) { order: 2 !important; }
 }
+
+
+/* Keep desktop navigation on one line in the tight 800–810px range. */
+@media (min-width: 800px) and (max-width: 810px) {
+  .nav-shell nav[aria-label="Main navigation"] .nav-link {
+    font-size: 11.5px !important;
+    white-space: nowrap;
+  }
+}
