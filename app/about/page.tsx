@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   ArrowRight, ArrowUpRight, Award, CheckCircle2, Clock3, Compass,
-  GraduationCap, HeartHandshake, Quote, Target,
+  GraduationCap, HeartHandshake, Lightbulb, Quote, Target,
 } from 'lucide-react';
 import { Reveal, Stagger } from '@/components/Reveal';
 import OrbitingIcons from '@/components/OrbitingIcons';
