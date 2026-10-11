@@ -49,7 +49,7 @@ export default function PageHero({
             </h1>
           </Reveal>
           <Reveal animateOnMount delay={0.16}>
-            <p className="muted-copy mt-6 max-w-[610px] text-[15px] sm:mt-7 sm:text-lg sm:leading-8">
+            <p className="muted-copy mt-6 max-w-[610px] whitespace-pre-line text-[15px] sm:mt-7 sm:text-lg sm:leading-8">
               {description}
             </p>
           </Reveal>
