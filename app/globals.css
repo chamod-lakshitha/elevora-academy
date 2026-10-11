@@ -73,7 +73,7 @@ nav a { transition: color .2s ease, background-color .2s ease, border-color .2s 
 
 @layer components {
   .container-shell { @apply mx-auto w-full max-w-[1380px] px-5 sm:px-8 lg:px-10; }
-  .section-space { @apply py-16 sm:py-20 lg:py-24; }
+  .section-space { @apply py-12 sm:py-14 lg:py-16; }
   .eyebrow { @apply inline-flex items-center gap-2 rounded-full border border-brand-gold/30 bg-amber-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-brand-navy; }
   .button-primary { @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-6 py-3.5 text-sm font-extrabold text-brand-navy shadow-glow transition duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-brand-gold/30; }
   .button-secondary { @apply inline-flex items-center justify-center gap-2 rounded-full border border-brand-navy/20 bg-white px-6 py-3.5 text-sm font-bold text-brand-navy transition duration-300 hover:-translate-y-0.5 hover:border-brand-blue hover:bg-blue-50 focus:outline-none focus:ring-4 focus:ring-brand-blue/15; }
@@ -320,4 +320,27 @@ input {
     margin-right: auto;
     text-align: center;
   }
+}
+
+
+/* Tighter vertical rhythm with a subtle brand accent between content sections. */
+.section-space {
+  position: relative;
+}
+.section-space::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4rem;
+  height: 3px;
+  border-radius: 999px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #4f7ee8, #8053e8, #f4b92f);
+  opacity: .55;
+  pointer-events: none;
+}
+@media (max-width: 799px) {
+  .section-space { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  .section-space::before { width: 3rem; height: 2px; }
 }
