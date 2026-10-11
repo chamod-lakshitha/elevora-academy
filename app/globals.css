@@ -194,3 +194,25 @@ input {
   .button-primary:active,
   .button-secondary:active { transform: none; }
 }
+
+
+/* Explicit tablet layout cutoff: under 900px always use the compact navigation and stacked hero. */
+@media (max-width: 899px) {
+  .nav-shell nav[aria-label="Main navigation"] {
+    display: none !important;
+  }
+  .nav-shell > .container-shell > button[aria-controls="mobile-navigation"] {
+    display: inline-flex !important;
+  }
+  .nav-shell > .container-shell > a.button-primary {
+    display: none !important;
+  }
+  .page-hero > .container-shell {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .page-hero > .container-shell > div:nth-of-type(1),
+  .page-hero > .container-shell > div:nth-of-type(2) {
+    order: initial !important;
+    min-height: 0 !important;
+  }
+}
