@@ -6,6 +6,14 @@ import { courses } from '@/lib/data';
 import { absoluteUrl, courseSlug } from '@/lib/seo';
 import CourseIcon from '@/components/CourseIcon';
 
+const backgroundByIcon: Record<string, string> = {
+  FR: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1100&q=80',
+  EN: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1100&q=80',
+  DE: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1100&q=80',
+  JAVA: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1100&q=80',
+  Py: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1100&q=80',
+};
+
 type CoursePageProps = { params: Promise<{ slug: string }> };
 
 function getCourse(slug: string) {
@@ -112,10 +120,16 @@ export default async function CoursePage({ params }: CoursePageProps) {
                 <Link href="/about" className="button-secondary">About Elevora <ArrowUpRight size={16} /></Link>
               </div>
             </div>
-            <div className={'relative overflow-hidden rounded-[2rem] bg-gradient-to-br p-8 shadow-[0_25px_70px_rgba(25,35,80,0.18)] sm:p-10 ' + course.color}>
-              <div aria-hidden="true" className="absolute -right-10 -top-12 h-56 w-56 rounded-full border border-white/20" />
-              <div aria-hidden="true" className="absolute -bottom-16 -left-10 h-48 w-48 rounded-full border border-white/20" />
-              <div className="relative">
+            <div className={'relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br p-8 shadow-[0_25px_70px_rgba(25,35,80,0.18)] sm:p-10 ' + course.color}>
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 z-0 bg-cover bg-center"
+                style={{ backgroundImage: backgroundByIcon[course.icon] ? `url('${backgroundByIcon[course.icon]}')` : undefined }}
+              />
+              <div aria-hidden="true" className="absolute inset-0 z-0 bg-gradient-to-br from-[#13113d]/75 via-[#33206b]/65 to-[#0b2e4e]/75" />
+              <div aria-hidden="true" className="absolute -right-10 -top-12 z-[1] h-56 w-56 rounded-full border border-white/25" />
+              <div aria-hidden="true" className="absolute -bottom-16 -left-10 z-[1] h-48 w-48 rounded-full border border-white/25" />
+              <div className="relative z-10">
                 <CourseIcon icon={course.icon} size="hero" />
                 <p className="mt-8 text-xs font-extrabold uppercase tracking-[0.2em] text-white/70">Learn with Elevora</p>
                 <p className="mt-2 text-2xl font-black leading-tight text-white sm:text-3xl">Build skills one lesson at a time.</p>
