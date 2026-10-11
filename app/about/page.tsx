@@ -3,6 +3,7 @@ import Link from 'next/link';
 import {
   ArrowRight, ArrowUpRight, Award, CheckCircle2, Clock3, Compass,
   GraduationCap, HeartHandshake, Lightbulb, Quote, Target,
+  BookOpen, Languages, Code2, MonitorPlay, Users,
 } from 'lucide-react';
 import { Reveal, Stagger } from '@/components/Reveal';
 import PageHero from '@/components/PageHero';
@@ -26,6 +27,53 @@ const pillars = [
   { icon: GraduationCap, title: 'Expert instructors', text: 'Supportive guidance from people who care about your progress.' },
   { icon: Clock3, title: 'Flexible schedules', text: 'Learning designed to work alongside your life and commitments.' },
   { icon: Award, title: 'Meaningful milestones', text: 'Celebrate progress and build a portfolio of skills over time.' },
+];
+
+const teachingStaff = [
+  {
+    name: 'Amelia Carter',
+    role: 'English Language Educator',
+    qualification: 'BA in English Language & Communication',
+    experience: '8 years teaching experience',
+    subjects: 'English · Communication · Writing',
+    initials: 'AC',
+    tone: 'from-sky-500 to-blue-700',
+    icon: Languages,
+    bio: 'Helps learners communicate clearly through practical activities, conversation and supportive feedback.',
+  },
+  {
+    name: 'Sophie Laurent',
+    role: 'French Language Instructor',
+    qualification: 'Diploma in French Language Studies',
+    experience: '6 years teaching experience',
+    subjects: 'French · Pronunciation · Grammar',
+    initials: 'SL',
+    tone: 'from-violet-500 to-fuchsia-700',
+    icon: BookOpen,
+    bio: 'Makes French approachable with step-by-step explanations, everyday vocabulary and speaking practice.',
+  },
+  {
+    name: 'Daniel Weber',
+    role: 'German Language Tutor',
+    qualification: 'BA in Modern Languages',
+    experience: '5 years teaching experience',
+    subjects: 'German · Beginner Language Skills',
+    initials: 'DW',
+    tone: 'from-amber-500 to-orange-700',
+    icon: Users,
+    bio: 'Builds learner confidence through structured lessons, useful expressions and real-life examples.',
+  },
+  {
+    name: 'Ethan Brooks',
+    role: 'Programming Instructor',
+    qualification: 'BSc in Computer Science',
+    experience: '7 years teaching experience',
+    subjects: 'Python · Java · Programming Basics',
+    initials: 'EB',
+    tone: 'from-teal-500 to-cyan-800',
+    icon: Code2,
+    bio: 'Turns coding concepts into manageable projects and encourages learners to solve problems independently.',
+  },
 ];
 
 export default function AboutPage() {
@@ -84,6 +132,63 @@ export default function AboutPage() {
                     </div>
                     <h3 className="mt-6 text-xl font-extrabold tracking-tight text-brand-ink">{value.title}</h3>
                     <p className="muted-copy mt-3 text-sm">{value.text}</p>
+                  </div>
+                </article>
+              );
+            })}
+          </Stagger>
+        </div>
+      </section>
+
+      <section className="section-space relative overflow-hidden bg-white">
+        <div aria-hidden="true" className="absolute -right-24 top-10 h-72 w-72 rounded-full bg-violet-100/50 blur-3xl" />
+        <div className="container-shell relative">
+          <SectionHeading
+            eyebrow="Meet the educators"
+            title="The people behind your progress"
+            description="Our sample teaching team represents the supportive, subject-focused educators we want learners to meet at Elevora Academy."
+            centered
+            titleClassName="leading-[1.2] sm:leading-[1.12]"
+          />
+          <div className="mx-auto mt-5 max-w-3xl rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-center text-xs font-medium leading-5 text-amber-900 sm:text-sm">
+            Demo profiles for the website design. Names, qualifications and experience are illustrative and should be replaced with your real teachers’ details before publication.
+          </div>
+          <Stagger className="mt-9 grid gap-5 sm:grid-cols-2 xl:grid-cols-4" delayChildren={0.05}>
+            {teachingStaff.map((teacher, index) => {
+              const Icon = teacher.icon;
+              return (
+                <article key={teacher.name} className="group flex h-full flex-col overflow-hidden rounded-[1.7rem] border border-slate-200/80 bg-white shadow-[0_8px_30px_rgba(31,35,80,0.06)] transition duration-300 hover:-translate-y-2 hover:border-violet-200 hover:shadow-[0_24px_55px_rgba(49,35,122,0.13)]">
+                  <div className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-violet-50 px-5 pb-5 pt-6">
+                    <div aria-hidden="true" className="absolute -right-5 -top-8 h-28 w-28 rounded-full border border-white/80" />
+                    <div aria-hidden="true" className="absolute -bottom-12 left-1/2 h-24 w-32 -translate-x-1/2 rounded-full bg-white/70 blur-xl" />
+                    <div className={'relative mx-auto flex h-24 w-24 items-center justify-center rounded-[1.8rem] bg-gradient-to-br ' + teacher.tone + ' text-2xl font-black tracking-tight text-white shadow-lg ring-4 ring-white transition duration-300 group-hover:rotate-3 group-hover:scale-105'}>
+                      {teacher.initials}
+                    </div>
+                    <div className="relative mt-4 text-center">
+                      <h3 className="text-lg font-extrabold tracking-tight text-brand-navy">{teacher.name}</h3>
+                      <p className="mt-1 text-sm font-bold text-brand-violet">{teacher.role}</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-1 flex-col p-5">
+                    <p className="text-sm leading-6 text-slate-600">{teacher.bio}</p>
+                    <div className="mt-5 space-y-3 border-t border-slate-100 pt-4 text-xs leading-5 text-slate-600">
+                      <div className="flex items-start gap-2.5">
+                        <GraduationCap size={16} className="mt-0.5 shrink-0 text-brand-violet" />
+                        <span>{teacher.qualification}</span>
+                      </div>
+                      <div className="flex items-start gap-2.5">
+                        <MonitorPlay size={16} className="mt-0.5 shrink-0 text-brand-violet" />
+                        <span>{teacher.experience}</span>
+                      </div>
+                      <div className="flex items-start gap-2.5">
+                        <Icon size={16} className="mt-0.5 shrink-0 text-brand-violet" />
+                        <span>{teacher.subjects}</span>
+                      </div>
+                    </div>
+                    <div className="mt-5 flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.12em] text-slate-400">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      Educator profile 0{index + 1}
+                    </div>
                   </div>
                 </article>
               );
