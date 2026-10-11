@@ -25,10 +25,13 @@ export default function HomeCoursesCarousel({ courses }: { courses: Course[] }) 
     window.addEventListener('resize', updateControls);
     const resizeObserver = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(updateControls) : null;
     resizeObserver?.observe(track);
+    track.querySelectorAll<HTMLElement>('[data-course-card]').forEach((card) => resizeObserver?.observe(card));
+    const frame = window.requestAnimationFrame(updateControls);
 
     return () => {
       track.removeEventListener('scroll', updateControls);
       window.removeEventListener('resize', updateControls);
+      window.cancelAnimationFrame(frame);
       resizeObserver?.disconnect();
     };
   }, [courses.length]);
@@ -38,8 +41,14 @@ export default function HomeCoursesCarousel({ courses }: { courses: Course[] }) 
     if (!track) return;
 
     const firstCard = track.querySelector<HTMLElement>('[data-course-card]');
-    const distance = firstCard ? firstCard.getBoundingClientRect().width + 20 : 320;
-    track.scrollBy({ left: direction === 'right' ? distance : -distance, behavior: 'smooth' });
+    const distance = firstCard ? firstCard.getBoundingClientRect().width + 20 : Math.max(280, track.clientWidth * 0.8);
+    const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+    const target = Math.min(maxScroll, Math.max(0, track.scrollLeft + (direction === 'right' ? distance : -distance)));
+    track.scrollTo({ left: target, behavior: 'smooth' });
+    window.requestAnimationFrame(() => {
+      setCanScrollLeft(target > 2);
+      setCanScrollRight(maxScroll - target > 2);
+    });
   };
 
   const arrowClasses = 'pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full border border-amber-200 bg-amber-50/95 text-amber-900 shadow-lg backdrop-blur-sm transition hover:border-amber-300 hover:bg-amber-100 disabled:cursor-not-allowed disabled:opacity-35 disabled:shadow-none disabled:hover:border-amber-200 disabled:hover:bg-amber-50 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-300/40 sm:h-11 sm:w-11';
