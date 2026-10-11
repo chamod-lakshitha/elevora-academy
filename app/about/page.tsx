@@ -47,7 +47,7 @@ export default function AboutPage() {
       <section className="section-space relative overflow-hidden bg-white">
         <div aria-hidden="true" className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-sky-100/50 blur-3xl" />
         <div className="container-shell relative grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
-          <SectionHeading eyebrow="Our purpose" title="Learning should open doors, not create barriers." description="We are shaping a flexible online learning space where curiosity is encouraged, progress is celebrated and each new skill can lead to a new possibility." titleClassName="leading-[1.28] sm:leading-[1.18] lg:leading-[1.18]" />
+          <SectionHeading eyebrow="Our purpose" title="Learning should open doors, not create barriers." description="We are shaping a flexible online learning space where curiosity is encouraged, progress is celebrated and each new skill can lead to a new possibility." titleClassName="max-w-[18ch] text-[clamp(1.65rem,5.5vw,3rem)] leading-[1.12] tracking-[-0.035em] break-words [overflow-wrap:anywhere] sm:max-w-none sm:text-4xl lg:text-5xl" />
           <div className="grid gap-5 sm:grid-cols-2">
             <Reveal>
               <article className="group h-full rounded-[1.7rem] border border-sky-100 bg-gradient-to-br from-sky-50 via-white to-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft sm:p-7">
