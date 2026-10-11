@@ -118,17 +118,16 @@ export default function HeroVisual({ variant = 'home' }: HeroVisualProps) {
               </div>
 
               <div className="relative z-10 mt-6 rounded-2xl border border-white/15 bg-white/[0.07] p-4 sm:p-5">
-                <div aria-hidden="true" className="absolute bottom-10 left-[2.05rem] top-10 w-px bg-gradient-to-b from-amber-300 via-violet-300 to-fuchsia-300 sm:left-[2.3rem]" />
-                <div className="relative flex items-center gap-3.5">
-                  <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-amber-200/40 bg-amber-300 text-brand-navy shadow-lg"><Compass size={19} /></span>
+                                <div className="relative flex items-center gap-3.5">
+                  <span className="hero-float hero-float-card-one relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-amber-200/40 bg-amber-300 text-brand-navy shadow-lg"><Compass size={19} /></span>
                   <span><b className="block text-sm font-extrabold">Discover</b><small className="mt-1 block text-xs text-white/60">Find a direction that inspires you.</small></span>
                 </div>
                 <div className="relative mt-4 flex items-center gap-3.5">
-                  <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-violet-200"><BookOpen size={19} /></span>
+                  <span className="hero-float hero-float-card-two relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-violet-200"><BookOpen size={19} /></span>
                   <span><b className="block text-sm font-extrabold">Develop</b><small className="mt-1 block text-xs text-white/60">Practise new skills with guidance.</small></span>
                 </div>
                 <div className="relative mt-4 flex items-center gap-3.5">
-                  <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-violet-100"><Target size={19} /></span>
+                  <span className="hero-float hero-float-card-three relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-violet-100"><Target size={19} /></span>
                   <span><b className="block text-sm font-extrabold">Achieve</b><small className="mt-1 block text-xs text-white/60">Turn steady progress into confidence.</small></span>
                 </div>
               </div>
