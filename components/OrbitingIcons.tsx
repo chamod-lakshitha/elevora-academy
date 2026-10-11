@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { Globe2, Lightbulb, Sparkles } from 'lucide-react';
 
 type OrbitingIconsProps = {
@@ -10,6 +11,13 @@ type OrbitingIconsProps = {
 /** Keeps decorative learning icons moving around a circular path without covering the central illustration. */
 export default function OrbitingIcons({ variant }: OrbitingIconsProps) {
   const reduceMotion = useReducedMotion();
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  const motionReady = hasMounted && !reduceMotion;
   const SecondaryIcon = variant === 'about' ? Lightbulb : Globe2;
   const orbitSize = variant === 'about'
     ? 'h-44 w-44 sm:h-52 sm:w-52'
@@ -28,13 +36,13 @@ export default function OrbitingIcons({ variant }: OrbitingIconsProps) {
     >
       <motion.div
         className="absolute inset-0"
-        animate={reduceMotion ? undefined : { rotate: 360 }}
+        animate={motionReady ? { rotate: 360 }}
         transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
       >
         <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
           <motion.span
             className={'flex h-10 w-10 items-center justify-center rounded-2xl shadow-xl sm:h-11 sm:w-11 ' + starStyle}
-            animate={reduceMotion ? undefined : { rotate: -360 }}
+            animate={motionReady ? { rotate: -360 }}
             transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
           >
             <Sparkles size={21} />
@@ -43,7 +51,7 @@ export default function OrbitingIcons({ variant }: OrbitingIconsProps) {
         <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
           <motion.span
             className={'flex items-center justify-center ' + secondaryStyle}
-            animate={reduceMotion ? undefined : { rotate: -360 }}
+            animate={motionReady ? { rotate: -360 }}
             transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
           >
             <SecondaryIcon size={18} />
