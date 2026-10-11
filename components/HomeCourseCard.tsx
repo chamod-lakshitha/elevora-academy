@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import type { Course } from '@/lib/data';
+import { courseSlug } from '@/lib/seo';
 
 export default function HomeCourseCard({ course }: { course: Course }) {
   return (
@@ -19,7 +20,7 @@ export default function HomeCourseCard({ course }: { course: Course }) {
         <p className="mt-2 flex-1 text-sm leading-6 text-slate-500">{course.description}</p>
         <div className="mt-5 border-t border-slate-100 pt-4">
           <Link
-            href={'/classes#class-' + course.id}
+            href={'/classes/' + courseSlug(course.title)}
             aria-label={'Explore ' + course.title + ' class'}
             className="group/explore flex items-center justify-between gap-3 rounded-xl px-1 py-1 text-xs font-bold text-brand-violet transition-colors hover:text-brand-navy focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-violet/20"
           >
