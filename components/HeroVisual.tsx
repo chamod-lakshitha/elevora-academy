@@ -107,7 +107,7 @@ export default function HeroVisual() {
         initial={reduceMotion ? false : { opacity: 0, x: 16 }}
         animate={{ opacity: 1, x: 0, y: reduceMotion ? 0 : [0, 5, 0] }}
         transition={{ opacity: { delay: 0.7, duration: 0.5 }, x: { delay: 0.7, duration: 0.5 }, y: { delay: 1.2, duration: 5.8, repeat: Infinity, ease: 'easeInOut' } }}
-        className="absolute -right-5 bottom-[13%] z-20 hidden max-w-[205px] lg:-right-7 xl:-right-10 items-center gap-2.5 rounded-2xl border border-white bg-white/95 px-3 py-3 shadow-[0_16px_45px_rgba(22,29,74,0.13)] backdrop-blur-md md:flex"
+        className="absolute -right-5 top-[43%] z-20 hidden max-w-[205px] lg:-right-7 xl:-right-10 items-center gap-2.5 rounded-2xl border border-white bg-white/95 px-3 py-3 shadow-[0_16px_45px_rgba(22,29,74,0.13)] backdrop-blur-md md:flex"
       >
         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-violet-100 text-violet-700"><GraduationCap size={19} /></span>
         <span><b className="block text-xs text-slate-900 sm:text-sm">Skills for tomorrow</b><small className="mt-0.5 block text-[10px] text-slate-500 sm:text-xs">Start with one class</small></span>
