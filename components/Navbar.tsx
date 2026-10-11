@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, BookOpenCheck, Compass, Home, Menu, X } from 'lucide-react';
 import BrandLogo from './BrandLogo';
 
@@ -18,12 +18,37 @@ function isCurrentPage(pathname: string, href: string) {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const pathname = usePathname() || '/';
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const focusFrame = window.requestAnimationFrame(() => {
+      document.querySelector<HTMLElement>('#mobile-navigation a')?.focus();
+    });
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.cancelAnimationFrame(focusFrame);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [open]);
 
   return (
     <header className="nav-shell sticky top-0 z-50 border-b border-white/70 bg-white/85 backdrop-blur-xl">
       <div className="container-shell flex h-[76px] items-center justify-between gap-4 sm:gap-5">
-        <BrandLogo />
+        <BrandLogo priority />
 
         <nav className="hidden items-center gap-1 rounded-full border border-slate-100 bg-slate-50/80 p-1.5 md:flex" aria-label="Main navigation">
           {links.map((link) => {
@@ -52,6 +77,7 @@ export default function Navbar() {
         </Link>
 
         <button
+          ref={menuButtonRef}
           type="button"
           className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-brand-navy shadow-sm transition hover:border-violet-200 hover:bg-violet-50 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-violet/15 md:hidden"
           aria-label={open ? 'Close menu' : 'Open menu'}
