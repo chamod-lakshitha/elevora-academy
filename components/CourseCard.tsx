@@ -5,6 +5,7 @@ import { ArrowUpRight, Clock3, Star, Users } from 'lucide-react';
 import type { Course } from '@/lib/data';
 import Link from 'next/link';
 import { courseSlug } from '@/lib/seo';
+import CourseIcon from '@/components/CourseIcon';
 
 export default function CourseCard({ course, onQuickView }: { course: Course; onQuickView?: (course: Course) => void }) {
   return (
@@ -19,13 +20,13 @@ export default function CourseCard({ course, onQuickView }: { course: Course; on
         <div aria-hidden="true" className="absolute -bottom-20 -left-10 h-48 w-48 rounded-full border border-white/20 transition-transform duration-700 group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:-rotate-12" />
         <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-white/15 px-3 py-1.5 text-xs font-bold text-white backdrop-blur-md">{course.category}</span>
         <span className="absolute right-4 top-4 rounded-full bg-white px-3 py-1.5 text-xs font-extrabold text-brand-navy shadow-sm">{course.level}</span>
-        <motion.span
-          className="relative flex h-20 w-20 items-center justify-center rounded-[1.6rem] border border-white/30 bg-white/15 text-2xl font-black text-white shadow-lg backdrop-blur-md"
-          whileHover={{ rotate: 5, scale: 1.08 }}
+        <motion.div
+          className="relative"
+          whileHover={{ rotate: 5, scale: 1.06 }}
           transition={{ type: 'spring', stiffness: 300, damping: 18 }}
         >
-          {course.icon}
-        </motion.span>
+          <CourseIcon icon={course.icon} size="hero" />
+        </motion.div>
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-slate-950/15 to-transparent" />
       </div>
 
