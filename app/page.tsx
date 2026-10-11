@@ -130,7 +130,7 @@ export default function HomePage() {
                 <Reveal key={step.number} delay={index * 0.12} className="h-full min-w-0">
                   <article className={'group relative h-full overflow-hidden rounded-[1.75rem] border border-white bg-white/90 p-6 shadow-[0_12px_40px_rgba(39,35,86,0.07)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_55px_rgba(39,35,86,0.13)] sm:p-7 ' + step.glow}>
                     <div aria-hidden="true" className={'absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ' + step.tone} />
-                    <span aria-hidden="true" className="pointer-events-none absolute -right-3 -top-8 select-none text-[8rem] font-black leading-none tracking-tighter text-slate-100/80 transition-transform duration-500 group-hover:scale-110">{step.number}</span>
+                    
                     <div className="relative flex items-start justify-between gap-4">
                       <div className={'flex h-[4.25rem] w-[4.25rem] items-center justify-center rounded-2xl ' + step.soft}>
                         <span className={'flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br text-white shadow-lg transition-transform duration-300 group-hover:rotate-[-5deg] group-hover:scale-105 ' + step.tone}>
