@@ -74,7 +74,7 @@ export default function AboutPage() {
               const Icon = value.icon;
               return (
                 <article key={value.title} className="group h-full overflow-hidden rounded-[1.7rem] border border-slate-200/70 bg-white shadow-[0_5px_22px_rgba(20,35,75,0.035)] transition duration-300 hover:-translate-y-2 hover:border-violet-200 hover:shadow-[0_24px_60px_rgba(49,35,122,0.12)]">
-                  <div className="h-1.5 bg-gradient-to-r from-brand-blue via-brand-violet to-brand-gold" />
+                  <div aria-hidden="true" className="h-1.5 bg-brand-violet" />
                   <div className="p-6 sm:p-7">
                     <div className="flex items-start justify-between gap-3">
                       <span className={'flex h-14 w-14 items-center justify-center rounded-2xl transition duration-300 group-hover:rotate-3 group-hover:scale-105 ' + value.tint}><Icon size={25} /></span>
