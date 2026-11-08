@@ -31,14 +31,14 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
 
   const subject = course.icon === 'FR' ? 'French' : course.icon === 'DE' ? 'German' : course.icon === 'EN' ? 'English' : 'Programming';
   const title = course.icon === 'FR'
-    ? 'Online French Classes | DELF, O/L & A/L French | Elevora Academy'
+    ? 'Online French Classes | DELF, O/L & A/L Preparation'
     : course.icon === 'DE'
-      ? 'Online German Classes | German Language Course | Elevora Academy'
+      ? 'Online German Classes | German Language Course'
       : course.icon === 'EN'
-        ? 'Online English Classes | English Language Course | Elevora Academy'
+        ? 'Online English Classes | English Language Course'
         : course.icon === 'JAVA'
-          ? 'Online Java Programming Classes | Elevora Academy'
-          : 'Online Python Programming Classes | Elevora Academy';
+          ? 'Online Java Programming Classes'
+          : 'Online Python Programming Classes';
   const description = course.icon === 'FR'
     ? 'Learn French online with Elevora Academy. Develop grammar, vocabulary, speaking, listening, reading and writing skills, with DELF, O/L and A/L French preparation.'
     : course.icon === 'DE'
