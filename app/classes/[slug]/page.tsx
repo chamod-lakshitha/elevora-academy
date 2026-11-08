@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, Clock3, GraduationCap, Star, Users } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, GraduationCap, Users } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { courses } from '@/lib/data';
 import { absoluteUrl, courseSlug } from '@/lib/seo';
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
   if (!course) return { title: 'Class not found', robots: { index: false, follow: false } };
 
   const title = `${course.title} | Online ${course.category} Class`;
-  const description = `${course.description} Explore the ${course.level.toLowerCase()} ${course.title} class at Elevora Academy. Course duration: ${course.duration}.`;
+  const description = `${course.description} Explore the ${course.level.toLowerCase()} ${course.title} class at Elevora Academy.`;
   const canonical = `/classes/${courseSlug(course.title)}`;
 
   return {
@@ -111,9 +111,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
               <h1 className="mt-5 max-w-3xl text-4xl font-black leading-tight tracking-[-0.04em] text-brand-navy sm:text-5xl lg:text-6xl">{course.title}</h1>
               <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">{course.description}</p>
               <div className="mt-7 flex flex-wrap items-center gap-4 text-sm text-slate-500">
-                <span className="inline-flex items-center gap-2"><Clock3 size={17} className="text-brand-violet" /> {course.duration}</span>
                 <span className="inline-flex items-center gap-2"><GraduationCap size={17} className="text-brand-violet" /> {course.level}</span>
-                <span className="inline-flex items-center gap-2"><Star size={16} className="fill-brand-gold text-brand-gold" /> {course.rating} illustrative rating</span>
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link href="/classes#class-catalog" className="button-primary">Explore all classes <ArrowRight size={17} /></Link>
@@ -150,7 +148,6 @@ export default async function CoursePage({ params }: CoursePageProps) {
             <dl className="mt-4 grid gap-3 sm:grid-cols-2">
               <div className="rounded-2xl bg-slate-50 p-4"><dt className="text-xs font-semibold text-slate-500">Subject area</dt><dd className="mt-1 font-bold text-brand-navy">{course.category}</dd></div>
               <div className="rounded-2xl bg-slate-50 p-4"><dt className="text-xs font-semibold text-slate-500">Level</dt><dd className="mt-1 font-bold text-brand-navy">{course.level}</dd></div>
-              <div className="rounded-2xl bg-slate-50 p-4"><dt className="text-xs font-semibold text-slate-500">Listed duration</dt><dd className="mt-1 font-bold text-brand-navy">{course.duration}</dd></div>
               <div className="rounded-2xl bg-slate-50 p-4"><dt className="text-xs font-semibold text-slate-500">Instructor</dt><dd className="mt-1 font-bold text-brand-navy"><Link href={'/about#teacher-' + course.instructor.toLowerCase().replace(/\s+/g, '-')} className="text-brand-violet underline decoration-violet-200 underline-offset-4 transition hover:text-brand-navy">{course.instructor}</Link></dd><p className="mt-1 text-xs text-slate-500">View educator profile</p></div>
             </dl>
           </article>
