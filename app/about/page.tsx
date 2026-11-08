@@ -135,8 +135,8 @@ export default function AboutPage() {
                   <div className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-violet-50 px-5 pb-5 pt-6">
                     <div aria-hidden="true" className="absolute -right-5 -top-8 h-28 w-28 rounded-full border border-white/80" />
                     <div aria-hidden="true" className="absolute -bottom-12 left-1/2 h-24 w-32 -translate-x-1/2 rounded-full bg-white/70 blur-xl" />
-                    <div className={'relative mx-auto flex h-24 w-24 items-center justify-center rounded-[1.8rem] bg-gradient-to-br ' + teacher.tone + ' text-2xl font-black tracking-tight text-white shadow-lg ring-4 ring-white transition duration-300 group-hover:rotate-3 group-hover:scale-105'}>
-                      {teacher.initials}
+                    <div className={'relative mx-auto grid h-24 w-24 place-items-center rounded-[1.8rem] bg-gradient-to-br ' + teacher.tone + ' text-2xl font-black tracking-tight text-white shadow-lg ring-4 ring-white transition duration-300 group-hover:rotate-3 group-hover:scale-105'}>
+                      <span className="block w-full translate-y-[-1px] text-center leading-none">{teacher.initials}</span>
                     </div>
                     <div className="relative mt-4 text-center">
                       <h3 className="text-lg font-extrabold tracking-tight text-brand-navy">{teacher.name}</h3>
