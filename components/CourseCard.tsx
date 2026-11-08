@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Clock3, Star, Users } from 'lucide-react';
+import { ArrowUpRight, Star, Users } from 'lucide-react';
 import type { Course } from '@/lib/data';
 import Link from 'next/link';
 import { courseSlug } from '@/lib/seo';
@@ -26,7 +26,6 @@ export default function CourseCard({ course, onQuickView }: { course: Course; on
 
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-4 text-xs text-slate-500">
           <Link href={'/about#teacher-' + course.instructor.toLowerCase().replace(/\\s+/g, '-')} className="flex min-w-0 items-center gap-1.5 rounded-sm transition hover:text-brand-violet focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-violet/40" aria-label={'View teacher profile for ' + course.instructor}><Users size={14} className="shrink-0 text-brand-blue" /><span className="underline decoration-transparent underline-offset-4 transition hover:decoration-violet-300">{course.instructor}</span><ArrowUpRight size={12} className="shrink-0" /></Link>
-          <span className="flex items-center gap-1.5"><Clock3 size={14} className="text-brand-violet" />{course.duration}</span>
         </div>
         <div className="mt-5 flex flex-wrap items-center justify-start gap-2">
           <Link href={'/classes/' + courseSlug(course.title)} aria-label={'Read about ' + course.title} className="inline-flex items-center gap-1.5 rounded-full border border-violet-100 bg-violet-50 px-3 py-2.5 text-xs font-extrabold text-brand-violet transition hover:border-violet-200 hover:bg-violet-100 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-violet/20">Course details <ArrowUpRight size={14} /></Link>
