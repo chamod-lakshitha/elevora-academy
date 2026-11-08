@@ -31,48 +31,48 @@ const pillars = [
 
 const teachingStaff = [
   {
-    name: 'Amelia Carter',
-    role: 'English Language Educator',
-    qualification: 'BA in English Language & Communication',
-    experience: '8 years teaching experience',
-    subjects: 'English · Communication · Writing',
-    initials: 'AC',
-    tone: 'from-sky-500 to-blue-700',
-    icon: Languages,
-    bio: 'Helps learners communicate clearly through practical activities, conversation and supportive feedback.',
-  },
-  {
-    name: 'Sophie Laurent',
-    role: 'French Language Instructor',
-    qualification: 'Diploma in French Language Studies',
-    experience: '6 years teaching experience',
-    subjects: 'French · Pronunciation · Grammar',
-    initials: 'SL',
+    name: 'Ishara De Silva',
+    role: 'French Language Teacher',
+    qualification: 'BA (Hons) in French – University of Kelaniya · DELF B2 Qualified',
+    experience: 'French teacher at a reputed international school in Sri Lanka · Certified for online teaching',
+    subjects: 'French · DELF Preparation · Grammar · Communication',
+    initials: 'ID',
     tone: 'from-violet-500 to-fuchsia-700',
-    icon: BookOpen,
-    bio: 'Makes French approachable with step-by-step explanations, everyday vocabulary and speaking practice.',
+    icon: Languages,
+    bio: 'Learn French with a qualified educator, with guidance designed to build language proficiency, communication skills and confidence.',
   },
   {
-    name: 'Daniel Weber',
-    role: 'German Language Tutor',
-    qualification: 'BA in Modern Languages',
-    experience: '5 years teaching experience',
-    subjects: 'German · Beginner Language Skills',
-    initials: 'DW',
+    name: 'Methasha Manulji',
+    role: 'German Language Teacher',
+    qualification: 'BA in German – University of Kelaniya · Goethe-Zertifikat B1',
+    experience: 'Qualified German language teacher',
+    subjects: 'German · Grammar · Vocabulary · Communication',
+    initials: 'MM',
     tone: 'from-amber-500 to-orange-700',
-    icon: Users,
-    bio: 'Builds learner confidence through structured lessons, useful expressions and real-life examples.',
+    icon: BookOpen,
+    bio: 'Develop your German language skills through structured lessons, practical vocabulary and guided communication practice.',
   },
   {
-    name: 'Ethan Brooks',
-    role: 'Programming Instructor',
-    qualification: 'BSc in Computer Science',
-    experience: '7 years teaching experience',
-    subjects: 'Python · Java · Programming Basics',
-    initials: 'EB',
+    name: 'Chamod De Silva',
+    role: 'Programming Teacher',
+    qualification: 'BEng (Hons) in Software Engineering · CMJD Qualified',
+    experience: 'Software Engineer at a reputed company',
+    subjects: 'Programming · Software Development · Java',
+    initials: 'CD',
     tone: 'from-teal-500 to-cyan-800',
     icon: Code2,
-    bio: 'Turns coding concepts into manageable projects and encourages learners to solve problems independently.',
+    bio: 'Build practical programming and software development skills with guidance from a software engineering graduate and industry professional.',
+  },
+  {
+    name: 'Lakshani De Silva',
+    role: 'English Language Teacher',
+    qualification: 'Higher National Diploma (HND) in English · B.Ed. in English',
+    experience: 'English language educator',
+    subjects: 'English · Grammar · Writing · Speaking · Communication',
+    initials: 'LD',
+    tone: 'from-sky-500 to-blue-700',
+    icon: Languages,
+    bio: 'Strengthen your English language skills through focused learning in grammar, vocabulary and effective communication.',
   },
 ];
 
@@ -123,7 +123,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Meet the educators"
             title="The people behind your progress"
-            description="Our sample teaching team represents the supportive, subject-focused educators we want learners to meet at Elevora Academy."
+            description="Meet the educators behind Elevora Academy’s language and technology programmes, bringing academic knowledge and practical experience to every lesson."
             centered
             titleClassName="leading-[1.2] sm:leading-[1.12]"
           />
