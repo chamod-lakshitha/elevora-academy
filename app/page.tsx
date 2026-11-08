@@ -12,11 +12,11 @@ import { courses, pillars } from '@/lib/data';
 import { absoluteUrl, SITE_URL } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Online French, English, German & Coding Classes',
-  description: 'Learn French, English or German online, or start coding with Java and Python at Elevora Academy. Explore flexible beginner-friendly classes and build practical skills.',
+  title: 'Online French, German & English Classes | Programming Courses | Elevora Academy',
+  description: 'Join online French, German and English classes or learn programming with Java and Python at Elevora Academy. Explore language courses, exam preparation and practical coding lessons from Sri Lanka and beyond.',
   openGraph: {
-    title: 'Online Language & Coding Classes | Elevora Academy',
-    description: 'Explore online French, English, German, Java and Python classes. Find your next learning path at Elevora Academy.',
+    title: 'Online French, German, English & Programming Classes | Elevora Academy',
+    description: 'Find online French, German and English language classes, plus Java and Python programming courses at Elevora Academy.'
     images: [{ url: '/logo.png', alt: 'Elevora Academy logo' }],
     type: 'website',
     ...(absoluteUrl('/') ? { url: absoluteUrl('/') } : {}),
