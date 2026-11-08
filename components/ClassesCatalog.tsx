@@ -238,9 +238,8 @@ export default function ClassesCatalog() {
                       <span className="text-xs font-bold uppercase tracking-widest text-brand-violet">{selected.category} · {selected.level}</span>
                       <h2 id="course-dialog-title" className="mt-2 text-2xl font-black tracking-tight text-brand-navy">{selected.title}</h2>
                       <p className="mt-3 leading-7 text-slate-500">{selected.description}</p>
-                      <div className="mt-5 grid grid-cols-2 gap-3 text-sm">
+                      <div className="mt-5 text-sm">
                         <div className="rounded-2xl bg-slate-50 p-4"><span className="block text-xs text-slate-500">Instructor</span><Link href={'/about#teacher-' + selected.instructor.toLowerCase().replace(/\\s+/g, '-')} onClick={() => setSelected(null)} className="mt-1 inline-flex items-center gap-1 font-bold text-brand-violet underline decoration-violet-200 underline-offset-4 transition hover:text-brand-navy">{selected.instructor} <ArrowUpRight size={13} /></Link><span className="mt-1 block text-[11px] text-slate-500">View teacher profile</span></div>
-                        <div className="rounded-2xl bg-slate-50 p-4"><span className="block text-xs text-slate-500">Duration</span><b className="mt-1 block text-brand-navy">{selected.duration}</b></div>
                       </div>
                       <div className="mt-6 flex justify-end border-t border-slate-100 pt-5">
                         <Link href={'/classes/' + selected.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')} onClick={() => setSelected(null)} className="button-primary">Course details <ArrowUpRight size={16} /></Link>
