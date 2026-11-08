@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: 'Join online French, German and English classes or learn programming with Java and Python at Elevora Academy. Explore language courses, exam preparation and practical coding lessons from Sri Lanka and beyond.',
   openGraph: {
     title: 'Online French, German, English & Programming Classes | Elevora Academy',
-    description: 'Find online French, German and English language classes, plus Java and Python programming courses at Elevora Academy.'
+    description: 'Find online French, German and English language classes, plus Java and Python programming courses at Elevora Academy.',
     images: [{ url: '/logo.png', alt: 'Elevora Academy logo' }],
     type: 'website',
     ...(absoluteUrl('/') ? { url: absoluteUrl('/') } : {}),
