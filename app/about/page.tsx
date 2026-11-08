@@ -11,7 +11,7 @@ import SectionHeading from '@/components/SectionHeading';
 import { absoluteUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Our Teachers | Elevora Academy Online Language & Coding Classes',
+  title: 'Our Teachers | Online Language & Coding Classes',
   description: 'Meet Elevora Academy teachers: French, German and English language educators and a software engineering professional teaching practical programming skills online.',
   alternates: { canonical: '/about' },
   openGraph: { title: 'About Elevora Academy', description: 'Learn about our learner-first approach to practical online language and coding classes.', type: 'website', ...(absoluteUrl('/about') ? { url: absoluteUrl('/about') } : {}) },
