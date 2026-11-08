@@ -29,8 +29,23 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
   const course = getCourse(slug);
   if (!course) return { title: 'Class not found', robots: { index: false, follow: false } };
 
-  const title = `${course.title} | Online ${course.category} Class`;
-  const description = `${course.description} Explore the ${course.level.toLowerCase()} ${course.title} class at Elevora Academy.`;
+  const subject = course.icon === 'FR' ? 'French' : course.icon === 'DE' ? 'German' : course.icon === 'EN' ? 'English' : 'Programming';
+  const title = course.icon === 'FR'
+    ? 'Online French Classes | DELF, O/L & A/L French | Elevora Academy'
+    : course.icon === 'DE'
+      ? 'Online German Classes | German Language Course | Elevora Academy'
+      : course.icon === 'EN'
+        ? 'Online English Classes | English Language Course | Elevora Academy'
+        : course.icon === 'JAVA'
+          ? 'Online Java Programming Classes | Elevora Academy'
+          : 'Online Python Programming Classes | Elevora Academy';
+  const description = course.icon === 'FR'
+    ? 'Learn French online with Elevora Academy. Develop grammar, vocabulary, speaking, listening, reading and writing skills, with DELF, O/L and A/L French preparation.'
+    : course.icon === 'DE'
+      ? 'Join online German classes at Elevora Academy. Develop German grammar, vocabulary, pronunciation and practical communication skills with structured lessons.'
+      : course.icon === 'EN'
+        ? 'Improve your English online with Elevora Academy. Build confidence in grammar, vocabulary, reading, writing, speaking and everyday communication.'
+        : 'Learn programming online with Elevora Academy. Build coding foundations, logical thinking and practical software development skills through guided lessons.';
   const canonical = `/classes/${courseSlug(course.title)}`;
 
   return {
@@ -39,9 +54,11 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
     alternates: { canonical },
     keywords: [
       course.title,
-      `online ${course.title.toLowerCase()}`,
-      `${course.title.toLowerCase()} course`,
-      `${course.level.toLowerCase()} ${course.category.toLowerCase()} class`,
+      `online ${subject.toLowerCase()} classes`,
+      `${subject.toLowerCase()} course online`,
+      `${subject.toLowerCase()} lessons`,
+      'online classes',
+      'online courses',
       'Elevora Academy',
     ],
     openGraph: {
@@ -144,6 +161,8 @@ export default async function CoursePage({ params }: CoursePageProps) {
           <article className="rounded-[1.75rem] border border-slate-200/70 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-black tracking-tight text-brand-navy">About this class</h2>
             <p className="mt-4 leading-8 text-slate-600">{course.description} This course is listed as part of Elevora Academy’s online learning catalogue. Review the class details and contact the academy to confirm current availability, lesson format and enrolment information.</p>
+            <h2 className="mt-8 text-xl font-black tracking-tight text-brand-navy">What you can learn</h2>
+            <p className="mt-3 leading-8 text-slate-600">{course.icon === 'FR' ? 'These online French classes help learners develop listening, speaking, reading and writing skills. Lessons can support general French learning as well as preparation for DELF and school-level French examinations.' : course.icon === 'DE' ? 'These online German classes focus on building a useful foundation in the language, including vocabulary, grammar, pronunciation and everyday communication.' : course.icon === 'EN' ? 'These online English classes focus on practical language development, including grammar, vocabulary, reading, writing, speaking and communication.' : 'These online programming classes introduce coding concepts and practical problem-solving. Develop programming knowledge in a structured learning environment.'}</p>
             <h2 className="mt-8 text-xl font-black tracking-tight text-brand-navy">Class overview</h2>
             <dl className="mt-4 grid gap-3 sm:grid-cols-2">
               <div className="rounded-2xl bg-slate-50 p-4"><dt className="text-xs font-semibold text-slate-500">Subject area</dt><dd className="mt-1 font-bold text-brand-navy">{course.category}</dd></div>
