@@ -11,8 +11,8 @@ import SectionHeading from '@/components/SectionHeading';
 import { absoluteUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'About Elevora Academy | Teaching That Helps You Grow',
-  description: 'Meet Elevora Academy, an online learning space focused on clear teaching, guided practice and helping learners grow through language and technology classes.',
+  title: 'Our Teachers | Elevora Academy Online Language & Coding Classes',
+  description: 'Meet Elevora Academy teachers: French, German and English language educators and a software engineering professional teaching practical programming skills online.',
   alternates: { canonical: '/about' },
   openGraph: { title: 'About Elevora Academy', description: 'Learn about our learner-first approach to practical online language and coding classes.', type: 'website', ...(absoluteUrl('/about') ? { url: absoluteUrl('/about') } : {}) },
 };
@@ -81,10 +81,10 @@ export default function AboutPage() {
     <main className="overflow-hidden">
       <PageHero
         variant="about"
-        eyebrow="A little about our academy"
+        eyebrow="Meet the Elevora Academy teaching team"
         title="Teaching that opens"
         highlight="doors to possibility."
-        description="At Elevora Academy, learning is more than completing a course. It is asking questions, practising with purpose and gaining the confidence to use what you learn in real life."
+        description="Meet the educators behind Elevora Academy’s online French, German, English and programming classes. Learn about their qualifications, teaching backgrounds and subject expertise."
         primaryLabel="Explore our classes"
         primaryHref="/classes"
         secondaryLabel="Back to home"
