@@ -68,6 +68,44 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section aria-labelledby="latest-classes-title" className="relative overflow-hidden bg-white py-10 sm:py-14">
+        <div className="container-shell">
+          <div className="mb-6 flex flex-col gap-3 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full bg-amber-50 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.18em] text-amber-700"><Sparkles size={13} /> Latest announcements</span>
+              <h2 id="latest-classes-title" className="mt-3 text-2xl font-black tracking-tight text-brand-navy sm:text-3xl">New classes at Elevora</h2>
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">Discover our latest group classes and contact us for more information.</p>
+            </div>
+            <Link href="/classes" className="inline-flex items-center gap-2 text-sm font-extrabold text-brand-violet transition hover:gap-3">View all classes <ArrowRight size={16} /></Link>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {[
+              { flag: '🇫🇷', subject: 'French', title: 'O/L & A/L French Group Classes', description: 'Build your French skills with guided lessons and exam-focused practice.', tone: 'from-blue-600 to-indigo-500', soft: 'bg-blue-50 text-blue-700' },
+              { flag: '🇫🇷', subject: 'French', title: 'DELF A1 Group Class', description: 'Start learning French and prepare for the DELF A1 examination.', tone: 'from-violet-600 to-fuchsia-500', soft: 'bg-violet-50 text-violet-700' },
+              { flag: '🇫🇷', subject: 'French', title: 'DELF B1 Group Class', description: 'Develop your French communication skills and prepare for DELF B1.', tone: 'from-sky-600 to-cyan-500', soft: 'bg-sky-50 text-sky-700' },
+              { flag: '🇩🇪', subject: 'German', title: 'German Group Classes', description: 'Learn German step by step with supportive, guided lessons.', tone: 'from-amber-500 to-orange-500', soft: 'bg-amber-50 text-amber-700' },
+            ].map((ad) => {
+              const message = encodeURIComponent(`Hello Elevora Academy, I would like to know more about the ${ad.title}.`);
+              return (
+                <article key={ad.title} className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-5 shadow-[0_8px_28px_rgba(31,41,85,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-violet-200 hover:shadow-[0_16px_36px_rgba(31,41,85,0.11)]">
+                  <div aria-hidden="true" className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${ad.tone}`} />
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-2xl" aria-hidden="true">{ad.flag}</span>
+                    <span className={`rounded-full px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.14em] ${ad.soft}`}>New class</span>
+                  </div>
+                  <p className="mt-4 text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">{ad.subject} classes</p>
+                  <h3 className="mt-1.5 text-lg font-extrabold leading-snug text-brand-navy">{ad.title}</h3>
+                  <p className="mt-2 flex-1 text-sm leading-6 text-slate-600">{ad.description}</p>
+                  <a href={`https://wa.me/94754554724?text=${message}`} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-brand-violet px-4 py-2.5 text-xs font-extrabold text-white transition hover:bg-brand-navy focus:outline-none focus:ring-4 focus:ring-violet-200">
+                    Enquire on WhatsApp <ArrowUpRight size={14} />
+                  </a>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="section-space relative overflow-hidden bg-slate-50/80">
         <div aria-hidden="true" className="absolute -right-24 top-16 h-72 w-72 rounded-full bg-violet-100/55 blur-3xl" />
         <div className="container-shell relative">
